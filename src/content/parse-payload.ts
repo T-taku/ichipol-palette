@@ -1,40 +1,6 @@
 import { extractLabeledRecord, findCourseRows } from './extract-dom';
+import { JSON_FIELD_KEYS } from './selectors';
 import type { CourseRecord } from '../shared/types';
-
-const KEY_MAP: Record<string, 'code' | 'name' | 'instructor' | 'department' | 'faculty' | 'division' | 'commonFlag'> = {
-  jugyocd: 'code',
-  jugyocode: 'code',
-  jyugyocd: 'code',
-  kmkcd: 'code',
-  kamokucd: 'code',
-  kamokcd: 'code',
-  coursecode: 'code',
-  classcode: 'code',
-  jugyoname: 'name',
-  jugyonm: 'name',
-  kmkname: 'name',
-  kamokuname: 'name',
-  kamokunm: 'name',
-  coursename: 'name',
-  tanninname: 'instructor',
-  kynname: 'instructor',
-  instructorname: 'instructor',
-  gakkaname: 'department',
-  gakkanm: 'department',
-  sgksname: 'department',
-  sgksnm: 'department',
-  kaikoingakka: 'department',
-  gakubuname: 'faculty',
-  gakubunm: 'faculty',
-  kbnname: 'division',
-  kamokukbn: 'division',
-  kamokukbnr: 'division',
-  kmkbnrname: 'division',
-  jugyokanribusho: 'division',
-  kyotsuflg: 'commonFlag',
-  kyotsuflag: 'commonFlag',
-  commonflg: 'commonFlag',
-};
 
 function canonKey(key: string): string {
   return key.toLowerCase().replace(/[_-]/g, '');
@@ -51,7 +17,7 @@ function walkJson(value: unknown, out: CourseRecord[], depth: number): void {
   const record: CourseRecord = {};
   let recognized = 0;
   for (const [key, child] of Object.entries(value as Record<string, unknown>)) {
-    const mapped = KEY_MAP[canonKey(key)];
+    const mapped = JSON_FIELD_KEYS[canonKey(key)];
     if (!mapped) {
       walkJson(child, out, depth + 1);
       continue;

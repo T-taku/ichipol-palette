@@ -29,8 +29,10 @@ npm run build
 1. Chrome で `chrome://extensions` を開く
 2. デベロッパーモードをオンにする
 3. 「パッケージ化されていない拡張機能を読み込む」で、このリポジトリの `dist/` を選ぶ
-4. いちぽるにログインし、履修登録またはシラバス検索を開く
+4. セッションのある履修登録（`/uprx/up/**/*.xhtml`）を開くと色が付く
 5. ツールバーのアイコン、または画面左下の「色分け設定」から学科を保存する
+
+この拡張はログインしません。認証の入口は `https://ichipol.g.hiroshima-cu.ac.jp/uprx/ShibbolethAuthServlet` です。セッションがない状態で画面の奥の URL を開いても通りません。別の場所でログインすると、こちらのセッションが切れることがあります。
 
 設定を変えたあとは、開いている一覧にそのまま反映されます。反映されないときはページを再読み込みしてください。
 
@@ -74,9 +76,21 @@ npm run build
 
 開講学科が画面に無い科目は、推測で他学科にしません。上書きルールか、下の「画面から読むもの」で埋まったときだけ色が付きます。
 
+## 仮のセレクタ
+
+実画面の列名はまだ仮です。差し替え口は `src/content/selectors.ts` です。Unipaヘルパーがログイン済みの履修登録（URL、表の構造、列名、同一オリジンの XHR）を渡したあと、次を実測に合わせます。
+
+| 項目 | 仮の見方 | 更新する場所 |
+| --- | --- | --- |
+| 開講学部・学科 | 見出し「開講学部・学科」「開講学科」「学科組織」「開講学部」 | `HEADER_FIELDS` の department / faculty、`LIVE_ATTRIBUTE_HOOKS` |
+| 科目区分 | 見出し「科目区分」「授業管理部署」 | `HEADER_FIELDS` の division |
+| 共通科目 | セル文言の「全学共通」「教養」「共通科目」など。`kyotsuFlg` | `COMMON_TEXT_PATTERNS`、`JSON_FIELD_KEYS` |
+
+`LIVE_TABLE_SELECTORS.courseTable` と `LIVE_ATTRIBUTE_HOOKS` は空です。空のあいだは `table` の見出し文言で判定します。実測の CSS セレクタや `data-*` が分かったら、その配列だけ足します。
+
 ## 画面から読むもの
 
-ログイン済みのいちぽる HTML は、この開発環境では取得していません。大学ごとに列名が変わる前提で、次の順に見ます。
+次の順に見ます。列名は仮です。
 
 1. 表の見出し
    - 授業コード / 科目コード
@@ -91,13 +105,11 @@ npm run build
    - JSF / PrimeFaces の `partial-response`（`update` の CDATA に入った HTML）
 5. 設定をオンにしたときだけ、行の中の同一オリジン GET（`/uprx/**/*.xhtml?…`）。`javascript:` リンクは開きません
 
-入口と画面の形は、公開情報と UNIPA RX の一般的な構造から次のとおりです。
+画面の形は、公開情報と UNIPA RX の一般的な構造からの仮です。機能コードは実測待ちです。
 
 - ホスト: `https://ichipol.g.hiroshima-cu.ac.jp`（旧表記の `ichipol.hiroshima-cu.ac.jp` と `*.g.hiroshima-cu.ac.jp` も対象）
-- 入口: `https://ichipol.g.hiroshima-cu.ac.jp/uprx/`
-- 認証: `https://ichipol.g.hiroshima-cu.ac.jp/uprx/ShibbolethAuthServlet`（この画面では色分けしません）
-- ログイン後は `/uprx/up/**/*.xhtml`。履修・シラバスは大学ごとの機能コード付き JSF 画面です。広島市立大学固有の機能コードは未ログインのため断定していません
-- 履修登録は、時間割の追加から開く授業一覧（PrimeFaces の `ui-datatable` が多い）と、検索結果の表が対象です
+- 認証の入口: `https://ichipol.g.hiroshima-cu.ac.jp/uprx/ShibbolethAuthServlet`（この画面では色分けしません）
+- ログイン後の JSF は `/uprx/up/**/*.xhtml`。PrimeFaces の `ui-datatable` を想定しています
 - 大学サイト全体（`www.hiroshima-cu.ac.jp` など）には入れません
 
 第三者が叩く非公開 API は見つけていません。拡張から新しいバックエンドも作っていません。
@@ -132,6 +144,7 @@ npm run dev
 ## 構成
 
 - `src/shared/classify.ts` — 判定
+- `src/content/selectors.ts` — 仮の見出し・属性・JSON キー。実測が来たらここを更新する
 - `src/content/` — 一覧の検出、色付け、同一オリジン応答の観測
 - `src/settings/` — Chakra UI の設定モーダル
 - `src/background/index.ts` — ツールバーから設定を開く

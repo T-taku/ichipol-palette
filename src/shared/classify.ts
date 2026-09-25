@@ -1,3 +1,4 @@
+import { COMMON_TEXT_PATTERNS } from '../content/selectors';
 import { resolvedFaculty } from './defaults';
 import { departmentMatches, facultyMatches, hasSpecificDepartment, normalize } from './normalize';
 import type { Classification, CourseRecord, OverrideRule, Settings } from './types';
@@ -13,27 +14,8 @@ import type { Classification, CourseRecord, OverrideRule, Settings } from './typ
  *
  * 広島市立大学の教育課程では、全学共通系科目・外国語系科目は学部専門とは別枠
  * （学修の手引き）。ここでの「共通」はその枠を指す。
+ * 共通科目の文言は `src/content/selectors.ts` の COMMON_TEXT_PATTERNS。
  */
-
-const COMMON_PATTERNS: readonly RegExp[] = [
-  /全学共通/,
-  /総合共通/,
-  /共通教育/,
-  /教養教育/,
-  /教養科目/,
-  /一般情報処理/,
-  /保健体育/,
-  /外国語系/,
-  /初年次演習/,
-  /キャリア形成/,
-  /広島・?地域志向/,
-  /地域志向科目/,
-  /平和科目/,
-  /共通科目[ABCＡＢＣ]/,
-  /(?<!学部)共通科目/,
-  /全学教育/,
-  /全学展開/,
-];
 
 function ruleText(record: CourseRecord, field: OverrideRule['field']): string {
   switch (field) {
@@ -77,7 +59,7 @@ export function isCommonCourse(record: CourseRecord): boolean {
   if (record.commonFlag && !/学部共通/.test(record.division ?? '')) return true;
   const blob = [record.name, record.department, record.faculty, record.division].filter(Boolean).join(' ');
   if (!blob) return false;
-  return COMMON_PATTERNS.some((pattern) => pattern.test(blob));
+  return COMMON_TEXT_PATTERNS.some((pattern) => pattern.test(blob));
 }
 
 function orgBlob(record: CourseRecord): string {

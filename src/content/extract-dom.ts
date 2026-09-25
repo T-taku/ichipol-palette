@@ -1,4 +1,5 @@
 import type { CourseRecord } from '../shared/types';
+import { CONTEXT_FIELDS, HEADER_FIELDS, LABEL_FIELDS, LIVE_TABLE_SELECTORS, readAttributeHooks, type HeaderField } from './selectors';
 
 export interface ExtractedRow {
   row: HTMLTableRowElement;
@@ -6,17 +7,6 @@ export interface ExtractedRow {
   /** 表に開講学科・開講学部の列がないとき、同じ form の検索条件を補う。 */
   inheritContext: boolean;
 }
-
-type RecordField = 'code' | 'name' | 'instructor' | 'department' | 'faculty' | 'division';
-
-const HEADER_FIELDS: { field: RecordField; patterns: RegExp[] }[] = [
-  { field: 'code', patterns: [/授業コード/, /科目コード/, /講義コード/, /授業番号/, /^コード$/] },
-  { field: 'name', patterns: [/授業科目名/, /授業科目/, /科目名/, /講義題目/, /講義名/, /^科目$/] },
-  { field: 'instructor', patterns: [/担当教員/, /教員名/, /担当者/, /^教員$/, /^担当$/] },
-  { field: 'department', patterns: [/開講学部.?学科/, /開講学科/, /学科組織/, /開講所属/, /開設学科/] },
-  { field: 'faculty', patterns: [/^開講学部$/, /^開設学部$/] },
-  { field: 'division', patterns: [/科目区分/, /授業管理部署/, /科目分類/, /授業区分/, /^区分$/] },
-];
 
 const DAY = /^(月|火|水|木|金|土|日)(曜日)?$/;
 const IGNORE_VALUE = /^(すべて|全て|指定なし|未選択|選択してください|----|---|―|なし|未設定)$/;
@@ -27,9 +17,9 @@ export function cellText(cell: Element): string {
   return (clone.textContent ?? '').replace(/\s+/g, ' ').trim();
 }
 
-function matchHeader(text: string): { field: RecordField; score: number } | null {
+function matchHeader(text: string): { field: HeaderField; score: number } | null {
   const compact = text.replace(/\s+/g, '');
-  let best: { field: RecordField; score: number } | null = null;
+  let best: { field: HeaderField; score: number } | null = null;
   for (const spec of HEADER_FIELDS) {
     for (const pattern of spec.patterns) {
       if (!pattern.test(compact)) continue;
@@ -62,7 +52,7 @@ function mapTable(table: HTMLTableElement): ExtractedRow[] | null {
   }
   if (!headerRow || bestScore < 2) return null;
 
-  const columns = new Map<RecordField, number>();
+  const columns = new Map<HeaderField, number>();
   [...headerRow.cells].forEach((cell, index) => {
     const matched = matchHeader(cellText(cell));
     if (!matched || columns.has(matched.field)) return;
@@ -87,6 +77,11 @@ function mapTable(table: HTMLTableElement): ExtractedRow[] | null {
       record[field] = text;
       if (field === 'name') cell.dataset.hcuName = '1';
     }
+    const hooked = readAttributeHooks(row);
+    if (!record.department && hooked.department) record.department = hooked.department;
+    if (!record.faculty && hooked.faculty) record.faculty = hooked.faculty;
+    if (!record.division && hooked.division) record.division = hooked.division;
+    if (hooked.commonFlag) record.commonFlag = true;
     if (!record.name && !record.code) continue;
     extracted.push({ row, record, inheritContext });
   }
@@ -95,7 +90,8 @@ function mapTable(table: HTMLTableElement): ExtractedRow[] | null {
 
 export function findCourseRows(root: ParentNode): ExtractedRow[] {
   const rows: ExtractedRow[] = [];
-  root.querySelectorAll('table').forEach((table) => {
+  const selector = LIVE_TABLE_SELECTORS.courseTable.length > 0 ? LIVE_TABLE_SELECTORS.courseTable.join(',') : 'table';
+  root.querySelectorAll(selector).forEach((table) => {
     if (!(table instanceof HTMLTableElement) || isTimetableTable(table)) return;
     const mapped = mapTable(table);
     if (mapped) rows.push(...mapped);
@@ -132,10 +128,7 @@ function directLabelText(label: Element): string {
 }
 
 function matchContextField(label: string): 'department' | 'faculty' | 'division' | null {
-  if (/授業管理部署|科目区分|科目分類/.test(label)) return 'division';
-  if (/学科組織|開講学科|開講学部.?学科|開講所属/.test(label)) return 'department';
-  if (/開講学部|開設学部/.test(label)) return 'faculty';
-  return null;
+  return CONTEXT_FIELDS.find((item) => item.pattern.test(label))?.field ?? null;
 }
 
 function controlValue(element: Element): string {
@@ -183,15 +176,6 @@ export function readPageContext(scope: ParentNode): Partial<CourseRecord> {
   return found;
 }
 
-const LABEL_FIELD: { field: RecordField; pattern: RegExp }[] = [
-  { field: 'code', pattern: /^(授業コード|科目コード|講義コード)$/ },
-  { field: 'name', pattern: /^(授業科目|授業科目名|科目名|講義題目)$/ },
-  { field: 'instructor', pattern: /^(担当教員|教員名|担当者)$/ },
-  { field: 'department', pattern: /^(開講学科|学科組織|開講所属)$/ },
-  { field: 'faculty', pattern: /^(開講学部|開設学部)$/ },
-  { field: 'division', pattern: /^(科目区分|授業管理部署|科目分類)$/ },
-];
-
 /** シラバス詳細のような「項目名 + 値」の2列から、科目を1件取り出す。 */
 export function extractLabeledRecord(root: ParentNode): CourseRecord | null {
   const skip = new Set(findCourseRows(root).map((item) => item.row));
@@ -201,7 +185,7 @@ export function extractLabeledRecord(root: ParentNode): CourseRecord | null {
     const label = cellText(tr.cells[0]).replace(/\s+/g, '');
     const value = cellText(tr.cells[1]);
     if (!label || !value || label.length > 30 || value.length > 160) return;
-    const field = LABEL_FIELD.find((item) => item.pattern.test(label))?.field;
+    const field = LABEL_FIELDS.find((item) => item.pattern.test(label))?.field;
     if (!field || record[field]) return;
     record[field] = value;
   });

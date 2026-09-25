@@ -1,4 +1,9 @@
-/** Chrome の host パターン。`*` はラベル1つ分なので、ichipol.g は個別に書く。 */
+/**
+ * コンテンツスクリプトはホスト全体にマッチする。
+ * 認証の入口は `https://ichipol.g.hiroshima-cu.ac.jp/uprx/ShibbolethAuthServlet`。
+ * セッションのない `/uprx/up/...` 直リンクは開かない。色分けは `isUnipaAppPath` の `.xhtml` 画面だけで行う。
+ * `*` はラベル1つ分なので、ichipol.g は個別に書く。
+ */
 export const UNIPA_MATCHES = [
   'https://ichipol.g.hiroshima-cu.ac.jp/*',
   'https://ichipol.hiroshima-cu.ac.jp/*',

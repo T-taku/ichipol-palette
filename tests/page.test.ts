@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { applyColoring } from '../src/content/apply';
 import { createCourseCache } from '../src/content/cache';
 import { findCourseRows, readPageContext } from '../src/content/extract-dom';
+import { readAttributeHooks } from '../src/content/selectors';
 import { FIXTURE_HTML } from '../src/content/fixture';
 import { extractRecordsFromPayload } from '../src/content/parse-payload';
 import { safeSyllabusUrl } from '../src/content/urls';
@@ -100,6 +101,31 @@ describe('応答の解析', () => {
     const html = `<table><tr><th>授業科目</th><td>地域志向入門</td></tr><tr><th>科目区分</th><td>全学共通系科目</td></tr></table>`;
     const [record] = extractRecordsFromPayload(html);
     expect(record).toMatchObject({ name: '地域志向入門', division: '全学共通系科目' });
+  });
+});
+
+describe('属性フック', () => {
+  it('空のフックは何も読まない', () => {
+    document.body.innerHTML = `<table><tr data-kaiko-gakka="情報工学科"><td>科目</td></tr></table>`;
+    const row = document.querySelector('tr');
+    expect(row).not.toBeNull();
+    expect(readAttributeHooks(row!)).toEqual({});
+  });
+
+  it('指定した属性から開講学科・科目区分・共通フラグを読む', () => {
+    document.body.innerHTML = `<table><tr data-kaiko-gakka="情報科学部 情報工学科" data-kbn="専門科目"><td data-kyotsu="1">科目</td></tr></table>`;
+    expect(
+      readAttributeHooks(document.querySelector('tr')!, {
+        department: ['data-kaiko-gakka'],
+        faculty: ['data-kaiko-gakubu'],
+        division: ['data-kbn'],
+        commonFlag: ['data-kyotsu'],
+      }),
+    ).toEqual({
+      department: '情報科学部 情報工学科',
+      division: '専門科目',
+      commonFlag: true,
+    });
   });
 });
 
