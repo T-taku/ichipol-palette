@@ -1,0 +1,3776 @@
+{
+  "year": 2026,
+  "term": "後期",
+  "source": "ichiPOL guest syllabus Pky00101 guestlogin=Kmh006",
+  "updated": "2026-09-26",
+  "counts": {
+    "common": 154,
+    "情報科学部": 128,
+    "国際学部": 252,
+    "芸術学部": 93
+  },
+  "courses": {
+    "00110401": {
+      "name": "情報社会論",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00110501": {
+      "name": "コンピュータとアート",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00111401": {
+      "name": "広島の産業と技術",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00120101": {
+      "name": "哲学",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00120401": {
+      "name": "心理学",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00120801": {
+      "name": "法学（日本国憲法）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00120901": {
+      "name": "政治学",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00121401": {
+      "name": "文化人類学",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00122401": {
+      "name": "経営学",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00130501": {
+      "name": "化学概論",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00130901": {
+      "name": "情報科学概論",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00131101": {
+      "name": "基礎生物学",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00131401": {
+      "name": "データサイエンス",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00140401": {
+      "name": "立体造形概論",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "001609A1": {
+      "name": "体育実技Ⅱ （アーチェリー）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "001609A2": {
+      "name": "体育実技Ⅱ （アーチェリー）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "001609B1": {
+      "name": "体育実技Ⅱ （バドミントン）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "001609B2": {
+      "name": "体育実技Ⅱ （バドミントン）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "001609E1": {
+      "name": "体育実技Ⅱ （エアロビクス）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "001609E2": {
+      "name": "体育実技Ⅱ （エアロビクス）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "001609F1": {
+      "name": "体育実技Ⅱ （フィットネス）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "001609F2": {
+      "name": "体育実技Ⅱ （フィットネス）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "001609S1": {
+      "name": "体育実技Ⅱ （サッカー）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "001609S2": {
+      "name": "体育実技Ⅱ （サッカー）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "001609T1": {
+      "name": "体育実技Ⅱ （テニス）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "001609T2": {
+      "name": "体育実技Ⅱ （テニス）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00180701": {
+      "name": "地域課題演習",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00180801": {
+      "name": "国際化時代の平和",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00200101": {
+      "name": "キャリアデザイン",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00200310": {
+      "name": "国際交流演習Ⅰ",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00200401": {
+      "name": "キャリアサポートベーシックＢ",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00200410": {
+      "name": "国際交流演習Ⅱ",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00200510": {
+      "name": "国際交流演習Ⅲ",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00200610": {
+      "name": "国際交流演習Ⅳ",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00200801": {
+      "name": "キャリアデザインⅱ",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00200901": {
+      "name": "仕事体験演習",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021F901": {
+      "name": "ＣＡＬＬ英語集中Ⅱ",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021F9A1": {
+      "name": "英語総合演習Ⅱ (Advanced)",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021F9A2": {
+      "name": "英語総合演習Ⅱ (Intermediate1)",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021F9A3": {
+      "name": "英語総合演習Ⅱ (Intermediate3)",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021F9A4": {
+      "name": "英語総合演習Ⅱ (Upper intermediate1)",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021F9A5": {
+      "name": "英語総合演習Ⅱ (Intermediate2)",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021F9A6": {
+      "name": "英語総合演習Ⅱ (Intermediate4)",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021F9B1": {
+      "name": "英語総合演習Ⅱ (Advanced)",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021F9B2": {
+      "name": "英語総合演習Ⅱ (Upper intermediate2)",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021F9B3": {
+      "name": "英語総合演習Ⅱ (Intermediate1)",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021F9B4": {
+      "name": "英語総合演習Ⅱ (Upper intermediate1)",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021F9B5": {
+      "name": "英語総合演習Ⅱ (Upper intermediate3)",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021F9B6": {
+      "name": "英語総合演習Ⅱ (Intermediate2)",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021G201": {
+      "name": "ＣＡＬＬ英語集中Ⅳ",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H201": {
+      "name": "英語応用演習Ⅱ （Intermediate 1）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H202": {
+      "name": "英語応用演習Ⅱ （Intermediate 2）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H203": {
+      "name": "英語応用演習Ⅱ （Intermediate 3）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H204": {
+      "name": "英語応用演習Ⅱ （Intermediate 4）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H205": {
+      "name": "英語応用演習Ⅱ （Upper-Intermediate 1）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H206": {
+      "name": "英語応用演習Ⅱ （Upper-Intermediate 2）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H207": {
+      "name": "英語応用演習Ⅱ （Upper-Intermediate 3）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H208": {
+      "name": "英語応用演習Ⅱ （Upper-Intermediate 4）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H209": {
+      "name": "英語応用演習Ⅱ （Upper-Intermediate 5）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H210": {
+      "name": "英語応用演習Ⅱ （Upper-Intermediate 6）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H211": {
+      "name": "英語応用演習Ⅱ （Advanced 1）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H212": {
+      "name": "英語応用演習Ⅱ （Advanced 2）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H213": {
+      "name": "英語応用演習Ⅱ （Advanced 3）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H214": {
+      "name": "英語応用演習Ⅱ （Advanced 4）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H2J1": {
+      "name": "英語応用演習Ⅱ （Intermediate 1）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H2J2": {
+      "name": "英語応用演習Ⅱ （Intermediate 2）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H2J3": {
+      "name": "英語応用演習Ⅱ （Intermediate 3）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H2J4": {
+      "name": "英語応用演習Ⅱ （Intermediate 4）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H2J5": {
+      "name": "英語応用演習Ⅱ （Intermediate 5）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H2J6": {
+      "name": "英語応用演習Ⅱ （Upper-Intermediate 1）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H2J7": {
+      "name": "英語応用演習Ⅱ （Upper-Intermediate 2）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H2J8": {
+      "name": "英語応用演習Ⅱ （Upper-Intermediate 3）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H2J9": {
+      "name": "英語応用演習Ⅱ （Upper-Intermediate 4）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H2JB": {
+      "name": "英語応用演習Ⅱ （Advanced 1）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H2JC": {
+      "name": "英語応用演習Ⅱ （Advanced 2）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H2JD": {
+      "name": "英語応用演習Ⅱ （Advanced 3）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H2JE": {
+      "name": "英語応用演習Ⅱ （Intermediate 6）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H2JF": {
+      "name": "英語応用演習Ⅱ （Intermediate 7）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H401": {
+      "name": "英語応用演習Ⅳ （Upper-Intermediate 1）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H402": {
+      "name": "英語応用演習Ⅳ （Upper-Intermediate 2）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H403": {
+      "name": "英語応用演習Ⅳ （Advanced 1）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H404": {
+      "name": "英語応用演習Ⅳ （Super-Advanced 1）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H4J1": {
+      "name": "英語応用演習Ⅳ （Upper-Intermediate 1）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H4J2": {
+      "name": "英語応用演習Ⅳ （Upper-Intermediate 2）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H4J3": {
+      "name": "英語応用演習Ⅳ （Upper-Intermediate 3）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H4J4": {
+      "name": "英語応用演習Ⅳ （Upper-Intermediate 4）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H4J5": {
+      "name": "英語応用演習Ⅳ （Upper-Intermediate 5）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H4J6": {
+      "name": "英語応用演習Ⅳ （Upper-Intermediate 6）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H4J7": {
+      "name": "英語応用演習Ⅳ （Upper-Intermediate 7）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H4J8": {
+      "name": "英語応用演習Ⅳ （Upper-Intermediate 8）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H4JA": {
+      "name": "英語応用演習Ⅳ （Advanced 1）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H4JB": {
+      "name": "英語応用演習Ⅳ （Advanced 2）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H4JC": {
+      "name": "英語応用演習Ⅳ （Advanced 3）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H4JD": {
+      "name": "英語応用演習Ⅳ （Advanced 4）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H4JE": {
+      "name": "英語応用演習Ⅳ （Upper-Intermediate 9）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021H4JF": {
+      "name": "英語応用演習Ⅳ （Upper-Intermediate 10）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021I2A1": {
+      "name": "ｅラーニング英語Ⅱ",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "0021I4A1": {
+      "name": "ｅラーニング英語Ⅳ",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00220201": {
+      "name": "ドイツ語Ⅱ",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "002202JG": {
+      "name": "ドイツ語Ⅱ",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "002204K1": {
+      "name": "フランス語Ⅱ",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "002206JG": {
+      "name": "中国語Ⅱ",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "002206K1": {
+      "name": "中国語Ⅱ",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00220801": {
+      "name": "ハングルⅡ",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00220802": {
+      "name": "ハングルⅡ",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00221001": {
+      "name": "アラビア語Ⅱ",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00221201": {
+      "name": "ロシア語Ⅱ",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00221501": {
+      "name": "ドイツ語Ⅳ",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00221701": {
+      "name": "フランス語Ⅳ",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00221901": {
+      "name": "中国語Ⅳ",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00222101": {
+      "name": "ハングルⅣ",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00222301": {
+      "name": "アラビア語Ⅳ",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00222502": {
+      "name": "イタリア語Ⅱ",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00222701": {
+      "name": "イタリア語Ⅳ",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00222901": {
+      "name": "ロシア語Ⅳ",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00223101": {
+      "name": "日本語Ⅱ a",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00223102": {
+      "name": "日本語Ⅱ b",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00223103": {
+      "name": "日本語Ⅱ c",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00223301": {
+      "name": "日本語Ⅳ a",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00223302": {
+      "name": "日本語Ⅳ b",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00223501": {
+      "name": "スペイン語Ⅱ",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00223701": {
+      "name": "スペイン語Ⅳ",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00410901": {
+      "name": "道徳教育論",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00411301": {
+      "name": "教師論",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00411401": {
+      "name": "教育心理学",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00412701": {
+      "name": "教育実習Ⅰ",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00412801": {
+      "name": "教育実習Ⅱ （中一種免許希望者のみ）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00413301": {
+      "name": "学校インターンシップ",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00413501": {
+      "name": "教職実践演習（中等）Ａ",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00413601": {
+      "name": "教職実践演習（中等）B",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00413701": {
+      "name": "教職実践演習（中等）C",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00413801": {
+      "name": "教職特講",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00414001": {
+      "name": "教科教育法（英語）ＢⅡ",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00414201": {
+      "name": "教科教育法（数学）Ⅱ",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00414401": {
+      "name": "教科教育法（情報）Ⅱ",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00414601": {
+      "name": "教科教育法（美術）ＢⅡ",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00414801": {
+      "name": "教科教育法（工芸）Ⅱ",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00414901": {
+      "name": "教育課程論",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00415002": {
+      "name": "教科教育法（美術）ＡⅡ",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00415101": {
+      "name": "総合的な学習の時間論",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00415301": {
+      "name": "情報通信技術を活用した教育の理論",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00415401": {
+      "name": "教科教育法（社会・地理歴史）Ⅰ",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00415B01": {
+      "name": "教科教育法（英語）ＡⅡ",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00510202": {
+      "name": "生涯学習概論",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00510301": {
+      "name": "博物館実習",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00510601": {
+      "name": "博物館資料論",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00510801": {
+      "name": "博物館経営論",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00510901": {
+      "name": "博物館資料保存論",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00511001": {
+      "name": "博物館展示論",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00511201": {
+      "name": "博物館情報・メディア論",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00610501": {
+      "name": "教育方法・技術論",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00610601": {
+      "name": "教育方法・技術論",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00M10501": {
+      "name": "国際関係と平和",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "00M10701": {
+      "name": "研究倫理",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null
+    },
+    "103K0401": {
+      "name": "基礎演習",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "103K0402": {
+      "name": "基礎演習",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "103K0403": {
+      "name": "基礎演習",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "103K0404": {
+      "name": "基礎演習",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "103K0405": {
+      "name": "基礎演習",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "103K0406": {
+      "name": "基礎演習",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "103K0407": {
+      "name": "基礎演習",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "103K0408": {
+      "name": "基礎演習",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "103K0601": {
+      "name": "発展演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "103K0602": {
+      "name": "発展演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "103K0603": {
+      "name": "発展演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "103K0604": {
+      "name": "発展演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "103K0605": {
+      "name": "発展演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "103K0606": {
+      "name": "発展演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "103K0607": {
+      "name": "発展演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "103K0608": {
+      "name": "発展演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "103K0701": {
+      "name": "データ分析入門",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "113I0199": {
+      "name": "国際研究特講Ⅰ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "113I0299": {
+      "name": "国際研究特講Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "113I0501": {
+      "name": "企業インターンシップ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "113I1499": {
+      "name": "特別演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "113I1699": {
+      "name": "特別演習Ⅳ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "113I1899": {
+      "name": "特別講義Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "113I2101": {
+      "name": "海外短期英語留学",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "113L0801": {
+      "name": "英語スキルアップⅡ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "113L0802": {
+      "name": "英語スキルアップⅡ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "113L0803": {
+      "name": "英語スキルアップⅡ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "113L0804": {
+      "name": "英語スキルアップⅡ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "113L0805": {
+      "name": "英語スキルアップⅡ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "113l1901": {
+      "name": "学部派遣海外インターンシップ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "113l2001": {
+      "name": "公的機関インターンシップ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "113l2201": {
+      "name": "海外短期フランス語留学",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "113l2401": {
+      "name": "海外短期中国語留学",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114A0301": {
+      "name": "芸術文化論",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114A0601": {
+      "name": "比較文化論Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114A0801": {
+      "name": "比較民族学Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114A1101": {
+      "name": "エスニシティと宗教Ⅰ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114A1401": {
+      "name": "労働と社会",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114A1801": {
+      "name": "文化交流史Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114A1901": {
+      "name": "社会文化思想史Ⅰ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114A2201": {
+      "name": "共生の哲学Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114A2401": {
+      "name": "メディア・リテラシー",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114A2501": {
+      "name": "日本文化史Ⅰ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114A2801": {
+      "name": "イギリス文化論Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114A3001": {
+      "name": "アメリカ文化論Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114A3002": {
+      "name": "American CultureⅡ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114A3201": {
+      "name": "中国文化論",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114A3401": {
+      "name": "Modern Japanese Studies",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114A3801": {
+      "name": "中東アラブ研究",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114A4001": {
+      "name": "ラテンアメリカ研究Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114A4101": {
+      "name": "アフリカ研究Ⅰ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114A4102": {
+      "name": "アフリカ研究",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114A4401": {
+      "name": "美術史（日本）Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114A5001": {
+      "name": "フランス文化論",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114A5801": {
+      "name": "美術史（西洋）Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114A6001": {
+      "name": "美術史（現代）Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114A6601": {
+      "name": "East Asian Cultures and Societies",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114A7201": {
+      "name": "広島と世界",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114A7401": {
+      "name": "日本史概論Ⅰ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114B0501": {
+      "name": "応用言語論Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114B0701": {
+      "name": "日本語学・日本語教育学Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114B0901": {
+      "name": "翻訳論Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114B1101": {
+      "name": "言語比較論Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114B1501": {
+      "name": "コミュニケーション技法論Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114B2301": {
+      "name": "英語学概論Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114B2601": {
+      "name": "英米文学概論Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114B2801": {
+      "name": "英米文学特講Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114B2802": {
+      "name": "Special Lecture in British and American LiteratureⅡ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114B3001": {
+      "name": "英文構成法Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114B3201": {
+      "name": "英語コミュニケーションⅡ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114B3202": {
+      "name": "Communication in EnglishⅡ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114B3301": {
+      "name": "英語聴解法",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114B3501": {
+      "name": "言語・コミュニケーション研究入門A",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114B3601": {
+      "name": "言語・コミュニケーション研究入門B",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114B4201": {
+      "name": "英語学習論Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114C0201": {
+      "name": "国際関係史入門",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114C0501": {
+      "name": "国際法",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114C0701": {
+      "name": "国際協力論Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114C0901": {
+      "name": "国際社会論Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114C1101": {
+      "name": "国際政治理論",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114C1601": {
+      "name": "民族国家論Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114C1801": {
+      "name": "開発政治論Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114C1901": {
+      "name": "平和研究Ⅰ （旧：平和研究入門）",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114C2101": {
+      "name": "平和研究Ⅲ （旧：平和研究Ⅱ）",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114C2301": {
+      "name": "日本社会と人権",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114C2501": {
+      "name": "紛争解決論Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114C2701": {
+      "name": "国際機構論Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114C2901": {
+      "name": "国際関係史（日本）Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114C3101": {
+      "name": "国際関係史（朝鮮半島）Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114C3301": {
+      "name": "国際関係史（中国）Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114C3501": {
+      "name": "国際関係史（アメリカ）Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114C3701": {
+      "name": "国際関係史（ロシア）Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114C4601": {
+      "name": "東南アジア研究",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114C4801": {
+      "name": "Contemporary Political Issues",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114C5402": {
+      "name": "世界史概論Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114C5801": {
+      "name": "History of Japanese Politics and Diplomacy",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114C5901": {
+      "name": "国際政治学",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114C6201": {
+      "name": "東北アジア政治論",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114C6401": {
+      "name": "日本史概論Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114D0201": {
+      "name": "ミクロ経済学Ⅰ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114D0401": {
+      "name": "マクロ経済学Ⅰ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114D1201": {
+      "name": "現代社会と法Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114D2101": {
+      "name": "組織の経済学Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114D2201": {
+      "name": "国際開発学",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114D2501": {
+      "name": "健康心理学",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114D2701": {
+      "name": "比較教育学",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114D3301": {
+      "name": "非営利組織論Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114D3601": {
+      "name": "地域再生論",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114D3801": {
+      "name": "Deutschland und Japan im Vergleich",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114D4001": {
+      "name": "基本統計学Ⅱ－ⅰ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114D4101": {
+      "name": "基本統計学Ⅱ－ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114D4301": {
+      "name": "環境社会学",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114D5001": {
+      "name": "スポーツ開発論",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114D5501": {
+      "name": "公共政策論",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114D5701": {
+      "name": "行政学",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114D5801": {
+      "name": "地理学概論",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114E0401": {
+      "name": "国際経営論Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114E0601": {
+      "name": "マーケティング論Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114E0901": {
+      "name": "多国籍企業論Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114E1101": {
+      "name": "財務管理論Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114E1201": {
+      "name": "会計学Ⅰ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114E1401": {
+      "name": "公会計論",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114E1501": {
+      "name": "国際会計論",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114E1601": {
+      "name": "経営組織論",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114E2301": {
+      "name": "国際取引と法Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114E2701": {
+      "name": "International Business",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114E2901": {
+      "name": "Introduction to Management",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114F1001": {
+      "name": "専門演習Ⅱ（開発政治論）",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114F1201": {
+      "name": "専門演習Ⅱ（マスメディア学）",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114F1601": {
+      "name": "専門演習Ⅱ（応用言語論）",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114F2001": {
+      "name": "専門演習Ⅱ（ジェンダー研究）",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114F2601": {
+      "name": "専門演習Ⅱ（国際法）",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114F3201": {
+      "name": "専門演習Ⅱ（民族国家論）",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114F3601": {
+      "name": "専門演習Ⅱ（非営利組織論）",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114F3801": {
+      "name": "専門演習Ⅱ（財務管理論）",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114F4401": {
+      "name": "専門演習Ⅱ（国際経営論）",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114F4601": {
+      "name": "専門演習Ⅱ（国際関係史(朝鮮半島)）",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114F5801": {
+      "name": "専門演習Ⅱ（経済政策論）",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114F6001": {
+      "name": "専門演習Ⅱ（アフリカ研究・文化人類学）",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114F7001": {
+      "name": "専門演習Ⅱ（国際開発論） （地域実践演習）",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114F8201": {
+      "name": "専門演習Ⅱ（健康心理学） （地域実践演習）",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114F8401": {
+      "name": "専門演習Ⅱ（国際社会論）",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114F8601": {
+      "name": "専門演習Ⅱ（翻訳論）",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114F8801": {
+      "name": "専門演習Ⅱ（国際関係論）",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114F9001": {
+      "name": "専門演習Ⅱ（ラテンアメリカ研究） （地域実践演習）",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114F9801": {
+      "name": "専門演習Ⅱ（異文化間コミュニケーション）",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114FA101": {
+      "name": "専門演習Ⅱ（国際関係史（中国））",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114FA701": {
+      "name": "専門演習Ⅱ（アメリカ文化論）",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114FA901": {
+      "name": "専門演習Ⅱ（国際教育論）",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114FB501": {
+      "name": "専門演習Ⅱ（マーケティング論）",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114FB901": {
+      "name": "専門演習Ⅱ（フランス文化）",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114FC201": {
+      "name": "専門演習Ⅱ（紛争解決論）",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114FC401": {
+      "name": "専門演習Ⅱ（ミクロ経済学・基本統計学） （地域実践演習）",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114FD101": {
+      "name": "専門演習Ⅱ（中東地域研究）",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114FD501": {
+      "name": "専門演習Ⅱ（多国籍企業論）",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114FD701": {
+      "name": "専門演習Ⅱ（国際金融論）",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114FD901": {
+      "name": "専門演習Ⅱ（会計学・国際会計論）",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114FE201": {
+      "name": "専門演習Ⅱ（日本政治外交史）",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114FE401": {
+      "name": "専門演習Ⅱ（国際貿易論・国際商務論）",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114FE601": {
+      "name": "専門演習Ⅱ（イギリス文学）",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114FE801": {
+      "name": "専門演習Ⅱ（言語比較論）",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114FF101": {
+      "name": "専門演習Ⅱ（日本文化論・日本古代史） （地域実践演習）",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114FF901": {
+      "name": "専門演習Ⅱ（人的資源管理論）",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114FG201": {
+      "name": "専門演習Ⅱ（日本語教育学）",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114FG601": {
+      "name": "専門演習Ⅱ（国際政治学）",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114FH101": {
+      "name": "専門演習Ⅱ（現代フランス哲学・思想）",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114FH301": {
+      "name": "専門演習Ⅱ（国際関係史（アメリカ））",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114FH601": {
+      "name": "専門演習Ⅱ（公共政策論・行政学）",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0103": {
+      "name": "卒業論文",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0105": {
+      "name": "卒業論文",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0107": {
+      "name": "卒業論文",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0110": {
+      "name": "卒業論文",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0115": {
+      "name": "卒業論文",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0122": {
+      "name": "卒業論文",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0123": {
+      "name": "卒業論文",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0127": {
+      "name": "卒業論文",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0130": {
+      "name": "卒業論文",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0131": {
+      "name": "卒業論文",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0133": {
+      "name": "卒業論文",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0136": {
+      "name": "卒業論文",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0139": {
+      "name": "卒業論文",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0140": {
+      "name": "卒業論文",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0142": {
+      "name": "卒業論文",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0143": {
+      "name": "卒業論文",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0149": {
+      "name": "卒業論文",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0152": {
+      "name": "卒業論文",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0154": {
+      "name": "卒業論文",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0158": {
+      "name": "卒業論文",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0160": {
+      "name": "卒業論文",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0161": {
+      "name": "卒業論文",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0162": {
+      "name": "卒業論文",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0163": {
+      "name": "卒業論文",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0164": {
+      "name": "卒業論文",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0165": {
+      "name": "卒業論文",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0166": {
+      "name": "卒業論文",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0167": {
+      "name": "卒業論文",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0168": {
+      "name": "卒業論文",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0169": {
+      "name": "卒業論文",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0170": {
+      "name": "卒業論文",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0171": {
+      "name": "卒業論文",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0172": {
+      "name": "卒業論文",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0173": {
+      "name": "卒業論文",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0174": {
+      "name": "卒業論文",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0175": {
+      "name": "卒業論文",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0176": {
+      "name": "卒業論文",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0178": {
+      "name": "卒業論文",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0179": {
+      "name": "卒業論文",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0286": {
+      "name": "卒論演習Ⅰ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0287": {
+      "name": "卒論演習Ⅰ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0288": {
+      "name": "卒論演習Ⅰ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0303": {
+      "name": "卒論演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0305": {
+      "name": "卒論演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0307": {
+      "name": "卒論演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0308": {
+      "name": "卒論演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0310": {
+      "name": "卒論演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0315": {
+      "name": "卒論演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0322": {
+      "name": "卒論演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0323": {
+      "name": "卒論演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0327": {
+      "name": "卒論演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0330": {
+      "name": "卒論演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0331": {
+      "name": "卒論演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0333": {
+      "name": "卒論演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0336": {
+      "name": "卒論演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0339": {
+      "name": "卒論演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0340": {
+      "name": "卒論演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0342": {
+      "name": "卒論演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0343": {
+      "name": "卒論演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0344": {
+      "name": "卒論演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0349": {
+      "name": "卒論演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0352": {
+      "name": "卒論演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0354": {
+      "name": "卒論演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0357": {
+      "name": "卒論演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0358": {
+      "name": "卒論演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0360": {
+      "name": "卒論演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0361": {
+      "name": "卒論演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0362": {
+      "name": "卒論演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0363": {
+      "name": "卒論演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0364": {
+      "name": "卒論演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0365": {
+      "name": "卒論演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0366": {
+      "name": "卒論演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0367": {
+      "name": "卒論演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0368": {
+      "name": "卒論演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0369": {
+      "name": "卒論演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0370": {
+      "name": "卒論演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0371": {
+      "name": "卒論演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0372": {
+      "name": "卒論演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0375": {
+      "name": "卒論演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0376": {
+      "name": "卒論演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0377": {
+      "name": "卒論演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0379": {
+      "name": "卒論演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0380": {
+      "name": "卒論演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "114G0381": {
+      "name": "卒論演習Ⅱ",
+      "type": "国際学部専門科目",
+      "category": "faculty",
+      "faculty": "国際学部"
+    },
+    "20410801": {
+      "name": "解析学Ⅱ （A,B,C,Dクラス）",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20410802": {
+      "name": "解析学Ⅱ （E,F,G,Hクラス）",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20410803": {
+      "name": "解析学Ⅱ （I,J,K,Lクラス）",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20410901": {
+      "name": "線形代数学Ⅱ",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20411201": {
+      "name": "プログラミングⅡ",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20411202": {
+      "name": "プログラミングⅡ",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20411203": {
+      "name": "プログラミングⅡ",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20411204": {
+      "name": "プログラミングⅡ",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20411301": {
+      "name": "プログラミングⅡ演習",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20411302": {
+      "name": "プログラミングⅡ演習",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20411303": {
+      "name": "プログラミングⅡ演習",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20411304": {
+      "name": "プログラミングⅡ演習",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20411401": {
+      "name": "データ構造とアルゴリズムⅠ （A,B,Cクラス）",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20411402": {
+      "name": "データ構造とアルゴリズムⅠ （D,E,Fクラス）",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20411403": {
+      "name": "データ構造とアルゴリズムⅠ （G,H,Iクラス）",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20411404": {
+      "name": "データ構造とアルゴリズムⅠ （J,K,Lクラス）",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20413502": {
+      "name": "情報科学序説",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20414201": {
+      "name": "実社会指向基礎数学 （A,B,Cクラス）",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20414202": {
+      "name": "実社会指向基礎数学 （D,E,Fクラス）",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20414203": {
+      "name": "実社会指向基礎数学 （G,H,Iクラス）",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20414204": {
+      "name": "実社会指向基礎数学 （J,K,Lクラス）",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20414301": {
+      "name": "批判的創造的思考法",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20414302": {
+      "name": "批判的創造的思考法 （2020年度入学生用）",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20414403": {
+      "name": "情報科学基礎実験ａ （G,H,Iクラス）",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20414404": {
+      "name": "情報科学基礎実験ａ （D,E,Fクラス）",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20414503": {
+      "name": "情報科学基礎実験ｂ （J,K,Lクラス）",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20414504": {
+      "name": "情報科学基礎実験ｂ （G,H,Iクラス）",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20414603": {
+      "name": "情報科学基礎実験ｃ （A,B,Cクラス）",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20414604": {
+      "name": "情報科学基礎実験ｃ （J,K,Lクラス）",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20414701": {
+      "name": "モデル化とシミュレーション",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20414801": {
+      "name": "情報セキュリティ基礎 （A,B,Cクラス）",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20414802": {
+      "name": "情報セキュリティ基礎 （J,K,Lクラス）",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20414803": {
+      "name": "情報セキュリティ基礎 （D,E,Fクラス）",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20414804": {
+      "name": "情報セキュリティ基礎 （G,H,Iクラス）",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20415801": {
+      "name": "線形代数学ⅡA",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20415802": {
+      "name": "線形代数学ⅡA",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20415803": {
+      "name": "線形代数学ⅡA",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20415804": {
+      "name": "線形代数学ⅡA",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20415901": {
+      "name": "線形代数学ⅡB",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20415902": {
+      "name": "線形代数学ⅡB",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20415903": {
+      "name": "線形代数学ⅡB",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20415904": {
+      "name": "線形代数学ⅡB",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20421701": {
+      "name": "実践的ICT活用事例",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20421801": {
+      "name": "課題解決型演習",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "20421901": {
+      "name": "システム開発実践",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "26430101": {
+      "name": "デジタルデザイン",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "26430801": {
+      "name": "デジタル信号処理",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "26431201": {
+      "name": "コンピュータアーキテクチャ",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "26431501": {
+      "name": "オペレーティングシステム",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "26431601": {
+      "name": "ネットワークプロトコル",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "26431801": {
+      "name": "情報と職業",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "26432202": {
+      "name": "情報システム開発 （イノベクラス）",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "26432203": {
+      "name": "情報システム開発 （情報工学科）",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "26432401": {
+      "name": "テクニカルＲ＆Ｗ演習",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "26433603": {
+      "name": "プレゼンテーション技法",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "26433701": {
+      "name": "技術文書作成法",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "26433901": {
+      "name": "卒業研究Ⅱ",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "26440402": {
+      "name": "最適化技法",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "26440601": {
+      "name": "信頼性工学",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "26440801": {
+      "name": "設計最適化手法",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "26440901": {
+      "name": "リコンフィギャラブルコンピューティング",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "26450601": {
+      "name": "ワイヤレスネットワーク",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "26460301": {
+      "name": "物理学",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "26460801": {
+      "name": "情報工学実験Ⅲ",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "26460901": {
+      "name": "情報工学実験Ⅳ",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "26461301": {
+      "name": "センサシステム",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "26461401": {
+      "name": "トラフィック分析",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "27430101": {
+      "name": "グラフ理論",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "27430201": {
+      "name": "数理計画法",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "27430501": {
+      "name": "数理論理学",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "27430701": {
+      "name": "オペレーティングシステム",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "27430801": {
+      "name": "コンピュータグラフィックスⅠ",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "27431001": {
+      "name": "ディジタル信号処理",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "27431101": {
+      "name": "数値解析",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "27432201": {
+      "name": "感性情報処理",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "27433401": {
+      "name": "プログラミングⅢ",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "27433501": {
+      "name": "プログラミングⅢ演習",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "27433801": {
+      "name": "ソフトウェア工学概説",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "27434101": {
+      "name": "技術文書作成法",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "27434301": {
+      "name": "卒業研究Ⅱ",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "27440301": {
+      "name": "データマイニング",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "27440401": {
+      "name": "機械学習",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "27440501": {
+      "name": "情報検索",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "27450101": {
+      "name": "コンピュータグラフィックスⅡ",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "27450201": {
+      "name": "画像情報処理",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "27460501": {
+      "name": "知能工学実験Ⅲ",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "27460601": {
+      "name": "知能工学実験Ⅳ",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "27460702": {
+      "name": "技術英語演習Ⅰ （2023年度以降入学生用）",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "27460801": {
+      "name": "技術英語演習Ⅱ （2022年度以前入学生用）",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "28430101": {
+      "name": "偏微分方程式",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "28430201": {
+      "name": "応用幾何学",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "28430301": {
+      "name": "電子回路",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "28430501": {
+      "name": "コンピュータグラフィックス",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "28431001": {
+      "name": "ソフトウエア工学概論",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "28431201": {
+      "name": "情報セキュリティ応用",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "28431501": {
+      "name": "ソフトコンピューティング",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "28432401": {
+      "name": "外書講読演習Ⅱ",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "28433601": {
+      "name": "技術文書作成法",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "28433801": {
+      "name": "卒業研究Ⅱ",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "28440101": {
+      "name": "制御工学Ⅱ",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "28440201": {
+      "name": "画像情報処理 （システム工学科）",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "28440401": {
+      "name": "離散時間システム",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "28440501": {
+      "name": "ロボティクスⅡ",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "28450501": {
+      "name": "オペレーティングシステム",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "28450502": {
+      "name": "リアルタイムシステム",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "28450701": {
+      "name": "機械力学",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "28460201": {
+      "name": "物理学",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "28460701": {
+      "name": "システム工学実験Ⅲ",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "28460801": {
+      "name": "システム工学実験Ⅳ",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "29430101": {
+      "name": "電気磁気学",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "29430301": {
+      "name": "回路工学応用",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "29430401": {
+      "name": "プログラミングⅢ",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "29431401": {
+      "name": "技術英語応用演習",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "29432001": {
+      "name": "技術文書作成法",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "29432201": {
+      "name": "卒業研究Ⅱ",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "29440201": {
+      "name": "医用ロボット工学",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "29440801": {
+      "name": "生物工学",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "29441001": {
+      "name": "バイオメカニクス",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "29450402": {
+      "name": "幾何光学・波動",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "29460401": {
+      "name": "医用画像処理",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "29460601": {
+      "name": "生物学Ⅰ",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "29470201": {
+      "name": "力学",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "29480101": {
+      "name": "医用情報通信工学",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "29490701": {
+      "name": "生物学Ⅱ",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "29491501": {
+      "name": "医用情報科学実験Ⅲ",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "29491601": {
+      "name": "医用情報科学実験Ⅳ",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "29491701": {
+      "name": "バイオインフォマティクスⅠ",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "29491801": {
+      "name": "バイオインフォマティクスⅡ",
+      "type": "情報科学部専門科目",
+      "category": "faculty",
+      "faculty": "情報科学部"
+    },
+    "30311301": {
+      "name": "現代美術論",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "30311501": {
+      "name": "版画制作演習",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "30312201": {
+      "name": "絵画材料論",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "30312901": {
+      "name": "絵画論",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "30313401": {
+      "name": "現代美術演習Ⅰ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "30313501": {
+      "name": "現代美術演習Ⅱ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "30313801": {
+      "name": "アートマネージメント概論",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "30314601": {
+      "name": "色彩論",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "30314701": {
+      "name": "造形応用研究Ⅰ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "30314801": {
+      "name": "造形応用研究Ⅱ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "30314901": {
+      "name": "現代美術史Ⅱ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "30315001": {
+      "name": "図法及び製図",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "30315201": {
+      "name": "地域実践演習",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "30315401": {
+      "name": "美術解剖学Ⅱ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "30315601": {
+      "name": "美学Ⅱ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "30315801": {
+      "name": "日本美術史Ⅱ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "30316001": {
+      "name": "西洋美術史Ⅱ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "30316101": {
+      "name": "芸術と知的財産権",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "30316501": {
+      "name": "東洋美術史Ⅱ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "30316601": {
+      "name": "材料技法演習（木工）",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "30316701": {
+      "name": "材料技法演習（塗装）",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "30316801": {
+      "name": "専門演習Ⅰ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "30316901": {
+      "name": "専門演習Ⅱ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "30317001": {
+      "name": "専門演習Ⅲ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "30317101": {
+      "name": "専門演習Ⅳ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "30317301": {
+      "name": "美学美術史研究 （美学）",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "30317302": {
+      "name": "美学美術史研究 （美術史）",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "31320501": {
+      "name": "デッサン実習Ⅰ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "31321501": {
+      "name": "デッサン実習Ⅲ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "31321601": {
+      "name": "古美術研究（演習）",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "31323401": {
+      "name": "日本画実習Ⅳ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "31323502": {
+      "name": "絵画論演習",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "31323801": {
+      "name": "材料実習Ⅱ（金属材料）",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "31324201": {
+      "name": "彫塑演習",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "31324301": {
+      "name": "卒業制作（演習）",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "31324501": {
+      "name": "日本画実習ⅠＢ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "31324601": {
+      "name": "構成演習Ⅰ（平面）",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "31324801": {
+      "name": "日本画実習ⅡＢ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "31324901": {
+      "name": "構成演習Ⅱ（平面）",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "31325101": {
+      "name": "日本画実習ⅢＢ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "31325201": {
+      "name": "構成実習（平面）",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "31330601": {
+      "name": "版画制作実習Ⅰ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "31330701": {
+      "name": "学外演習",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "31330901": {
+      "name": "デッサン実習Ⅱ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "31331201": {
+      "name": "油絵材料・技法演習（古典技法）",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "31331401": {
+      "name": "デッサン実習Ⅲ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "31331501": {
+      "name": "古美術研究（演習）",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "31333901": {
+      "name": "油絵実習ⅣＢ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "31334401": {
+      "name": "油絵実習Ⅰ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "31334501": {
+      "name": "油絵実習ⅡＢ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "31334701": {
+      "name": "油絵実習ⅢＢ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "31335001": {
+      "name": "卒業制作Ｂ（演習）",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "31335201": {
+      "name": "構成演習Ⅱ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "31335401": {
+      "name": "彫塑演習",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "31340401": {
+      "name": "デッサン実習Ⅰ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "31340801": {
+      "name": "デッサン実習Ⅱ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "31341401": {
+      "name": "古美術研究（演習）",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "31341601": {
+      "name": "卒業制作",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "31342001": {
+      "name": "構成実習Ⅱ（平面・立体）",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "31342101": {
+      "name": "構成実習Ⅲ（立体）",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "31342801": {
+      "name": "実材制作基礎演習（工芸制作を含む。）",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "31342901": {
+      "name": "彫刻実習Ⅰ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "31343201": {
+      "name": "実材制作実習Ⅱ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "31343301": {
+      "name": "彫刻実習Ⅳ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "31343501": {
+      "name": "彫刻実習ⅡＢ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "31343701": {
+      "name": "彫刻実習ⅢＢ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "323D0702": {
+      "name": "造形実習ⅡB",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "323D0703": {
+      "name": "造形実習ⅡB",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "323D0704": {
+      "name": "造形実習ⅡB",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "323D0705": {
+      "name": "造形実習ⅡB",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "323D0706": {
+      "name": "造形実習ⅡB",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "323D0707": {
+      "name": "造形実習ⅡB",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "323D0708": {
+      "name": "造形実習ⅡB",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "323D1601": {
+      "name": "古美術研究（演習)",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "323D1801": {
+      "name": "描出演習Ⅰ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "323D1901": {
+      "name": "造形実習ⅠB",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "323D2101": {
+      "name": "描出演習Ⅱ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "323D2102": {
+      "name": "描出演習Ⅱ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "323D2103": {
+      "name": "描出演習Ⅱ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "323D2104": {
+      "name": "描出演習Ⅱ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "323D2105": {
+      "name": "描出演習Ⅱ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "323D2106": {
+      "name": "描出演習Ⅱ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "323D2107": {
+      "name": "描出演習Ⅱ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "323D2401": {
+      "name": "総合表現研究（演習）",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "323D2501": {
+      "name": "テーマ研究（演習）",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "323D2602": {
+      "name": "造形実習ⅢＢ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "323D2603": {
+      "name": "造形実習ⅢＢ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "323D2604": {
+      "name": "造形実習ⅢＢ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "323D2605": {
+      "name": "造形実習ⅢＢ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "323D2606": {
+      "name": "造形実習ⅢＢ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "323D2607": {
+      "name": "造形実習ⅢＢ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "323D2608": {
+      "name": "造形実習ⅢＢ",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    },
+    "323D2801": {
+      "name": "卒業制作（演習）",
+      "type": "芸術学部専門科目",
+      "category": "faculty",
+      "faculty": "芸術学部"
+    }
+  }
+}

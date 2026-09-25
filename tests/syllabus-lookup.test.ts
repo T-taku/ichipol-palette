@@ -28,13 +28,17 @@ function cat(code: string): string | null {
 }
 
 describe('同梱の授業コード索引', () => {
-  it('プレースホルダは 2026 後期の形', () => {
+  it('2026 後期の全件を同梱している', () => {
     expect(bundledCatalog.year).toBe(2026);
     expect(bundledCatalog.term).toBe('後期');
-    expect(lookupCourse('00110401')?.category).toBe('common');
+    expect(Object.keys(bundledCatalog.courses)).toHaveLength(627);
+    expect(bundledCatalog.counts).toEqual({ common: 154, 情報科学部: 128, 国際学部: 252, 芸術学部: 93 });
+    expect(lookupCourse('00110401')).toMatchObject({ category: 'common', faculty: null });
     expect(lookupCourse('26432203')?.faculty).toBe('情報科学部');
     expect(lookupCourse('103k0401')?.faculty).toBe('国際学部');
-    expect(lookupCourse('20414301')).toBeUndefined();
+    expect(lookupCourse('113L1901')?.name).toBe('学部派遣海外インターンシップ');
+    expect(lookupCourse('20414301')?.faculty).toBe('情報科学部');
+    expect(lookupCourse('99990001')).toBeUndefined();
   });
 
   it('共通は共通色、同じ学部は自学科、別学部は他学科', () => {
@@ -53,6 +57,21 @@ describe('同梱の授業コード索引', () => {
     expect(cat('26432203')).toBe('own');
     expect(cat('103K0401')).toBe('other');
     expect(cat('20414301')).toBeNull();
+  });
+
+  it('同梱索引では情報科学部の科目を自学科にし、無いコードは塗らない', () => {
+    document.body.innerHTML = `
+      <table>
+        <tr><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th></tr>
+        <tr>
+          <td>批判的創造的思考法<br>20414301<br>2.0単位</td>
+          <td>未登録科目<br>99990001<br>2.0単位</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>`;
+    applyColoring(document.body, info, createCourseCache());
+    expect(cat('20414301')).toBe('own');
+    expect(cat('99990001')).toBeNull();
   });
 
   it('索引にあるコードは、セルの学科名より学部区分を優先する', () => {

@@ -38,7 +38,7 @@ describe('履修登録の時間割', () => {
     applyColoring(document.body, info, createCourseCache());
     expect(cellCategory(document.body, '26432203')).toBe('own');
     expect(cellCategory(document.body, '26432202')).toBe('own');
-    expect(cellCategory(document.body, '20414301')).toBeNull();
+    expect(cellCategory(document.body, '20414301')).toBe('own');
     expect(cellCategory(document.body, '00110401')).toBe('common');
     expect(document.querySelector('#rishu td:nth-child(3)')?.getAttribute('data-hcu-cat')).toBeNull();
     const dialogCode = [...document.querySelectorAll('[aria-label="シラバス照会"] td')].find((cell) => cell.textContent?.includes('26432202'));
@@ -50,21 +50,23 @@ describe('履修登録の時間割', () => {
     expect(dialog).toMatchObject({ code: '26432202', department: '情報工学科' });
   });
 
-  it('シラバスが閉じているイノベクラスは未判定', () => {
+  it('索引にあるイノベクラスは学部で塗り、索引に無い括弧は学科にしない', () => {
     document.body.innerHTML = `
       <div role="group" aria-label="2026年度 後期">
         <table>
           <tr><th>月曜日</th><th>火曜日</th><th>水曜日</th><th>木曜日</th><th>金曜日</th></tr>
           <tr>
             <td>情報システム開発（イノベクラス）<br>大田 知行<br>26432202<br>2.0単位</td>
-            <td></td><td></td><td></td><td></td>
+            <td>架空演習（イノベクラス）<br>広島 太郎<br>99990001<br>2.0単位</td>
+            <td></td><td></td><td></td>
           </tr>
         </table>
       </div>`;
     applyColoring(document.body, info, createCourseCache());
-    const cell = document.querySelector('td');
-    expect(parseCourseCell(cell as HTMLTableCellElement)?.name).toBe('情報システム開発（イノベクラス）');
-    expect(cell?.getAttribute('data-hcu-cat')).toBeNull();
+    const cells = [...document.querySelectorAll('td')];
+    expect(parseCourseCell(cells[0] as HTMLTableCellElement)?.name).toBe('情報システム開発（イノベクラス）');
+    expect(cells[0]?.getAttribute('data-hcu-cat')).toBe('own');
+    expect(cells[1]?.getAttribute('data-hcu-cat')).toBeNull();
   });
 
   it('セル内の全学共通は共通科目にする', () => {
