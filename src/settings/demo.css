@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+  background: #e9eef2;
+  color: #1c2430;
+  font-family: "Hiragino Sans", "Yu Gothic UI", Meiryo, "Noto Sans CJK JP", "WenQuanYi Micro Hei", sans-serif;
+}
+
+.page {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 24px 16px 96px;
+}
+
+.bar {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-end;
+  background: #1b3a4b;
+  color: #f7f4ef;
+  border-radius: 16px;
+  padding: 18px 20px;
+}
+
+.bar h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.brand {
+  margin: 0 0 4px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+.bar a {
+  color: #f7f4ef;
+  font-weight: 700;
+}
+
+.notice {
+  background: #fffdf8;
+  border: 1px solid #e1d8c9;
+  border-radius: 12px;
+  padding: 12px 14px;
+  line-height: 1.6;
+}
+
+#unipa table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  margin: 12px 0 28px;
+}
+
+#unipa th,
+#unipa td {
+  border: 1px solid #d5dde3;
+  padding: 8px 10px;
+  text-align: left;
+  font-size: 14px;
+}
+
+#unipa th {
+  background: #f4f7f8;
+}
+
+#unipa label {
+  display: inline-block;
+  margin-right: 8px;
+  font-weight: 700;
+}
