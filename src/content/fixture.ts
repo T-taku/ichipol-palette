@@ -119,6 +119,123 @@ export const FIXTURE_HTML = `
     </tbody>
   </table>
 </form>
+<div role="group" aria-label="2026年度 後期">
+  <table id="rishu">
+    <thead>
+      <tr>
+        <th></th>
+        <th>月曜日</th>
+        <th>火曜日</th>
+        <th>水曜日</th>
+        <th>木曜日</th>
+        <th>金曜日</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>1</th>
+        <td>
+          情報システム開発（情報工学科）<br />
+          大田 知行<br />
+          情処４０１<br />
+          26432203<br />
+          2.0単位<br />
+          必修
+        </td>
+        <td><button type="button">＋ 追加</button></td>
+        <td>
+          情報システム開発（イノベ<br />
+          クラス）<br />
+          大田 知行<br />
+          情処４０１<br />
+          26432202<br />
+          2.0単位<br />
+          複数回 後前
+        </td>
+        <td>
+          批判的創造的思考法<br />
+          井上 智生<br />
+          講５０２（117名）<br />
+          20414301<br />
+          2.0単位
+        </td>
+        <td>
+          情報社会論<br />
+          広島 太郎<br />
+          00110401<br />
+          2.0単位
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div role="dialog" aria-label="シラバス照会">
+  <table>
+    <tr>
+      <th>授業コード</th>
+      <td>26432202</td>
+      <th>科目名</th>
+      <td>情報システム開発（イノベクラス）</td>
+    </tr>
+    <tr>
+      <th>担当者 ※授業代表教員は、先頭に表示されます。</th>
+      <td>大田 知行</td>
+      <th>履修対象</th>
+      <td>情報工学科学生のみ対象</td>
+    </tr>
+    <tr>
+      <th>備考</th>
+      <td>特になし</td>
+    </tr>
+  </table>
+</div>
+<table id="intensive">
+  <thead>
+    <tr>
+      <th>授業科目</th>
+      <th>教員氏名</th>
+      <th>教室</th>
+      <th>単位数</th>
+      <th>削除</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>データベース（知能工学科）</td>
+      <td>山田 花子</td>
+      <td>講101</td>
+      <td>2.0</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+<table id="units">
+  <thead>
+    <tr>
+      <th>科目分類</th>
+      <th>卒業要件単位</th>
+      <th>修得済単位</th>
+      <th>選択中単位</th>
+      <th>合計単位</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>全学共通</td>
+      <td>24</td>
+      <td>10</td>
+      <td>2</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <td>他学科</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
 <table id="week">
   <thead>
     <tr>

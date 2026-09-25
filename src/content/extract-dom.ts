@@ -1,5 +1,5 @@
 import type { CourseRecord } from '../shared/types';
-import { CONTEXT_FIELDS, HEADER_FIELDS, LABEL_FIELDS, LIVE_TABLE_SELECTORS, readAttributeHooks, type HeaderField } from './selectors';
+import { CONTEXT_FIELDS, HEADER_FIELDS, LABEL_FIELDS, LIVE_PAGE, LIVE_TABLE_SELECTORS, readAttributeHooks, type HeaderField } from './selectors';
 
 export interface ExtractedRow {
   row: HTMLTableRowElement;
@@ -88,33 +88,23 @@ function mapTable(table: HTMLTableElement): ExtractedRow[] | null {
   return extracted;
 }
 
+export function isUnitSummaryTable(table: HTMLTableElement): boolean {
+  const header = table.tHead?.rows[0] ?? table.rows[0];
+  if (!header) return false;
+  const text = [...header.cells].map((cell) => cellText(cell).replace(/\s+/g, '')).join(' ');
+  return text.includes('科目分類') && /卒業要件単位|修得済単位|選択中単位/.test(text);
+}
+
 export function findCourseRows(root: ParentNode): ExtractedRow[] {
   const rows: ExtractedRow[] = [];
   const selector = LIVE_TABLE_SELECTORS.courseTable.length > 0 ? LIVE_TABLE_SELECTORS.courseTable.join(',') : 'table';
   root.querySelectorAll(selector).forEach((table) => {
-    if (!(table instanceof HTMLTableElement) || isTimetableTable(table)) return;
+    if (!(table instanceof HTMLTableElement) || isTimetableTable(table) || isUnitSummaryTable(table)) return;
+    if (table.closest(LIVE_PAGE.syllabusDialog)) return;
     const mapped = mapTable(table);
     if (mapped) rows.push(...mapped);
   });
   return rows;
-}
-
-export function findTimetableCells(root: ParentNode): HTMLTableCellElement[] {
-  const cells: HTMLTableCellElement[] = [];
-  root.querySelectorAll('table').forEach((table) => {
-    if (!(table instanceof HTMLTableElement) || !isTimetableTable(table)) return;
-    const header = table.tHead?.rows[0] ?? table.rows[0];
-    for (const row of table.rows) {
-      if (row === header) continue;
-      for (const cell of row.cells) {
-        const text = cellText(cell);
-        if (text.length < 2 || text.length > 80) continue;
-        if (DAY.test(text.replace(/\s+/g, '')) || /^[0-9０-９]+$/.test(text)) continue;
-        cells.push(cell);
-      }
-    }
-  });
-  return cells;
 }
 
 function directLabelText(label: Element): string {

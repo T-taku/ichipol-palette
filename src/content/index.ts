@@ -8,6 +8,7 @@ import { renderLegend } from './legend';
 import { extractRecordsFromPayload } from './parse-payload';
 import { safeSyllabusUrl } from './urls';
 import { findCourseRows } from './extract-dom';
+import { LIVE_PAGE } from './selectors';
 
 const NET_SOURCE = 'hcu-rishu-net';
 const SETTINGS_SOURCE = 'hcu-rishu-settings';
@@ -78,8 +79,17 @@ function boot(): void {
     if (data?.source === SETTINGS_SOURCE && data.type === 'close') closeSettings();
   };
 
+  const onTab = (event: Event) => {
+    const target = event.target;
+    if (!(target instanceof Element)) return;
+    const tab = target.closest('a, button, [role="tab"]');
+    const text = (tab?.textContent ?? '').replace(/\s+/g, '');
+    if ((LIVE_PAGE.tabLabels as readonly string[]).includes(text)) schedule();
+  };
+
   window.addEventListener('message', onNet);
   window.addEventListener('message', onSettings);
+  document.addEventListener('click', onTab, true);
   chrome.runtime.onMessage.addListener((message: { type?: string }) => {
     if (message?.type === 'hcu-open-settings') openSettings();
   });

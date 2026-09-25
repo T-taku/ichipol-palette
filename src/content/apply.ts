@@ -3,8 +3,9 @@ import { normalize } from '../shared/normalize';
 import type { CourseRecord, Settings } from '../shared/types';
 import type { CourseCache } from './cache';
 import { mergeRecords } from './cache';
-import { findCourseRows, findTimetableCells, readPageContext } from './extract-dom';
+import { findCourseRows, readPageContext } from './extract-dom';
 import { clearMarked, applyCssVariables, paintCell, paintRow } from './paint';
+import { enrichOrgSignals, findRegistrationCourses, readSyllabusDialog } from './registration';
 
 export interface ApplyStats {
   own: number;
@@ -19,13 +20,21 @@ export function applyColoring(root: ParentNode, settings: Settings, cache: Cours
   const stats: ApplyStats = { own: 0, other: 0, common: 0, unknown: 0, tables: 0 };
   const seen = new Set<string>();
   const keep = new Set<HTMLElement>();
+  const dialog = readSyllabusDialog(root);
+  if (dialog) cache.add(dialog);
+
   const extracted = findCourseRows(root);
-  stats.tables = new Set(extracted.map((item) => item.row.closest('table'))).size;
+  const timetable = findRegistrationCourses(root);
+  stats.tables = new Set(
+    [...extracted.map((item) => item.row.closest('table')), ...timetable.map((item) => item.cell.closest('table'))].filter(
+      (table): table is HTMLTableElement => table instanceof HTMLTableElement,
+    ),
+  ).size;
 
   const prepared = extracted.map((item) => {
     const scope = item.row.closest('form') ?? root;
     const context = item.inheritContext ? readPageContext(scope) : {};
-    const record = cache.complete(mergeRecords(item.record, context));
+    const record = cache.complete(mergeRecords(enrichOrgSignals(item.record), context));
     cache.add(record);
     return { row: item.row, record };
   });
@@ -44,12 +53,16 @@ export function applyColoring(root: ParentNode, settings: Settings, cache: Cours
     count(item.record, result.category);
   }
 
-  for (const cell of findTimetableCells(root)) {
-    const loose = cache.lookupLooseName(cell.textContent ?? '');
-    const record = loose ?? { name: (cell.textContent ?? '').replace(/\s+/g, ' ').trim() };
+  for (const item of timetable) {
+    let record = cache.complete(enrichOrgSignals(item.record));
+    if (!record.department && !record.faculty && !record.division && !record.commonFlag && record.name) {
+      const loose = cache.lookupLooseName(record.name);
+      if (loose) record = mergeRecords(record, loose);
+    }
+    cache.add(record);
     const result = classify(record, settings);
-    paintCell(cell, result, settings, reasonLabel(result, settings));
-    keep.add(cell);
+    paintCell(item.cell, result, settings, reasonLabel(result, settings));
+    keep.add(item.cell);
     count(record, result.category);
   }
 

@@ -1,27 +1,39 @@
 import type { CourseRecord } from '../shared/types';
 
 /**
- * ログイン済み履修登録の実測前の仮セレクタ。
+ * 履修登録（2026-09-25 ログイン済み実測）の読み取り口。
  *
- * Unipaヘルパーが `/uprx/up/.../*.xhtml` を見たあと、このファイルだけを実測に合わせる。
- * 差し替え対象は次の3つ。
- * - 開講学部・学科 … `HEADER_FIELDS` の department / faculty、`LABEL_FIELDS`、`LIVE_ATTRIBUTE_HOOKS`
- * - 科目区分 … `HEADER_FIELDS` の division、`LABEL_FIELDS`、`LIVE_ATTRIBUTE_HOOKS.division`
- * - 共通科目 … `COMMON_TEXT_PATTERNS`、`JSON_FIELD_KEYS` の commonFlag、`LIVE_ATTRIBUTE_HOOKS.commonFlag`
- *
- * `LIVE_TABLE_SELECTORS` と `LIVE_ATTRIBUTE_HOOKS` は空が初期値。
- * 空のあいだは表見出しの文言で判定する。実測の CSS セレクタや data 属性が分かったら配列へ足す。
+ * 本体は `Bsa00101.xhtml` の曜日時間割。開講学部・学科・科目区分の列は無い。
+ * 学科は科目名の括弧（情報工学科）と、開いているシラバスの履修対象・備考から取る。
+ * `j_idt*` は再描画で変わる。タブは「授業を選択」「授業を追加」の文言で見る。
  *
  * 認証の入口は `https://ichipol.g.hiroshima-cu.ac.jp/uprx/ShibbolethAuthServlet`。
  * セッションのない画面への直リンクは開かない。この拡張はログインしない。
  */
+
+/** 実測ページ。コンテンツスクリプト自体はホスト全体にマッチし、色を付けるのは `/uprx/` の xhtml。 */
+export const LIVE_PAGE = {
+  registrationPath: '/uprx/up/bs/bsa001/',
+  dashboardPath: '/uprx/up/pk/pky001/Pky00102.xhtml',
+  /** アクセシビリティツリーの group。`2026年度 後期` のように年度を含む。 */
+  semesterGroup: 'group[aria-label], [role="group"][aria-label], [aria-label*="年度"]',
+  semesterLabel: /\d{4}\s*年度/,
+  syllabusDialog: '[role="dialog"][aria-label="シラバス照会"]',
+  /** 集中・実習の表。開講学科列は無い。 */
+  concentratedHeaders: ['授業科目', '教員氏名', '教室', '単位数', '削除'] as const,
+  /** 単位集計。セルへは写さない。 */
+  summaryHeaders: ['科目分類', '卒業要件単位', '修得済単位', '選択中単位', '合計単位'] as const,
+  tabLabels: ['授業を選択', '授業を追加'] as const,
+  courseCode: /(?<!\d)(\d{8})(?!\d)/,
+  syllabusDepartmentLabels: /^(履修対象|備考)/,
+} as const;
 
 export type HeaderField = 'code' | 'name' | 'instructor' | 'department' | 'faculty' | 'division';
 
 export const HEADER_FIELDS: { field: HeaderField; patterns: RegExp[] }[] = [
   { field: 'code', patterns: [/授業コード/, /科目コード/, /講義コード/, /授業番号/, /^コード$/] },
   { field: 'name', patterns: [/授業科目名/, /授業科目/, /科目名/, /講義題目/, /講義名/, /^科目$/] },
-  { field: 'instructor', patterns: [/担当教員/, /教員名/, /担当者/, /^教員$/, /^担当$/] },
+  { field: 'instructor', patterns: [/担当教員/, /教員氏名/, /教員名/, /担当者/, /^教員$/, /^担当$/] },
   // 開講学部・学科。実測の見出し（例: 「開講学部・学科」）が違えばここを足す。
   { field: 'department', patterns: [/開講学部.?学科/, /開講学科/, /学科組織/, /開講所属/, /開設学科/] },
   { field: 'faculty', patterns: [/^開講学部$/, /^開設学部$/] },
@@ -60,6 +72,7 @@ export const COMMON_TEXT_PATTERNS: readonly RegExp[] = [
   /地域志向科目/,
   /平和科目/,
   /共通科目[ABCＡＢＣ]/,
+  /共通[ABCＡＢＣ](?!クラス)/,
   /(?<!学部)共通科目/,
   /全学教育/,
   /全学展開/,

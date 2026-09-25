@@ -77,43 +77,32 @@ npm run build
 
 開講学科が画面に無い科目は、推測で他学科にしません。上書きルールか、下の「画面から読むもの」で埋まったときだけ色が付きます。
 
-## 仮のセレクタ
+## 履修登録の画面
 
-実画面の列名はまだ仮です。差し替え口は `src/content/selectors.ts` です。Unipaヘルパーがログイン済みの履修登録（URL、表の構造、列名、同一オリジンの XHR）を渡したあと、次を実測に合わせます。
+ログイン済みの実測（2026-09-25）です。色を付ける主対象は履修登録です。
 
-| 項目 | 仮の見方 | 更新する場所 |
-| --- | --- | --- |
-| 開講学部・学科 | 見出し「開講学部・学科」「開講学科」「学科組織」「開講学部」 | `HEADER_FIELDS` の department / faculty、`LIVE_ATTRIBUTE_HOOKS` |
-| 科目区分 | 見出し「科目区分」「授業管理部署」 | `HEADER_FIELDS` の division |
-| 共通科目 | セル文言の「全学共通」「教養」「共通科目」など。`kyotsuFlg` | `COMMON_TEXT_PATTERNS`、`JSON_FIELD_KEYS` |
+- ダッシュボード: `https://ichipol.g.hiroshima-cu.ac.jp/uprx/up/pk/pky001/Pky00102.xhtml`
+- 履修登録: `https://ichipol.g.hiroshima-cu.ac.jp/uprx/up/bs/bsa001/Bsa00101.xhtml`
+- シラバスは別ページではなく、同じ URL のダイアログ `[role="dialog"][aria-label="シラバス照会"]`
 
-`LIVE_TABLE_SELECTORS.courseTable` と `LIVE_ATTRIBUTE_HOOKS` は空です。空のあいだは `table` の見出し文言で判定します。実測の CSS セレクタや `data-*` が分かったら、その配列だけ足します。
+時間割は検索結果の行ではなく、`aria-label` が「2026年度 後期」のようなグループの中の表です。列は月〜金、行は時限です。セルには科目名、教員、教室、8桁の授業コード、単位、`必修` や `複数回` が入ります。タブ「授業を選択」「授業を追加」は文言で見ます。`j_idt*` の id は再描画で変わるので使いません。
 
-## 画面から読むもの
+開講学部・学科・科目区分の列はありません。判定は次です。
 
-次の順に見ます。列名は仮です。
+1. 科目名の括弧が学科・専攻そのもの（例: `情報システム開発（情報工学科）`）なら、その学科と自分の所属を比べる
+2. 開いているシラバスの「履修対象」「備考」に学科がある（例: `情報工学科学生のみ対象`）なら、授業コードでセルへ返す。`（イノベクラス）` や `(Advanced 2)` は学科にしない
+3. セルにもシラバスにも学科が無い科目（例: `情報社会論` `00110401`、`批判的創造的思考法` `20414301`）は未判定のまま色を付けない
+4. `全学共通` や `共通A` のような文言が、そのセルか科目名にあれば共通科目。単位集計の「全学共通」「他学科」「他学部」は表の説明なので、セルへは写さない
 
-1. 表の見出し
-   - 授業コード / 科目コード
-   - 授業科目 / 科目名
-   - 担当教員
-   - 開講学科 / 学科組織 / 開講学部・学科 / 開講学部
-   - 科目区分 / 授業管理部署
-2. 見出しに学科列が無い表だけ、同じフォームの「学科組織」「授業管理部署」の選択値（「選択してください」「すべて」は無視）
-3. 曜日の時間割マス。科目名が、同じ画面か直前までの応答で分かっている科目と一致するとき
-4. ページ自身の `fetch` / `XMLHttpRequest` 応答
-   - JSON に `jugyoCd` `jugyoName` `gakkaName` `kyotsuFlg` のような項目があるとき
-   - JSF / PrimeFaces の `partial-response`（`update` の CDATA に入った HTML）
-5. 設定をオンにしたときだけ、行の中の同一オリジン GET（`/uprx/**/*.xhtml?…`）。`javascript:` リンクは開きません
+集中・実習の表（見出しが授業科目、教員氏名、教室、単位数、削除）は行を塗ります。PrimeFaces がタブやダイアログで DOM を差し替えたら、同じ規則でもう一度塗ります。科目一覧の JSON API は実測で見えていないので、DOM だけを読みます。閉じたシラバスを拡張から開き直すことはしません。
 
-画面の形は、公開情報と UNIPA RX の一般的な構造からの仮です。機能コードは実測待ちです。
+差し替え口は `src/content/selectors.ts` の `LIVE_PAGE` です。
 
-- ホスト: `https://ichipol.g.hiroshima-cu.ac.jp`（旧表記の `ichipol.hiroshima-cu.ac.jp` と `*.g.hiroshima-cu.ac.jp` も対象）
+- ホスト: `https://ichipol.g.hiroshima-cu.ac.jp`（`ichipol.hiroshima-cu.ac.jp` と `*.g.hiroshima-cu.ac.jp` も対象）
 - 認証の入口: `https://ichipol.g.hiroshima-cu.ac.jp/uprx/ShibbolethAuthServlet`（この画面では色分けしません）
-- ログイン後の JSF は `/uprx/up/**/*.xhtml`。PrimeFaces の `ui-datatable` を想定しています
 - 大学サイト全体（`www.hiroshima-cu.ac.jp` など）には入れません
 
-第三者が叩く非公開 API は見つけていません。拡張から新しいバックエンドも作っていません。
+拡張から新しいバックエンドは作っていません。
 
 ## 開発
 
@@ -145,7 +134,8 @@ npm run dev
 ## 構成
 
 - `src/shared/classify.ts` — 判定
-- `src/content/selectors.ts` — 仮の見出し・属性・JSON キー。実測が来たらここを更新する
+- `src/content/selectors.ts` — 履修登録の実測セレクタ（`LIVE_PAGE`）
+- `src/content/registration.ts` — 時間割セル、シラバスダイアログ、学科の括弧
 - `src/content/` — 一覧の検出、色付け、同一オリジン応答の観測
 - `src/settings/` — Chakra UI の設定モーダル
 - `src/background/index.ts` — ツールバーから設定を開く

@@ -16,6 +16,8 @@ describe('対象ホスト', () => {
 
   it('ログイン画面では動かない', () => {
     expect(isUnipaAppPath('/uprx/up/km/kmd004/Kmd00401.xhtml')).toBe(true);
+    expect(isUnipaAppPath('/uprx/up/bs/bsa001/Bsa00101.xhtml')).toBe(true);
+    expect(isUnipaAppPath('/uprx/up/pk/pky001/Pky00102.xhtml')).toBe(true);
     expect(isUnipaAppPath('/uprx/ShibbolethAuthServlet')).toBe(false);
     expect(isUnipaAppPath('/campuslife/')).toBe(false);
   });
