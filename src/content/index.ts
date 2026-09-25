@@ -9,6 +9,7 @@ import { extractRecordsFromPayload } from './parse-payload';
 import { safeSyllabusUrl } from './urls';
 import { findCourseRows } from './extract-dom';
 import { LIVE_PAGE } from './selectors';
+import { SyllabusLookup } from './syllabus-lookup';
 
 const NET_SOURCE = 'hcu-rishu-net';
 const SETTINGS_SOURCE = 'hcu-rishu-settings';
@@ -44,6 +45,7 @@ function boot(): void {
 
   let settings: Settings = defaultSettings();
   const cache = createCourseCache();
+  const syllabus = new SyllabusLookup();
   const lookedUp = new Set<string>();
   let lookupBudget = 30;
   let timer = 0;
@@ -51,7 +53,7 @@ function boot(): void {
 
   const paint = () => {
     if (!document.body) return;
-    const stats = applyColoring(document.body, settings, cache);
+    const stats = applyColoring(document.body, settings, cache, syllabus);
     renderLegend(stats, settings, openSettings);
     if (settings.allowSameOriginLookup) queueLookups();
     window.clearTimeout(persistTimer);
@@ -120,9 +122,12 @@ function boot(): void {
     paint();
   };
 
-  void loadSettings().then((next) => {
+  syllabus.watch(() => schedule());
+
+  void loadSettings().then(async (next) => {
     settings = next;
-    return loadSession(cache);
+    await loadSession(cache);
+    await syllabus.load();
   }).then(() => {
     if (document.body) start();
     else document.addEventListener('DOMContentLoaded', start, { once: true });
