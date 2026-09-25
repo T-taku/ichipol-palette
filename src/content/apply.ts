@@ -6,7 +6,7 @@ import { mergeRecords } from './cache';
 import { findCourseRows, readPageContext } from './extract-dom';
 import { clearMarked, applyCssVariables, paintCell, paintRow } from './paint';
 import { enrichOrgSignals, findRegistrationCourses, readSyllabusDialog } from './registration';
-import { SyllabusLookup } from './syllabus-lookup';
+import { applyCatalog, bundledCatalog, type CourseCatalog } from './syllabus-lookup';
 
 export interface ApplyStats {
   own: number;
@@ -20,7 +20,7 @@ export function applyColoring(
   root: ParentNode,
   settings: Settings,
   cache: CourseCache,
-  syllabus: SyllabusLookup = new SyllabusLookup(),
+  catalog: CourseCatalog = bundledCatalog,
 ): ApplyStats {
   applyCssVariables(settings);
   const stats: ApplyStats = { own: 0, other: 0, common: 0, unknown: 0, tables: 0 };
@@ -40,7 +40,7 @@ export function applyColoring(
   const prepared = extracted.map((item) => {
     const scope = item.row.closest('form') ?? root;
     const context = item.inheritContext ? readPageContext(scope) : {};
-    const record = syllabus.complete(cache.complete(mergeRecords(enrichOrgSignals(item.record), context)));
+    const record = applyCatalog(cache.complete(mergeRecords(enrichOrgSignals(item.record), context)), catalog);
     cache.add(record);
     return { row: item.row, record };
   });
@@ -60,7 +60,7 @@ export function applyColoring(
   }
 
   for (const item of timetable) {
-    let record = syllabus.complete(cache.complete(enrichOrgSignals(item.record)));
+    let record = applyCatalog(cache.complete(enrichOrgSignals(item.record)), catalog);
     if (!record.department && !record.faculty && !record.division && !record.commonFlag && record.name) {
       const loose = cache.lookupLooseName(record.name);
       if (loose) record = mergeRecords(record, loose);

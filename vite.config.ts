@@ -13,6 +13,9 @@ export default defineConfig({
     host: '127.0.0.1',
     port: 43123,
     strictPort: true,
+    fs: {
+      allow: [fileURLToPath(new URL('.', import.meta.url))],
+    },
   },
   build: {
     outDir: fileURLToPath(new URL('./dist', import.meta.url)),

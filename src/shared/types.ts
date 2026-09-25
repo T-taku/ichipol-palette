@@ -17,6 +17,9 @@ export interface CourseRecord {
   faculty?: string;
   division?: string;
   commonFlag?: boolean;
+  /** 同梱の年度索引。セルの文言より先に使う。 */
+  catalogCategory?: 'common' | 'faculty';
+  catalogFaculty?: string;
 }
 
 export interface Classification {

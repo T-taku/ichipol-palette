@@ -39,7 +39,7 @@ describe('履修登録の時間割', () => {
     expect(cellCategory(document.body, '26432203')).toBe('own');
     expect(cellCategory(document.body, '26432202')).toBe('own');
     expect(cellCategory(document.body, '20414301')).toBeNull();
-    expect(cellCategory(document.body, '00110401')).toBeNull();
+    expect(cellCategory(document.body, '00110401')).toBe('common');
     expect(document.querySelector('#rishu td:nth-child(3)')?.getAttribute('data-hcu-cat')).toBeNull();
     const dialogCode = [...document.querySelectorAll('[aria-label="シラバス照会"] td')].find((cell) => cell.textContent?.includes('26432202'));
     expect(dialogCode?.getAttribute('data-hcu-cat')).toBeNull();

@@ -6,11 +6,12 @@ import type { Classification, CourseRecord, OverrideRule, Settings } from './typ
 /**
  * 判定の順序:
  * 1. 設定の上書きルール（先に書いてあるものが優先）
- * 2. 共通・教養・全学共通などの標識（「学部共通」は全学共通にしない）
- * 3. 開講学科がユーザの学科と一致 → 自学科
- * 4. 学科名がなく、ユーザの学部だけの開講 → 設定次第で自学科
- * 5. 開講所属が取れて一致しない → 他学科
- * 6. 所属が取れない、またはユーザ未設定 → 未判定（色を付けない）
+ * 2. 同梱の授業コード索引。common は共通。faculty は設定した学部と一致すれば自学科、違えば他学科
+ * 3. 共通・教養・全学共通などの標識（「学部共通」は全学共通にしない）
+ * 4. 開講学科がユーザの学科と一致 → 自学科
+ * 5. 学科名がなく、ユーザの学部だけの開講 → 設定次第で自学科
+ * 6. 開講所属が取れて一致しない → 他学科
+ * 7. 所属が取れない、またはユーザ未設定 → 未判定（色を付けない）
  *
  * 広島市立大学の教育課程では、全学共通系科目・外国語系科目は学部専門とは別枠
  * （学修の手引き）。ここでの「共通」はその枠を指す。
@@ -69,6 +70,17 @@ function orgBlob(record: CourseRecord): string {
 export function classify(record: CourseRecord, settings: Settings): Classification {
   const rule = settings.rules.find((item) => ruleMatches(item, record));
   if (rule) return { category: rule.category, reason: 'rule', ruleId: rule.id };
+
+  if (record.catalogCategory === 'common') return { category: 'common', reason: 'common-tag' };
+  if (record.catalogCategory === 'faculty') {
+    const userFaculty = resolvedFaculty(settings);
+    const userConfigured = Boolean(settings.department.trim() || settings.faculty.trim());
+    if (!userConfigured) return { category: 'unknown', reason: 'user-unset' };
+    if (userFaculty && record.catalogFaculty && facultyMatches(record.catalogFaculty, userFaculty)) {
+      return { category: 'own', reason: 'faculty-wide' };
+    }
+    return { category: 'other', reason: 'mismatch' };
+  }
 
   if (isCommonCourse(record)) return { category: 'common', reason: 'common-tag' };
 
