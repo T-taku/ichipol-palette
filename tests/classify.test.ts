@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { classify, isCommonCourse, ruleMatches } from '../src/shared/classify';
+import { inferFaculty } from '../src/shared/classify-faculty';
 import { sanitizeSettings } from '../src/shared/defaults';
 import type { Settings } from '../src/shared/types';
 
@@ -64,6 +65,36 @@ describe('classify', () => {
     expect(classify({ name: '英語コミュニケーション', department: '情報工学科' }, user).category).toBe('common');
     expect(ruleMatches(user.rules[1], { name: '英語' })).toBe(false);
     expect(classify({ name: 'プログラミング言語論', department: '知能工学科' }, user).category).toBe('other');
+  });
+
+  it('情報科学部の学部配属は、学科名の無い専門科目だけを自学科にする', () => {
+    const user = settings({ department: '学部配属' });
+    expect(inferFaculty('学部配属')).toBe('情報科学部');
+    expect(
+      classify(
+        { name: '批判的創造的思考法', catalogCategory: 'faculty', catalogFaculty: '情報科学部', faculty: '情報科学部' },
+        user,
+      ).category,
+    ).toBe('own');
+    expect(
+      classify(
+        {
+          name: '情報システム開発（情報工学科）',
+          department: '情報工学科',
+          catalogCategory: 'faculty',
+          catalogFaculty: '情報科学部',
+          faculty: '情報科学部',
+        },
+        user,
+      ).category,
+    ).toBe('other');
+    expect(
+      classify(
+        { name: '基礎演習', catalogCategory: 'faculty', catalogFaculty: '国際学部', faculty: '国際学部' },
+        user,
+      ).category,
+    ).toBe('other');
+    expect(classify({ name: '情報社会論', catalogCategory: 'common', commonFlag: true }, user).category).toBe('common');
   });
 
   it('学部開講を自学科にしない設定では他学科', () => {

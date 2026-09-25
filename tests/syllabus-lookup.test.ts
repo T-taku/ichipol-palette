@@ -81,7 +81,26 @@ describe('同梱の授業コード索引', () => {
     );
     expect(record.catalogCategory).toBe('faculty');
     expect(record.catalogFaculty).toBe('情報科学部');
-    expect(record.department).toBeUndefined();
+    expect(record.department).toBe('情報工学科');
+  });
+
+  it('学部配属は学科名の無い情報科学部の科目だけを自学科にする', () => {
+    document.body.innerHTML = `
+      <table>
+        <tr><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th></tr>
+        <tr>
+          <td>批判的創造的思考法<br>20414301</td>
+          <td>情報システム開発<br>26432203</td>
+          <td>基礎演習<br>103K0401</td>
+          <td>情報社会論<br>00110401</td>
+          <td></td>
+        </tr>
+      </table>`;
+    applyColoring(document.body, sanitizeSettings({ faculty: '情報科学部', department: '学部配属' }), createCourseCache());
+    expect(cat('20414301')).toBe('own');
+    expect(cat('26432203')).toBe('other');
+    expect(cat('103K0401')).toBe('other');
+    expect(cat('00110401')).toBe('common');
   });
 
   it('所属が空のときは共通だけ塗る', () => {

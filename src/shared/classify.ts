@@ -1,12 +1,15 @@
 import { COMMON_TEXT_PATTERNS } from '../content/selectors';
 import { resolvedFaculty } from './defaults';
 import { departmentMatches, facultyMatches, hasSpecificDepartment, normalize } from './normalize';
+import { isFacultyAssignment } from './org';
 import type { Classification, CourseRecord, OverrideRule, Settings } from './types';
 
 /**
  * 判定の順序:
  * 1. 設定の上書きルール（先に書いてあるものが優先）
- * 2. 同梱の授業コード索引。common は共通。faculty は設定した学部と一致すれば自学科、違えば他学科。索引に無いコードは他学科にしない
+ * 2. 同梱の授業コード索引。common は共通。faculty は設定した学部と一致すれば自学科、違えば他学科。
+ *    情報科学部の「学部配属」（1年）は、学科名の無い専門科目だけを自学科にし、学科名がある科目は他学科。
+ *    索引に無いコードは他学科にしない
  * 3. 共通・教養・全学共通などの標識（「学部共通」は全学共通にしない）
  * 4. 開講学科がユーザの学科と一致 → 自学科
  * 5. 学科名がなく、ユーザの学部だけの開講 → 設定次第で自学科
@@ -67,6 +70,25 @@ function orgBlob(record: CourseRecord): string {
   return [record.department, record.faculty].filter(Boolean).join(' ');
 }
 
+/** 他学科・全学などの言い回しを除き、特定の学科・専攻が書かれているか。 */
+function namesSpecificDepartment(record: CourseRecord): boolean {
+  const blob = [record.department, record.name].filter(Boolean).join(' ');
+  return extractNamedDepartments(blob).length > 0;
+}
+
+function extractNamedDepartments(text: string): string[] {
+  const source = normalize(text);
+  const re = /([0-9A-Za-z\u30A0-\u30FF\u4E00-\u9FFFー]{2,40}?)(学科|専攻)/g;
+  const names: string[] = [];
+  let match: RegExpExecArray | null;
+  while ((match = re.exec(source))) {
+    const name = match[1] + match[2];
+    if (/^(他|全学|共通)/.test(name)) continue;
+    names.push(name);
+  }
+  return names;
+}
+
 export function classify(record: CourseRecord, settings: Settings): Classification {
   const rule = settings.rules.find((item) => ruleMatches(item, record));
   if (rule) return { category: rule.category, reason: 'rule', ruleId: rule.id };
@@ -77,6 +99,9 @@ export function classify(record: CourseRecord, settings: Settings): Classificati
     const userConfigured = Boolean(settings.department.trim() || settings.faculty.trim());
     if (!userConfigured) return { category: 'unknown', reason: 'user-unset' };
     if (userFaculty && record.catalogFaculty && facultyMatches(record.catalogFaculty, userFaculty)) {
+      if (isFacultyAssignment(settings.department) && namesSpecificDepartment(record)) {
+        return { category: 'other', reason: 'mismatch' };
+      }
       return { category: 'own', reason: 'faculty-wide' };
     }
     return { category: 'other', reason: 'mismatch' };
@@ -117,8 +142,10 @@ export function reasonLabel(result: Classification, settings: Settings): string 
     case 'department':
       return `開講学科が「${settings.department}」と一致`;
     case 'faculty-wide':
+      if (isFacultyAssignment(settings.department)) return '学部配属のうち、学科の指定がない科目として判定';
       return `「${resolvedFaculty(settings) || '同じ学部'}」の学部開講として判定`;
     case 'mismatch':
+      if (isFacultyAssignment(settings.department)) return '学部配属では、学科指定のある科目と別学部の科目は他学科';
       return '開講所属が自分の学科と異なる';
     case 'user-unset':
       return '学科が未設定のため未判定';

@@ -30,7 +30,7 @@ import {
 } from '@chakra-ui/react';
 import { useEffect, useRef, useState } from 'react';
 import { defaultSettings } from '../shared/defaults';
-import { departmentsFor, isPresetFaculty, ORG_TREE } from '../shared/org';
+import { departmentsFor, FACULTY_ASSIGNMENT, isFacultyAssignment, isPresetFaculty, ORG_TREE } from '../shared/org';
 import { loadSettings, saveSettings } from '../shared/storage';
 import type { CourseCategory, Settings } from '../shared/types';
 
@@ -109,7 +109,7 @@ export function SettingsModal({ isOpen, onClose }: { isOpen: boolean; onClose: (
                   自分の所属
                 </Heading>
                 <Text fontSize="sm" color="gray.600" mt={-2}>
-                  ここで選んだ学科の講義が自学科、別の学科の講義が他学科になります。
+                  ここで選んだ学科の講義が自学科、別の学科の講義が他学科になります。情報科学部の1年で学科がまだ決まっていないときは「学部配属」を選んでください。
                 </Text>
                 <FormControl>
                   <FormLabel htmlFor="faculty">学部</FormLabel>
@@ -171,7 +171,7 @@ export function SettingsModal({ isOpen, onClose }: { isOpen: boolean; onClose: (
                       <option value="">未選択</option>
                       {deptOptions.map((name) => (
                         <option key={name} value={name}>
-                          {name}
+                          {name === FACULTY_ASSIGNMENT ? '学部配属（1年）' : name}
                         </option>
                       ))}
                       <option value={CUSTOM}>その他（手入力）</option>
@@ -187,9 +187,11 @@ export function SettingsModal({ isOpen, onClose }: { isOpen: boolean; onClose: (
                     />
                   )}
                   <FormHelperText>
-                    {affiliation
-                      ? `「${affiliation}」の講義を自学科にします。`
-                      : '候補は広島市立大学の学部構成です。一覧に無い名称はその他から入力できます。'}
+                    {isFacultyAssignment(draft.department)
+                      ? '学科名の付いていない情報科学部の専門科目を自学科の色にします。情報工学科などの学科名が付いた科目は他学科です。'
+                      : affiliation
+                        ? `「${affiliation}」の講義を自学科にします。`
+                        : '候補は広島市立大学の学部構成です。一覧に無い名称はその他から入力できます。'}
                   </FormHelperText>
                 </FormControl>
               </Stack>
