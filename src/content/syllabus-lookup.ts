@@ -14,12 +14,17 @@ export const SYLLABUS_MAP_KEY = 'hcu-rishu-syllabus-map';
 
 const MAX_ENTRIES = 4000;
 
+export type SyllabusKind = 'common' | 'faculty';
+
 export interface SyllabusEntry {
   code: string;
   name?: string;
   department?: string;
   faculty?: string;
   division?: string;
+  /** 科目授業種別の原文。例: 全学共通科目、情報科学部専門科目 */
+  rawType?: string;
+  kind?: SyllabusKind;
   commonFlag?: boolean;
 }
 
@@ -31,22 +36,35 @@ export interface SyllabusMapFile {
 
 export type SyllabusRefreshResult =
   | { ok: true; added: number }
-  | { ok: false; reason: 'guest-fields-pending' | 'host-rejected' };
+  | { ok: false; reason: 'open-guest-page' | 'host-rejected' };
 
 /**
- * ゲスト検索画面の列は未着。
- * TODO(Unipaヘルパー): 授業コード、開講学部・学科、科目区分、共通の位置が届いたら
- * `ingestGuestDocument` を実装し、このフラグを true にする。それまで fetch しない。
+ * ゲスト検索の項目は実測済み。種別は結果の列ではなく「科目授業種別」の選択値。
+ * JSF の ViewState は画面ごとに変わるので、ここから POST はしない。
+ * 開いた検索結果の表を `ingestGuestDocument` が読む。
  */
-export const GUEST_FIELDS_READY = false;
+export const GUEST_FIELDS_READY = true;
+
+const MODALITY = /^(講義|演習|実験|実習|実技)$/;
+
+/** 科目授業種別の表示文を、共通か学部専門かに分ける。講義などの実施形態は分類にしない。 */
+export function classifySubjectType(raw: string): { kind: SyllabusKind; faculty?: string; rawType: string } | null {
+  const text = raw.normalize('NFKC').replace(/\s+/g, '');
+  if (!text || text === 'すべて対象' || text === '指定なし' || MODALITY.test(text)) return null;
+  if (text.includes('全学共通')) return { kind: 'common', rawType: text };
+  if (text.includes('単位互換')) return null;
+  const faculty = text.match(/(.+?(?:学部|研究科))/);
+  if (faculty?.[1] && text.includes('専門')) return { kind: 'faculty', faculty: faculty[1], rawType: text };
+  return null;
+}
 
 function codeKey(code: string): string {
-  return normalize(code);
+  return normalize(code).toUpperCase();
 }
 
 function asEntry(record: CourseRecord): SyllabusEntry | null {
   const code = record.code?.trim() ?? '';
-  if (!/^\d{6,10}$/.test(codeKey(code))) return null;
+  if (!/^[0-9][0-9A-Z]{5,11}$/.test(codeKey(code))) return null;
   const entry: SyllabusEntry = { code: codeKey(code) };
   const text = (value?: string) => value?.trim().slice(0, 200) || '';
   const name = text(record.name);
@@ -57,7 +75,12 @@ function asEntry(record: CourseRecord): SyllabusEntry | null {
   if (department) entry.department = department;
   if (faculty) entry.faculty = faculty;
   if (division) entry.division = division;
-  if (record.commonFlag) entry.commonFlag = true;
+  const rawType = text((record as CourseRecord & { rawType?: string }).rawType) || (division && classifySubjectType(division)?.rawType);
+  if (rawType) entry.rawType = rawType;
+  const kind = classifySubjectType(rawType || division || '')?.kind;
+  if (kind) entry.kind = kind;
+  entry.commonFlag = record.commonFlag === true || kind === 'common';
+  if (kind === 'faculty') entry.commonFlag = false;
   return entry;
 }
 
@@ -122,21 +145,69 @@ export class SyllabusLookup {
     return added;
   }
 
-  /** セル側に既にある学科・区分は残し、空きだけ索引で埋める。 */
+  /** セルに書かれた学科は残す。索引は学部・共通の空きを埋める。 */
   complete(record: CourseRecord): CourseRecord {
     const key = record.code ? codeKey(record.code) : '';
     if (!key) return record;
     const hit = this.byCode.get(key);
     if (!hit) return record;
-    return mergeRecords(record, hit);
+    const merged = mergeRecords(record, {
+      code: hit.code,
+      name: hit.name,
+      department: hit.department,
+      faculty: hit.kind === 'common' ? undefined : hit.faculty,
+      division: hit.rawType ?? hit.division,
+      commonFlag: hit.kind === 'common' ? true : undefined,
+    });
+    if (hit.kind === 'common') merged.commonFlag = true;
+    return merged;
+  }
+
+  absorb(records: readonly CourseRecord[]): boolean {
+    const before = this.fingerprint();
+    this.remember(records);
+    return this.fingerprint() !== before;
   }
 
   /**
-   * TODO(Unipaヘルパー): ゲストシラバスの検索結果 DOM から授業コードごとの所属を読む。
-   * 列が届くまで空。推測のセレクタでは読まない。
+   * ゲストシラバス検索の結果表を読む。
+   * 種別は各行には無く、検索条件「科目授業種別」の選択値を、見えている授業コード全部に付ける。
+   * 詳細ダイアログに開講学部・学科は無い。
    */
-  ingestGuestDocument(_root: ParentNode): CourseRecord[] {
-    return [];
+  ingestGuestDocument(root: ParentNode): CourseRecord[] {
+    const rawType = readFilterValue(root, /科目授業種別/);
+    const typed = classifySubjectType(rawType);
+    if (!typed) return [];
+    const records: CourseRecord[] = [];
+    root.querySelectorAll('table').forEach((table) => {
+      if (!(table instanceof HTMLTableElement)) return;
+      const header = findResultHeader(table);
+      if (!header) return;
+      const rows = table.tBodies.length ? [...table.tBodies].flatMap((body) => [...body.rows]) : [...table.rows];
+      for (const row of rows) {
+        if (row === header.row) continue;
+        const cell = row.cells[header.nameIndex];
+        if (!cell) continue;
+        const text = (cell.textContent ?? '').replace(/\s+/g, ' ').trim();
+        const code = text.match(/[0-9][0-9A-Za-z]{7}/)?.[0];
+        if (!code) continue;
+        const name = text.replace(code, '').replace(/\s+/g, ' ').trim();
+        records.push({
+          code,
+          name: name || undefined,
+          faculty: typed.faculty,
+          division: typed.rawType,
+          commonFlag: typed.kind === 'common',
+        });
+      }
+    });
+    return records;
+  }
+
+  private fingerprint(): string {
+    return [...this.byCode.values()]
+      .map((entry) => [entry.code, entry.kind ?? '', entry.faculty ?? '', entry.commonFlag ? '1' : '0', entry.division ?? ''].join(':'))
+      .join('\n');
   }
 
   async load(): Promise<void> {
@@ -179,13 +250,11 @@ export class SyllabusLookup {
     return () => window.removeEventListener('storage', listener);
   }
 
-  /** 項目未着のあいだはネットワークを開かない。 */
+  /** 検索 POST はしない。ゲスト画面を開き、表示中の結果表を内容スクリプトが保存する。 */
   static async refresh(): Promise<SyllabusRefreshResult> {
-    if (!SyllabusLookup.FIELDS_READY) return { ok: false, reason: 'guest-fields-pending' };
     const url = SyllabusLookup.guestEntryUrl();
     if (!url) return { ok: false, reason: 'host-rejected' };
-    // TODO(Unipaヘルパー): 検索条件が分かってから url だけを取得し、ingestGuestDocument する。
-    return { ok: false, reason: 'guest-fields-pending' };
+    return { ok: false, reason: 'open-guest-page' };
   }
 
   static guestEntryUrl(): string | null {
@@ -196,6 +265,64 @@ export class SyllabusLookup {
   private replace(file: SyllabusMapFile): void {
     this.byCode = new Map(Object.entries(file.byCode));
   }
+}
+
+function ownText(element: Element): string {
+  const parts: string[] = [];
+  for (const node of element.childNodes) {
+    if (node.nodeType === Node.TEXT_NODE) parts.push(node.textContent ?? '');
+  }
+  const direct = parts.join('').replace(/\s+/g, '');
+  if (direct) return direct;
+  if (element.children.length === 0) return (element.textContent ?? '').replace(/\s+/g, '');
+  return '';
+}
+
+function controlText(scope: Element): string {
+  const menu = scope.querySelector('.ui-selectonemenu-label');
+  const menuText = (menu?.textContent ?? '').replace(/\s+/g, ' ').trim();
+  if (menuText) return menuText;
+  const select = scope instanceof HTMLSelectElement ? scope : scope.querySelector('select');
+  if (select instanceof HTMLSelectElement) {
+    return (select.selectedOptions[0]?.textContent ?? '').replace(/\s+/g, ' ').trim();
+  }
+  return '';
+}
+
+function readFilterValue(root: ParentNode, label: RegExp): string {
+  const nodes = root.querySelectorAll('th, td, label, span, div');
+  for (const node of nodes) {
+    const text = ownText(node);
+    if (!text || text.length > 24 || !label.test(text)) continue;
+    const cell = node.closest('td, th');
+    const next = cell?.nextElementSibling;
+    if (next) {
+      const value = controlText(next);
+      if (value) return value;
+    }
+    const parent = node.parentElement;
+    const sibling = parent?.querySelector('select, .ui-selectonemenu-label');
+    if (sibling && sibling !== node) {
+      const value = controlText(sibling.parentElement ?? sibling);
+      if (value) return value;
+    }
+  }
+  return '';
+}
+
+function findResultHeader(table: HTMLTableElement): { row: HTMLTableRowElement; nameIndex: number } | null {
+  const candidates = table.tHead ? [...table.tHead.rows] : [...table.rows].slice(0, 2);
+  for (const row of candidates) {
+    const labels = [...row.cells].map((cell) => (cell.textContent ?? '').replace(/\s+/g, ''));
+    const nameIndex = labels.findIndex((label) => label.includes('授業科目') || label === '科目名');
+    const hasTeacher = labels.some((label) => label.includes('担当'));
+    if (nameIndex >= 0 && hasTeacher) return { row, nameIndex };
+  }
+  return null;
+}
+
+export function isGuestSyllabusPath(pathname: string): boolean {
+  return pathname.includes('/uprx/up/pk/pky001/Pky00101');
 }
 
 async function readStored(): Promise<unknown> {

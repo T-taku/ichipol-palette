@@ -6,8 +6,19 @@ chrome.runtime.onInstalled.addListener(() => {
 });
 
 chrome.runtime.onMessage.addListener((message: { type?: string }, _sender, sendResponse) => {
+  if (message?.type === 'hcu-syllabus-open') {
+    const url = SyllabusLookup.guestEntryUrl();
+    if (!url) {
+      sendResponse({ ok: false, reason: 'host-rejected' });
+      return true;
+    }
+    void chrome.tabs.create({ url }).then(
+      () => sendResponse({ ok: true }),
+      () => sendResponse({ ok: false }),
+    );
+    return true;
+  }
   if (message?.type !== 'hcu-syllabus-refresh') return;
-  // TODO(Unipaヘルパー): ゲスト画面の項目が届くまで refresh は取得しない。
   void SyllabusLookup.refresh().then(sendResponse);
   return true;
 });

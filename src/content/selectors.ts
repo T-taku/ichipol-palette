@@ -24,7 +24,8 @@ export const LIVE_PAGE = {
   /** 単位集計。セルへは写さない。 */
   summaryHeaders: ['科目分類', '卒業要件単位', '修得済単位', '選択中単位', '合計単位'] as const,
   tabLabels: ['授業を選択', '授業を追加'] as const,
-  courseCode: /(?<!\d)(\d{8})(?!\d)/,
+  /** 8桁。数字だけの `00110401` と、文字を含む `103K0401` の両方。 */
+  courseCode: /(?<![0-9A-Za-z])([0-9][0-9A-Za-z]{7})(?![0-9A-Za-z])/,
   syllabusDepartmentLabels: /^(履修対象|備考)/,
 } as const;
 

@@ -78,6 +78,19 @@ export function SettingsModal({ isOpen, onClose }: { isOpen: boolean; onClose: (
     setStatus('保存しました。開いている履修一覧に反映されます。');
   };
 
+  const openGuest = async () => {
+    if (typeof chrome === 'undefined' || !chrome.runtime?.id) {
+      setStatus('シラバス照合の更新は、Chrome に読み込んだ拡張機能の設定から開きます。');
+      return;
+    }
+    const response = (await chrome.runtime.sendMessage({ type: 'hcu-syllabus-open' })) as { ok?: boolean } | undefined;
+    setStatus(
+      response?.ok
+        ? 'シラバス検索を開きました。科目授業種別を選んで検索してください。'
+        : 'シラバス検索を開けませんでした。',
+    );
+  };
+
   const affiliation = [draft.faculty, draft.department].filter(Boolean).join(' ');
 
   return (
@@ -207,6 +220,21 @@ export function SettingsModal({ isOpen, onClose }: { isOpen: boolean; onClose: (
                   />
                 ))}
                 <LegendPreview colors={draft.colors} enabled={draft.enabled} show={draft.showLegend} />
+              </Stack>
+
+              <Stack spacing={2} pt={1}>
+                <Heading as="h2" size="sm">
+                  シラバス照合
+                </Heading>
+                <Text fontSize="sm" color="gray.600">
+                  ゲストのシラバス検索で「科目授業種別」を選ぶと、表示中の授業コードを共通科目か学部の専門科目として保存します。詳細画面に開講学科は無いので、同じ学部の専門科目はまとめて自学科の色になります。
+                </Text>
+                <Button id="refresh-syllabus" alignSelf="flex-start" variant="outline" colorScheme="ink" onClick={() => void openGuest()}>
+                  シラバス照合を更新
+                </Button>
+                <Text fontSize="xs" color="gray.500">
+                  いちぽるはログインを一つしか持てないことがあります。履修登録を開いたままこの検索を開くと、セッションが切れることがあります。
+                </Text>
               </Stack>
 
               <Stack spacing={3} pt={1}>

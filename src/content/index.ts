@@ -9,7 +9,7 @@ import { extractRecordsFromPayload } from './parse-payload';
 import { safeSyllabusUrl } from './urls';
 import { findCourseRows } from './extract-dom';
 import { LIVE_PAGE } from './selectors';
-import { SyllabusLookup } from './syllabus-lookup';
+import { isGuestSyllabusPath, SyllabusLookup } from './syllabus-lookup';
 
 const NET_SOURCE = 'hcu-rishu-net';
 const SETTINGS_SOURCE = 'hcu-rishu-settings';
@@ -53,6 +53,10 @@ function boot(): void {
 
   const paint = () => {
     if (!document.body) return;
+    if (isGuestSyllabusPath(location.pathname)) {
+      const records = syllabus.ingestGuestDocument(document.body);
+      if (records.length > 0 && syllabus.absorb(records)) void syllabus.save();
+    }
     const stats = applyColoring(document.body, settings, cache, syllabus);
     renderLegend(stats, settings, openSettings);
     if (settings.allowSameOriginLookup) queueLookups();

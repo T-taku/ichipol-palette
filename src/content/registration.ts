@@ -69,7 +69,7 @@ function plainLines(cell: Element): string[] {
 function isMetaLine(line: string): boolean {
   const compact = line.replace(/\s+/g, '');
   if (TAG.test(compact) || CREDIT.test(compact)) return true;
-  return Boolean(compact.match(/^(\d{8})$/));
+  return /^[0-9][0-9A-Za-z]{7}$/.test(compact);
 }
 
 function looksLikeRoom(line: string): boolean {
