@@ -259,7 +259,7 @@ export function ResetDialog({
                 onClose();
               }}
             >
-              戻す
+              リセットする
             </Button>
           </AlertDialogFooter>
         </AlertDialogContent>
