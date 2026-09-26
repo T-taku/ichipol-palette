@@ -2,6 +2,7 @@
   "name": "hcu-rishu-color",
   "private": true,
   "version": "1.0.0",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "dev": "vite --host 127.0.0.1 --port 43123",

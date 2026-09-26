@@ -152,3 +152,7 @@ npm run dev
 ## 作者
 
 X: [@T_taku0427](https://x.com/T_taku0427)
+
+## ライセンス
+
+コードは [MIT License](LICENSE) です。`data/` の授業コード索引は広島市立大学の公開シラバスから作ったもので、大学の公式データではありません。
