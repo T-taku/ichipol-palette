@@ -32,6 +32,8 @@ describe('外部通信を足さない', () => {
       for (const match of text.matchAll(/https?:\/\/[^\s'")]+/g)) {
         const url = match[0];
         if (/hiroshima-cu\.ac\.jp|www\.w3\.org/.test(url)) continue;
+        // 作者の X へのリンク。押したときに開くだけで、拡張からは通信しない。
+        if (url === 'https://x.com/T_taku0427') continue;
         found.push(`${file}: ${url}`);
       }
     }

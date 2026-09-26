@@ -62,7 +62,7 @@ const manifest = {
   version: '1.0.0',
   description:
     '広島市立大学のいちぽるで、履修科目を自学科・他学科・共通科目に色分けします。大学公式ではありません。',
-  permissions: ['storage', 'activeTab', 'scripting'],
+  permissions: ['storage'],
   host_permissions: matches,
   background: { service_worker: 'background.js' },
   action: {
@@ -73,6 +73,7 @@ const manifest = {
       48: 'icons/icon48.png',
     },
   },
+  options_ui: { page: 'settings.html', open_in_tab: true },
   icons: {
     16: 'icons/icon16.png',
     32: 'icons/icon32.png',
@@ -97,9 +98,8 @@ const manifest = {
   ],
   web_accessible_resources: [
     {
-      // ツールバーからは、いちぽる以外のページにも設定モーダルを重ねるため、全ページから読めるようにする。
       resources: ['settings.html', 'assets/*'],
-      matches: ['<all_urls>'],
+      matches,
     },
   ],
 };

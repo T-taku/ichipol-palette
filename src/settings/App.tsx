@@ -1,29 +1,23 @@
 import { Box, useToast } from '@chakra-ui/react';
-import { useState } from 'react';
 import { SettingsModal } from './SettingsModal';
+import { SettingsPage } from './SettingsPage';
 
 const SAVED_NOTICE = '設定を保存しました';
 
 export function App({ embed }: { embed: boolean }) {
-  const [open, setOpen] = useState(true);
   const toast = useToast();
 
-  const close = () => {
-    if (embed) {
-      window.parent.postMessage({ source: 'hcu-rishu-settings', type: 'close' }, '*');
-      return;
-    }
-    setOpen(false);
-    // chrome:// などから別タブで開いたときは、閉じたらタブも閉じる。
-    window.close();
-  };
+  if (embed) {
+    return (
+      <SettingsModal
+        isOpen
+        onClose={() => window.parent.postMessage({ source: 'hcu-rishu-settings', type: 'close' }, '*')}
+        onSaved={() => window.parent.postMessage({ source: 'hcu-rishu-settings', type: 'close', saved: true }, '*')}
+      />
+    );
+  }
 
   const saved = () => {
-    if (embed) {
-      window.parent.postMessage({ source: 'hcu-rishu-settings', type: 'close', saved: true }, '*');
-      return;
-    }
-    setOpen(false);
     toast({
       id: 'settings-saved',
       position: 'bottom',
@@ -48,5 +42,5 @@ export function App({ embed }: { embed: boolean }) {
     });
   };
 
-  return <SettingsModal isOpen={open} onClose={close} onSaved={saved} />;
+  return <SettingsPage onSaved={saved} />;
 }
