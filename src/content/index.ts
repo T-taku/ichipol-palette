@@ -1,6 +1,6 @@
 import { isUnipaAppPath } from '../shared/hosts';
 import { defaultSettings } from '../shared/defaults';
-import { loadSettings, watchSettings } from '../shared/storage';
+import { extensionContextAlive, isContextInvalidated, loadSettings, watchSettings } from '../shared/storage';
 import type { Settings } from '../shared/types';
 import { applyColoring } from './apply';
 import { createCourseCache, type CourseCache } from './cache';
@@ -12,14 +12,45 @@ const NET_SOURCE = 'hcu-rishu-net';
 const SETTINGS_SOURCE = 'hcu-rishu-settings';
 const CACHE_KEY = 'hcu-rishu-color-cache';
 
+let halted = false;
+const cleanups: Array<() => void> = [];
+
+function halt(): void {
+  if (halted) return;
+  halted = true;
+  for (const cleanup of cleanups) {
+    try {
+      cleanup();
+    } catch (error) {
+      if (!isContextInvalidated(error)) throw error;
+    }
+  }
+  cleanups.length = 0;
+}
+
+function alive(): boolean {
+  if (halted) return false;
+  if (!extensionContextAlive()) {
+    halt();
+    return false;
+  }
+  return true;
+}
+
 function openSettings(): void {
+  if (!alive()) return;
   const mount = () => {
-    if (!document.body || document.getElementById('hcu-rc-frame')) return;
-    const frame = document.createElement('iframe');
-    frame.id = 'hcu-rc-frame';
-    frame.title = '履修パレットの設定';
-    frame.src = chrome.runtime.getURL('settings.html?embed=1');
-    document.body.appendChild(frame);
+    if (!alive() || !document.body || document.getElementById('hcu-rc-frame')) return;
+    try {
+      const frame = document.createElement('iframe');
+      frame.id = 'hcu-rc-frame';
+      frame.title = '履修パレットの設定';
+      frame.src = chrome.runtime.getURL('settings.html?embed=1');
+      document.body.appendChild(frame);
+    } catch (error) {
+      if (isContextInvalidated(error)) halt();
+      else throw error;
+    }
   };
   if (document.body) mount();
   else document.addEventListener('DOMContentLoaded', mount, { once: true });
@@ -44,20 +75,41 @@ function showSavedSnack(): void {
 }
 
 async function loadSession(cache: CourseCache): Promise<void> {
-  if (!chrome.storage?.session) return;
-  const data = await chrome.storage.session.get(CACHE_KEY);
-  const records = data[CACHE_KEY];
-  if (Array.isArray(records)) cache.load(records);
+  if (!alive() || !chrome.storage?.session) return;
+  try {
+    const data = await chrome.storage.session.get(CACHE_KEY);
+    const records = data[CACHE_KEY];
+    if (Array.isArray(records)) cache.load(records);
+  } catch (error) {
+    if (isContextInvalidated(error)) halt();
+    else throw error;
+  }
 }
 
 function persistSession(cache: CourseCache): void {
-  if (!chrome.storage?.session) return;
-  void chrome.storage.session.set({ [CACHE_KEY]: cache.snapshot() });
+  if (!alive() || !chrome.storage?.session) return;
+  try {
+    void chrome.storage.session.set({ [CACHE_KEY]: cache.snapshot() }).catch((error: unknown) => {
+      if (isContextInvalidated(error)) halt();
+    });
+  } catch (error) {
+    if (isContextInvalidated(error)) halt();
+    else throw error;
+  }
 }
 
 function boot(): void {
   const onSettings = (event: MessageEvent) => {
-    if (event.origin !== `chrome-extension://${chrome.runtime.id}`) return;
+    if (!alive()) return;
+    let origin: string;
+    try {
+      origin = `chrome-extension://${chrome.runtime.id}`;
+    } catch (error) {
+      if (isContextInvalidated(error)) halt();
+      else throw error;
+      return;
+    }
+    if (event.origin !== origin) return;
     const data = event.data as { source?: string; type?: string; saved?: boolean } | null;
     if (data?.source === SETTINGS_SOURCE && data.type === 'close') {
       closeSettings();
@@ -66,9 +118,17 @@ function boot(): void {
   };
 
   window.addEventListener('message', onSettings);
-  chrome.runtime.onMessage.addListener((message: { type?: string }) => {
-    if (message?.type === 'hcu-open-settings') openSettings();
-  });
+  cleanups.push(() => window.removeEventListener('message', onSettings));
+  if (alive()) {
+    const onCommand = (message: { type?: string }) => {
+      if (!alive()) return;
+      if (message?.type === 'hcu-open-settings') openSettings();
+    };
+    chrome.runtime.onMessage.addListener(onCommand);
+    cleanups.push(() => {
+      chrome.runtime.onMessage.removeListener(onCommand);
+    });
+  }
 
   if (!isUnipaAppPath(location.pathname)) return;
 
@@ -78,7 +138,7 @@ function boot(): void {
   let persistTimer = 0;
 
   const paint = () => {
-    if (!document.body) return;
+    if (!alive() || !document.body) return;
     const stats = applyColoring(document.body, settings, cache);
     renderLegend(stats, settings, openSettings);
     window.clearTimeout(persistTimer);
@@ -86,6 +146,7 @@ function boot(): void {
   };
 
   const schedule = () => {
+    if (!alive()) return;
     window.clearTimeout(timer);
     timer = window.setTimeout(paint, 120);
   };
@@ -110,10 +171,16 @@ function boot(): void {
 
   window.addEventListener('message', onNet);
   document.addEventListener('click', onTab, true);
-  watchSettings((next) => {
-    settings = next;
-    schedule();
-  });
+  cleanups.push(
+    () => window.removeEventListener('message', onNet),
+    () => document.removeEventListener('click', onTab, true),
+    () => window.clearTimeout(timer),
+    () => window.clearTimeout(persistTimer),
+    watchSettings((next) => {
+      settings = next;
+      schedule();
+    }),
+  );
 
   const observer = new MutationObserver((mutations) => {
     const own = mutations.every((mutation) => {
@@ -136,7 +203,9 @@ function boot(): void {
   });
 
   const start = () => {
+    if (!alive()) return;
     observer.observe(document.documentElement, { childList: true, subtree: true });
+    cleanups.push(() => observer.disconnect());
     paint();
   };
 
