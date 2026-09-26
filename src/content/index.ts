@@ -13,12 +13,16 @@ const SETTINGS_SOURCE = 'hcu-rishu-settings';
 const CACHE_KEY = 'hcu-rishu-color-cache';
 
 function openSettings(): void {
-  if (document.getElementById('hcu-rc-frame')) return;
-  const frame = document.createElement('iframe');
-  frame.id = 'hcu-rc-frame';
-  frame.title = '履修カラー設定';
-  frame.src = chrome.runtime.getURL('settings.html?embed=1');
-  document.body.appendChild(frame);
+  const mount = () => {
+    if (!document.body || document.getElementById('hcu-rc-frame')) return;
+    const frame = document.createElement('iframe');
+    frame.id = 'hcu-rc-frame';
+    frame.title = '履修パレットの設定';
+    frame.src = chrome.runtime.getURL('settings.html?embed=1');
+    document.body.appendChild(frame);
+  };
+  if (document.body) mount();
+  else document.addEventListener('DOMContentLoaded', mount, { once: true });
 }
 
 function closeSettings(): void {
@@ -52,6 +56,20 @@ function persistSession(cache: CourseCache): void {
 }
 
 function boot(): void {
+  const onSettings = (event: MessageEvent) => {
+    if (event.origin !== `chrome-extension://${chrome.runtime.id}`) return;
+    const data = event.data as { source?: string; type?: string; saved?: boolean } | null;
+    if (data?.source === SETTINGS_SOURCE && data.type === 'close') {
+      closeSettings();
+      if (data.saved) showSavedSnack();
+    }
+  };
+
+  window.addEventListener('message', onSettings);
+  chrome.runtime.onMessage.addListener((message: { type?: string }) => {
+    if (message?.type === 'hcu-open-settings') openSettings();
+  });
+
   if (!isUnipaAppPath(location.pathname)) return;
 
   let settings: Settings = defaultSettings();
@@ -82,15 +100,6 @@ function boot(): void {
     schedule();
   };
 
-  const onSettings = (event: MessageEvent) => {
-    if (event.origin !== `chrome-extension://${chrome.runtime.id}`) return;
-    const data = event.data as { source?: string; type?: string; saved?: boolean } | null;
-    if (data?.source === SETTINGS_SOURCE && data.type === 'close') {
-      closeSettings();
-      if (data.saved) showSavedSnack();
-    }
-  };
-
   const onTab = (event: Event) => {
     const target = event.target;
     if (!(target instanceof Element)) return;
@@ -100,11 +109,7 @@ function boot(): void {
   };
 
   window.addEventListener('message', onNet);
-  window.addEventListener('message', onSettings);
   document.addEventListener('click', onTab, true);
-  chrome.runtime.onMessage.addListener((message: { type?: string }) => {
-    if (message?.type === 'hcu-open-settings') openSettings();
-  });
   watchSettings((next) => {
     settings = next;
     schedule();

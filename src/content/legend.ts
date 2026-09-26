@@ -43,7 +43,7 @@ function ensureHost(): HTMLElement {
 function applyCollapsed(panel: HTMLElement, head: HTMLButtonElement): void {
   panel.classList.toggle('is-collapsed', collapsed);
   head.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
-  head.setAttribute('aria-label', collapsed ? '履修カラーを開く' : '履修カラーを閉じる');
+  head.setAttribute('aria-label', collapsed ? '履修パレットを開く' : '履修パレットを閉じる');
   const body = panel.querySelector('.hcu-rc-body');
   if (body instanceof HTMLElement) {
     if (collapsed) body.setAttribute('inert', '');
@@ -57,7 +57,7 @@ function ensurePanel(host: HTMLElement): HTMLElement {
 
   const panel = document.createElement('aside');
   panel.className = 'hcu-rc-panel';
-  panel.setAttribute('aria-label', '履修カラー');
+  panel.setAttribute('aria-label', '履修パレット');
 
   const head = document.createElement('button');
   head.type = 'button';
@@ -66,7 +66,7 @@ function ensurePanel(host: HTMLElement): HTMLElement {
 
   const title = document.createElement('span');
   title.className = 'hcu-rc-title';
-  title.textContent = '履修カラー';
+  title.textContent = '履修パレット';
   const chevron = document.createElement('span');
   chevron.className = 'hcu-rc-chevron';
   chevron.setAttribute('aria-hidden', 'true');

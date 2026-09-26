@@ -54,7 +54,7 @@ export function applyColoring(
 
   for (const item of prepared) {
     const result = classify(item.record, settings);
-    paintRow(item.row, result, settings, reasonLabel(result, settings));
+    paintRow(item.row, result, settings, reasonLabel(result, settings, item.record));
     keep.add(item.row);
     count(item.record, result.category);
   }
@@ -67,7 +67,7 @@ export function applyColoring(
     }
     cache.add(record);
     const result = classify(record, settings);
-    paintCell(item.cell, result, settings, reasonLabel(result, settings));
+    paintCell(item.cell, result, settings, reasonLabel(result, settings, record));
     keep.add(item.cell);
     count(record, result.category);
   }

@@ -1,6 +1,6 @@
 import { COMMON_TEXT_PATTERNS } from '../content/selectors';
 import { resolvedFaculty } from './defaults';
-import { departmentMatches, facultyMatches, hasSpecificDepartment, normalize } from './normalize';
+import { departmentMatches, extractUnits, facultyMatches, hasSpecificDepartment, normalize } from './normalize';
 import { isFacultyAssignment } from './org';
 import type { Classification, CourseRecord, OverrideRule, Settings } from './types';
 
@@ -140,7 +140,28 @@ export function classify(record: CourseRecord, settings: Settings): Classificati
   return { category: 'unknown', reason: 'no-metadata' };
 }
 
-export function reasonLabel(result: Classification, settings: Settings): string {
+/** 他学科の理由に出す、開講している学科・学部。 */
+function offeringLabel(record: CourseRecord | undefined): string | undefined {
+  if (!record) return undefined;
+  const explicitFaculty = (record.catalogFaculty || record.faculty)?.trim();
+  const department = record.department?.trim() ?? '';
+  const scanned = extractUnits(normalize(department || record.name || '')).filter(
+    (unit) => !/^(他|全学|共通)/.test(unit.name),
+  );
+  const subjects = scanned.filter((unit) => unit.kind === '学科');
+  const majors = scanned.filter((unit) => unit.kind === '専攻');
+  const faculties = scanned.filter((unit) => unit.kind === '学部' || unit.kind === '研究科');
+  let deptText = '';
+  if (subjects.length === 1 && majors.length === 1) deptText = `${subjects[0].name} ${majors[0].name}`;
+  else if (subjects.length > 1) deptText = subjects.map((unit) => unit.name).join('・');
+  else if (subjects.length === 1) deptText = subjects[0].name;
+  else if (majors.length > 0) deptText = majors.map((unit) => unit.name).join('・');
+  const facultyName = explicitFaculty || faculties[0]?.name;
+  if (facultyName && deptText && !deptText.startsWith(facultyName)) return `${facultyName} ${deptText}`;
+  return deptText || facultyName || undefined;
+}
+
+export function reasonLabel(result: Classification, settings: Settings, record?: CourseRecord): string {
   switch (result.reason) {
     case 'rule':
       return '上書きルールに一致';
@@ -151,9 +172,12 @@ export function reasonLabel(result: Classification, settings: Settings): string 
     case 'faculty-wide':
       if (isFacultyAssignment(settings.department)) return '学部配属のうち、学科の指定がない科目として判定';
       return `「${resolvedFaculty(settings) || '同じ学部'}」の学部開講として判定`;
-    case 'mismatch':
+    case 'mismatch': {
+      const offering = offeringLabel(record);
+      if (offering) return `「${offering}」の講義`;
       if (isFacultyAssignment(settings.department)) return '学部配属では、学科指定のある科目と別学部の科目は他学科';
       return '開講所属が自分の学科と異なる';
+    }
     case 'user-unset':
       return '学科が未設定のため未判定';
     case 'no-metadata':

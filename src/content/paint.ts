@@ -13,11 +13,12 @@ export function applyCssVariables(settings: Settings): void {
   }
 }
 
-function signature(target: Element, result: Classification, settings: Settings): string {
+function signature(target: Element, result: Classification, settings: Settings, title: string): string {
   return [
     settings.enabled ? '1' : '0',
     result.category,
     result.reason,
+    title,
     settings.colors.own,
     settings.colors.other,
     settings.colors.common,
@@ -36,7 +37,7 @@ function clearElement(element: HTMLElement): void {
 }
 
 function paint(element: HTMLElement, result: Classification, settings: Settings, title: string, cell: boolean): void {
-  const sig = signature(element, result, settings);
+  const sig = signature(element, result, settings, title);
   if (element.dataset.hcuSig === sig) return;
   clearElement(element);
   element.dataset.hcuSig = sig;

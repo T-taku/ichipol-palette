@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { classify, isCommonCourse, ruleMatches } from '../src/shared/classify';
+import { classify, isCommonCourse, reasonLabel, ruleMatches } from '../src/shared/classify';
 import { inferFaculty } from '../src/shared/classify-faculty';
 import { sanitizeSettings } from '../src/shared/defaults';
 import type { Settings } from '../src/shared/types';
@@ -160,5 +160,53 @@ describe('classify', () => {
       settings({ treatFacultyWideAsOwn: false }),
     );
     expect(result.category).toBe('other');
+  });
+
+  it('他学科の理由には開講している学科か学部を出す', () => {
+    const traffic = {
+      name: 'トラフィック分析',
+      department: '情報工学科',
+      faculty: '情報科学部',
+      catalogCategory: 'faculty' as const,
+      catalogFaculty: '情報科学部',
+    };
+    const international = {
+      name: '基礎演習',
+      department: '国際学科',
+      faculty: '国際学部',
+      catalogCategory: 'faculty' as const,
+      catalogFaculty: '国際学部',
+    };
+    const facultyOnly = {
+      name: '基礎演習',
+      faculty: '国際学部',
+      catalogCategory: 'faculty' as const,
+      catalogFaculty: '国際学部',
+    };
+    const nihonga = {
+      name: '日本画実習Ⅳ',
+      department: '美術学科 日本画専攻',
+      faculty: '芸術学部',
+      catalogCategory: 'faculty' as const,
+      catalogFaculty: '芸術学部',
+    };
+    const shared = {
+      name: 'オペレーティングシステム',
+      department: '情報工学科 医用情報科学科',
+      faculty: '情報科学部',
+      catalogCategory: 'faculty' as const,
+      catalogFaculty: '情報科学部',
+    };
+    const intelligence = settings({ department: '知能工学科' });
+    expect(reasonLabel(classify(traffic, intelligence), intelligence, traffic)).toBe('「情報科学部 情報工学科」の講義');
+    expect(reasonLabel(classify(international, settings()), settings(), international)).toBe('「国際学部 国際学科」の講義');
+    expect(reasonLabel(classify(facultyOnly, settings()), settings(), facultyOnly)).toBe('「国際学部」の講義');
+    expect(
+      reasonLabel(classify(nihonga, settings({ faculty: '芸術学部', department: '美術学科 油絵専攻' })), settings({ faculty: '芸術学部', department: '美術学科 油絵専攻' }), nihonga),
+    ).toBe('「芸術学部 美術学科 日本画専攻」の講義');
+    expect(reasonLabel(classify(shared, intelligence), intelligence, shared)).toBe('「情報科学部 情報工学科・医用情報科学科」の講義');
+    expect(reasonLabel(classify({ name: 'データベース', department: '知能工学科' }, settings()), settings(), { name: 'データベース', department: '知能工学科' })).toBe(
+      '「知能工学科」の講義',
+    );
   });
 });

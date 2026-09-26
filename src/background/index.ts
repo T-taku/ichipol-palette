@@ -5,14 +5,10 @@ chrome.runtime.onInstalled.addListener(() => {
 });
 
 chrome.action.onClicked.addListener(async (tab) => {
-  const url = tab.url ?? '';
-  if (tab.id && isUnipaUrl(url)) {
-    try {
-      await chrome.tabs.sendMessage(tab.id, { type: 'hcu-open-settings' });
-      return;
-    } catch {
-      // コンテンツスクリプトがまだ無い画面では、設定ページを開く。
-    }
+  if (!tab.id || !isUnipaUrl(tab.url ?? '')) return;
+  try {
+    await chrome.tabs.sendMessage(tab.id, { type: 'hcu-open-settings' });
+  } catch {
+    // いちぽるの画面にスクリプトが無いときは、別ページは開かない。
   }
-  await chrome.runtime.openOptionsPage();
 });

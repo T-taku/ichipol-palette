@@ -1,6 +1,5 @@
 import { build } from 'esbuild';
 import { copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync, renameSync, rmSync, statSync, writeFileSync } from 'node:fs';
-import { deflateSync } from 'node:zlib';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -51,26 +50,28 @@ if (existsSync(nestedDemo)) rmSync(nestedDemo);
 const iconsDir = join(dist, 'icons');
 mkdirSync(iconsDir, { recursive: true });
 for (const size of [16, 32, 48, 128]) {
-  writeFileSync(join(iconsDir, `icon${size}.png`), png(size, iconPixel));
+  const file = `icon${size}.png`;
+  const source = join(root, 'assets/icons', file);
+  if (!existsSync(source)) throw new Error(`${file} が assets/icons にありません`);
+  copyFileSync(source, join(iconsDir, file));
 }
 
 const manifest = {
   manifest_version: 3,
-  name: 'いちぽる履修カラー',
+  name: 'いちぽる履修パレット',
   version: '1.0.0',
-  description: '広島市立大学のいちぽる（UNIPA）で、自学科・他学科・共通科目を色分けします。通信や計測はしません。',
+  description: '広島市立大学のいちぽる（UNIPA）で、履修登録とシラバス検索の科目を自学科・他学科・共通科目に色分けします。',
   permissions: ['storage'],
   host_permissions: matches,
   background: { service_worker: 'background.js' },
   action: {
-    default_title: '履修カラーの設定',
+    default_title: '履修パレットの設定',
     default_icon: {
       16: 'icons/icon16.png',
       32: 'icons/icon32.png',
       48: 'icons/icon48.png',
     },
   },
-  options_ui: { page: 'settings.html', open_in_tab: true },
   icons: {
     16: 'icons/icon16.png',
     32: 'icons/icon32.png',
@@ -117,80 +118,3 @@ for (const path of walk(dist)) {
 }
 
 console.log(`extension written to ${dist}`);
-
-function crc32(buffer) {
-  let crc = ~0;
-  for (const byte of buffer) {
-    crc ^= byte;
-    for (let bit = 0; bit < 8; bit += 1) crc = (crc >>> 1) ^ (crc & 1 ? 0xedb88320 : 0);
-  }
-  return ~crc >>> 0;
-}
-
-function chunk(type, data) {
-  const length = Buffer.alloc(4);
-  length.writeUInt32BE(data.length);
-  const name = Buffer.from(type);
-  const crc = Buffer.alloc(4);
-  crc.writeUInt32BE(crc32(Buffer.concat([name, data])));
-  return Buffer.concat([length, name, data, crc]);
-}
-
-function png(size, pixel) {
-  const raw = Buffer.alloc((size * 4 + 1) * size);
-  for (let y = 0; y < size; y += 1) {
-    const row = y * (size * 4 + 1);
-    raw[row] = 0;
-    for (let x = 0; x < size; x += 1) {
-      const [r, g, b, a] = pixel(x, y, size);
-      const index = row + 1 + x * 4;
-      raw[index] = r;
-      raw[index + 1] = g;
-      raw[index + 2] = b;
-      raw[index + 3] = a;
-    }
-  }
-  const ihdr = Buffer.alloc(13);
-  ihdr.writeUInt32BE(size, 0);
-  ihdr.writeUInt32BE(size, 4);
-  ihdr[8] = 8;
-  ihdr[9] = 6;
-  return Buffer.concat([
-    Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]),
-    chunk('IHDR', ihdr),
-    chunk('IDAT', deflateSync(raw)),
-    chunk('IEND', Buffer.alloc(0)),
-  ]);
-}
-
-function insideRoundRect(x, y, size, pad, radius) {
-  const left = pad;
-  const right = size - pad - 1;
-  const top = pad;
-  const bottom = size - pad - 1;
-  if (x < left || x > right || y < top || y > bottom) return false;
-  const cx = x < left + radius ? left + radius : x > right - radius ? right - radius : x;
-  const cy = y < top + radius ? top + radius : y > bottom - radius ? bottom - radius : y;
-  const dx = x - cx;
-  const dy = y - cy;
-  return dx * dx + dy * dy <= radius * radius;
-}
-
-function iconPixel(x, y, size) {
-  const pad = Math.max(1, Math.round(size * 0.08));
-  const radius = Math.max(2, Math.round(size * 0.22));
-  if (!insideRoundRect(x, y, size, pad, radius)) return [0, 0, 0, 0];
-  const colors = [
-    [215, 243, 227],
-    [253, 231, 199],
-    [217, 231, 251],
-  ];
-  const barTop = size * 0.26;
-  const barHeight = size * 0.14;
-  const gap = size * 0.07;
-  for (let index = 0; index < colors.length; index += 1) {
-    const top = barTop + index * (barHeight + gap);
-    if (y >= top && y < top + barHeight && x > size * 0.22 && x < size * 0.78) return [...colors[index], 255];
-  }
-  return [27, 58, 75, 255];
-}
