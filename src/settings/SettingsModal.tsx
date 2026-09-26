@@ -42,12 +42,20 @@ const COLOR_LABEL: Record<CourseCategory, string> = {
 
 const CUSTOM = '__custom';
 
-export function SettingsModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
+export function SettingsModal({
+  isOpen,
+  onClose,
+  onSaved,
+}: {
+  isOpen: boolean;
+  onClose: () => void;
+  onSaved: () => void;
+}) {
   const [draft, setDraft] = useState<Settings>(defaultSettings);
   const [facultyCustom, setFacultyCustom] = useState(false);
   const [deptCustom, setDeptCustom] = useState(false);
-  const [status, setStatus] = useState('');
   const [resetOpen, setResetOpen] = useState(false);
+  const savingRef = useRef(false);
   const cancelRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
@@ -58,7 +66,6 @@ export function SettingsModal({ isOpen, onClose }: { isOpen: boolean; onClose: (
       setDraft(settings);
       setFacultyCustom(Boolean(settings.faculty) && !isPresetFaculty(settings.faculty));
       setDeptCustom(Boolean(settings.department) && !departmentsFor(settings.faculty).includes(settings.department));
-      setStatus('');
     });
     return () => {
       cancel = true;
@@ -70,12 +77,17 @@ export function SettingsModal({ isOpen, onClose }: { isOpen: boolean; onClose: (
 
   const patch = (partial: Partial<Settings>) => {
     setDraft((current) => ({ ...current, ...partial }));
-    setStatus('');
   };
 
   const save = async () => {
-    await saveSettings(draft);
-    setStatus('保存しました。開いている履修一覧に反映されます。');
+    if (savingRef.current) return;
+    savingRef.current = true;
+    try {
+      await saveSettings(draft);
+      onSaved();
+    } finally {
+      savingRef.current = false;
+    }
   };
 
   const affiliation = [draft.faculty, draft.department].filter(Boolean).join(' ');
@@ -231,9 +243,6 @@ export function SettingsModal({ isOpen, onClose }: { isOpen: boolean; onClose: (
             </Text>
           </ModalBody>
           <ModalFooter gap={3} flexShrink={0}>
-            <Text flex="1" fontSize="sm" color="green.700" aria-live="polite">
-              {status}
-            </Text>
             <Button variant="ghost" onClick={() => setResetOpen(true)}>
               初期状態に戻す
             </Button>
@@ -262,7 +271,6 @@ export function SettingsModal({ isOpen, onClose }: { isOpen: boolean; onClose: (
                   setFacultyCustom(false);
                   setDeptCustom(false);
                   setResetOpen(false);
-                  setStatus('');
                 }}
               >
                 戻す

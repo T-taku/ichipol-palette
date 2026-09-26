@@ -97,6 +97,63 @@ describe('classify', () => {
     expect(classify({ name: '情報社会論', catalogCategory: 'common', commonFlag: true }, user).category).toBe('common');
   });
 
+  it('索引の学科が違えば同じ学部でも他学科、学科の無い学部開講は自学科', () => {
+    const info = settings();
+    const intelligence = settings({ department: '知能工学科' });
+    const medical = settings({ department: '医用情報科学科' });
+    const traffic = {
+      name: 'トラフィック分析',
+      department: '情報工学科',
+      catalogCategory: 'faculty' as const,
+      catalogFaculty: '情報科学部',
+    };
+    const shared = {
+      name: 'オペレーティングシステム',
+      department: '情報工学科 医用情報科学科',
+      catalogCategory: 'faculty' as const,
+      catalogFaculty: '情報科学部',
+    };
+    const foundation = {
+      name: 'プログラミングⅡ',
+      catalogCategory: 'faculty' as const,
+      catalogFaculty: '情報科学部',
+      faculty: '情報科学部',
+    };
+    expect(classify(traffic, info)).toMatchObject({ category: 'own', reason: 'department' });
+    expect(classify(traffic, intelligence).category).toBe('other');
+    expect(classify(shared, info).category).toBe('own');
+    expect(classify(shared, medical).category).toBe('own');
+    expect(classify(shared, intelligence).category).toBe('other');
+    expect(classify(foundation, intelligence)).toMatchObject({ category: 'own', reason: 'faculty-wide' });
+    expect(classify(foundation, settings({ department: '学部配属' })).category).toBe('own');
+    expect(classify(shared, settings({ department: '学部配属' })).category).toBe('other');
+    expect(
+      classify(traffic, settings({ faculty: '芸術学部', department: '美術学科 油絵専攻' })).category,
+    ).toBe('other');
+    expect(
+      classify(
+        {
+          name: '日本画実習Ⅳ',
+          department: '美術学科 日本画専攻',
+          catalogCategory: 'faculty',
+          catalogFaculty: '芸術学部',
+        },
+        settings({ faculty: '芸術学部', department: '美術学科 日本画専攻' }),
+      ).category,
+    ).toBe('own');
+    expect(
+      classify(
+        {
+          name: '日本画実習Ⅳ',
+          department: '美術学科 日本画専攻',
+          catalogCategory: 'faculty',
+          catalogFaculty: '芸術学部',
+        },
+        settings({ faculty: '芸術学部', department: '美術学科 油絵専攻' }),
+      ).category,
+    ).toBe('other');
+  });
+
   it('学部開講を自学科にしない設定では他学科', () => {
     const result = classify(
       { department: '情報科学部', division: '学部共通科目' },

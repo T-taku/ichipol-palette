@@ -25,6 +25,20 @@ function closeSettings(): void {
   document.getElementById('hcu-rc-frame')?.remove();
 }
 
+const SAVED_NOTICE = '保存しました。開いている履修一覧に反映されます。';
+let savedSnackTimer = 0;
+
+function showSavedSnack(): void {
+  document.getElementById('hcu-rc-snack')?.remove();
+  const snack = document.createElement('div');
+  snack.id = 'hcu-rc-snack';
+  snack.setAttribute('role', 'status');
+  snack.textContent = SAVED_NOTICE;
+  document.body.appendChild(snack);
+  window.clearTimeout(savedSnackTimer);
+  savedSnackTimer = window.setTimeout(() => snack.remove(), 4000);
+}
+
 async function loadSession(cache: CourseCache): Promise<void> {
   if (!chrome.storage?.session) return;
   const data = await chrome.storage.session.get(CACHE_KEY);
@@ -70,8 +84,11 @@ function boot(): void {
 
   const onSettings = (event: MessageEvent) => {
     if (event.origin !== `chrome-extension://${chrome.runtime.id}`) return;
-    const data = event.data as { source?: string; type?: string } | null;
-    if (data?.source === SETTINGS_SOURCE && data.type === 'close') closeSettings();
+    const data = event.data as { source?: string; type?: string; saved?: boolean } | null;
+    if (data?.source === SETTINGS_SOURCE && data.type === 'close') {
+      closeSettings();
+      if (data.saved) showSavedSnack();
+    }
   };
 
   const onTab = (event: Event) => {
@@ -96,14 +113,17 @@ function boot(): void {
   const observer = new MutationObserver((mutations) => {
     const own = mutations.every((mutation) => {
       const target = mutation.target;
-      if (target instanceof Element && target.closest('#hcu-rc-host, #hcu-rc-frame')) return true;
+      if (target instanceof Element && target.closest('#hcu-rc-host, #hcu-rc-frame, #hcu-rc-snack')) return true;
       const nodes = [...mutation.addedNodes, ...mutation.removedNodes];
       return (
         nodes.length > 0 &&
         nodes.every(
           (node) =>
             node instanceof Element &&
-            (node.classList.contains('hcu-rc-badge') || node.id === 'hcu-rc-host' || node.id === 'hcu-rc-frame'),
+            (node.classList.contains('hcu-rc-badge') ||
+              node.id === 'hcu-rc-host' ||
+              node.id === 'hcu-rc-frame' ||
+              node.id === 'hcu-rc-snack'),
         )
       );
     });

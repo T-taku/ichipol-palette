@@ -98,14 +98,73 @@ td.hcu-rc-cell a {
   border: 1px solid #d9d2c5;
   border-radius: 14px;
   box-shadow: 0 12px 32px rgba(28, 36, 48, 0.16);
-  padding: 12px;
+  overflow: hidden;
 }
 
-.hcu-rc-title {
-  margin: 0 0 6px;
+.hcu-rc-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  margin: 0;
+  padding: 12px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.04em;
+  text-align: start;
+  cursor: pointer;
+}
+
+.hcu-rc-head:hover { background: rgba(27, 58, 75, 0.06); }
+.hcu-rc-head:focus-visible {
+  outline: 2px solid #0f6e6b;
+  outline-offset: -2px;
+}
+
+.hcu-rc-title {
+  margin: 0;
+}
+
+.hcu-rc-chevron {
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+  flex: none;
+  transition: transform 180ms ease;
+}
+
+.hcu-rc-panel.is-collapsed .hcu-rc-chevron {
+  transform: rotate(-45deg);
+}
+
+.hcu-rc-body {
+  display: grid;
+  grid-template-rows: 1fr;
+  transition: grid-template-rows 180ms ease;
+}
+
+.hcu-rc-panel.is-collapsed .hcu-rc-body {
+  grid-template-rows: 0fr;
+}
+
+.hcu-rc-body-inner {
+  overflow: hidden;
+  min-height: 0;
+  padding: 0 12px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hcu-rc-body,
+  .hcu-rc-chevron {
+    transition: none;
+  }
 }
 
 .hcu-rc-note {
@@ -144,6 +203,7 @@ td.hcu-rc-cell a {
 .hcu-rc-open {
   width: 100%;
   margin-top: 8px;
+  margin-bottom: 12px;
   border: 0;
   border-radius: 999px;
   background: #1b3a4b;
@@ -169,4 +229,27 @@ td.hcu-rc-cell a {
   border: 0;
   z-index: 2147483646;
   background: transparent;
+}
+
+#hcu-rc-snack {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  z-index: 2147483647;
+  max-width: min(480px, calc(100vw - 32px));
+  background: #102735;
+  color: #fffdf8;
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", Meiryo, "Noto Sans CJK JP", "WenQuanYi Micro Hei", sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(28, 36, 48, 0.24);
+  animation: hcu-rc-snack-in 160ms ease-out;
+}
+
+@keyframes hcu-rc-snack-in {
+  from { opacity: 0; transform: translateX(-50%) translateY(8px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
 }

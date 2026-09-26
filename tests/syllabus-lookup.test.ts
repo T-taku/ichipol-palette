@@ -33,8 +33,13 @@ describe('同梱の授業コード索引', () => {
     expect(bundledCatalog.term).toBe('後期');
     expect(Object.keys(bundledCatalog.courses)).toHaveLength(627);
     expect(bundledCatalog.counts).toEqual({ common: 154, 情報科学部: 128, 国際学部: 252, 芸術学部: 93 });
-    expect(lookupCourse('00110401')).toMatchObject({ category: 'common', faculty: null });
-    expect(lookupCourse('26432203')?.faculty).toBe('情報科学部');
+    expect(lookupCourse('00110401')).toMatchObject({ category: 'common', faculty: null, department: null });
+    expect(lookupCourse('26432203')).toMatchObject({ faculty: '情報科学部', department: '情報工学科' });
+    expect(lookupCourse('26461401')?.department).toBe('情報工学科');
+    expect(lookupCourse('26431501')?.department).toBe('情報工学科 医用情報科学科');
+    expect(lookupCourse('20411201')?.department).toBeNull();
+    expect(lookupCourse('114A0301')?.department).toBe('国際学科');
+    expect(lookupCourse('31323401')?.department).toBe('美術学科 日本画専攻');
     expect(lookupCourse('103k0401')?.faculty).toBe('国際学部');
     expect(lookupCourse('113L1901')?.name).toBe('学部派遣海外インターンシップ');
     expect(lookupCourse('20414301')?.faculty).toBe('情報科学部');
@@ -59,19 +64,24 @@ describe('同梱の授業コード索引', () => {
     expect(cat('20414301')).toBeNull();
   });
 
-  it('同梱索引では情報科学部の科目を自学科にし、無いコードは塗らない', () => {
+  it('同梱索引では同じ学科と学部開講を自学科にし、別学科と無いコードは塗らない', () => {
     document.body.innerHTML = `
       <table>
         <tr><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th></tr>
         <tr>
           <td>批判的創造的思考法<br>20414301<br>2.0単位</td>
+          <td>トラフィック分析<br>26461401<br>2.0単位</td>
           <td>未登録科目<br>99990001<br>2.0単位</td>
-          <td></td><td></td><td></td>
+          <td></td><td></td>
         </tr>
       </table>`;
     applyColoring(document.body, info, createCourseCache());
     expect(cat('20414301')).toBe('own');
+    expect(cat('26461401')).toBe('own');
     expect(cat('99990001')).toBeNull();
+    applyColoring(document.body, sanitizeSettings({ faculty: '情報科学部', department: '知能工学科' }), createCourseCache());
+    expect(cat('20414301')).toBe('own');
+    expect(cat('26461401')).toBe('other');
   });
 
   it('索引にあるコードは、セルの学科名より学部区分を優先する', () => {

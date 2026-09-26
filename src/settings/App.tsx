@@ -1,10 +1,13 @@
-import { Box, Button, Heading, Text, VStack } from '@chakra-ui/react';
+import { Box, Button, Heading, Text, useToast, VStack } from '@chakra-ui/react';
 import { useState } from 'react';
 import { hasChromeStorage } from '../shared/storage';
 import { SettingsModal } from './SettingsModal';
 
+const SAVED_NOTICE = '保存しました。開いている履修一覧に反映されます。';
+
 export function App({ embed }: { embed: boolean }) {
   const [open, setOpen] = useState(true);
+  const toast = useToast();
 
   const close = () => {
     if (embed) {
@@ -12,6 +15,36 @@ export function App({ embed }: { embed: boolean }) {
       return;
     }
     setOpen(false);
+  };
+
+  const saved = () => {
+    if (embed) {
+      window.parent.postMessage({ source: 'hcu-rishu-settings', type: 'close', saved: true }, '*');
+      return;
+    }
+    setOpen(false);
+    toast({
+      id: 'settings-saved',
+      position: 'bottom',
+      duration: 4000,
+      render: () => (
+        <Box
+          role="status"
+          bg="#102735"
+          color="#fffdf8"
+          px={4}
+          py={3}
+          mb={4}
+          borderRadius="md"
+          boxShadow="0 8px 24px rgba(28, 36, 48, 0.24)"
+          fontSize="sm"
+          lineHeight="1.5"
+          maxW="min(480px, calc(100vw - 32px))"
+        >
+          {SAVED_NOTICE}
+        </Box>
+      ),
+    });
   };
 
   return (
@@ -41,7 +74,7 @@ export function App({ embed }: { embed: boolean }) {
           </VStack>
         </Box>
       )}
-      <SettingsModal isOpen={open} onClose={close} />
+      <SettingsModal isOpen={open} onClose={close} onSaved={saved} />
     </>
   );
 }

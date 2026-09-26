@@ -9,6 +9,8 @@ export interface CatalogCourse {
   type?: string;
   category: CatalogCategory;
   faculty?: string | null;
+  /** 専門科目として載っていた学科。複数学科は空白区切り。学部全体の科目は null。 */
+  department?: string | null;
 }
 
 /** 年度・学期ごとの静的索引。実行時にシラバスへ取りにいかない。 */
@@ -50,6 +52,15 @@ function catalogFaculty(course: CatalogCourse): string | undefined {
   return faculty || undefined;
 }
 
+/** 索引に学科があればそれを使う。学科キーの無い索引だけ、科目名に一つだけ書かれた学科を使う。 */
+function catalogDepartment(course: CatalogCourse): string | undefined {
+  if (course.department !== undefined) {
+    const department = course.department?.trim();
+    return department || undefined;
+  }
+  return departmentInTitle(course.name);
+}
+
 /** 索引の科目名に学科が一つだけ書かれていれば、それを開講学科にする。クラス名は学科にしない。 */
 function departmentInTitle(name: string | undefined): string | undefined {
   if (!name) return undefined;
@@ -85,7 +96,7 @@ export function applyCatalog(record: CourseRecord, catalog: CourseCatalog = bund
     name,
     division: hit.type ?? record.division,
     faculty: catalogFaculty(hit) ?? record.faculty,
-    department: departmentInTitle(hit.name),
+    department: catalogDepartment(hit),
     catalogCategory: 'faculty',
     catalogFaculty: catalogFaculty(hit),
     commonFlag: false,

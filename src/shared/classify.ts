@@ -7,8 +7,9 @@ import type { Classification, CourseRecord, OverrideRule, Settings } from './typ
 /**
  * 判定の順序:
  * 1. 設定の上書きルール（先に書いてあるものが優先）
- * 2. 同梱の授業コード索引。common は共通。faculty は設定した学部と一致すれば自学科、違えば他学科。
- *    情報科学部の「学部配属」（1年）は、学科名の無い専門科目だけを自学科にし、学科名がある科目は他学科。
+ * 2. 同梱の授業コード索引。common は共通。faculty は設定した学部と一致したうえで、
+ *    学科があればその学科と一致するときだけ自学科。学科の無い学部開講は自学科。
+ *    情報科学部の「学部配属」（1年）は、学科名の無い専門科目だけを自学科にし、学科がある科目は他学科。
  *    索引に無いコードは他学科にしない
  * 3. 共通・教養・全学共通などの標識（「学部共通」は全学共通にしない）
  * 4. 開講学科がユーザの学科と一致 → 自学科
@@ -99,7 +100,13 @@ export function classify(record: CourseRecord, settings: Settings): Classificati
     const userConfigured = Boolean(settings.department.trim() || settings.faculty.trim());
     if (!userConfigured) return { category: 'unknown', reason: 'user-unset' };
     if (userFaculty && record.catalogFaculty && facultyMatches(record.catalogFaculty, userFaculty)) {
-      if (isFacultyAssignment(settings.department) && namesSpecificDepartment(record)) {
+      const listed = record.department?.trim() ?? '';
+      const listedSpecific = Boolean(listed && hasSpecificDepartment(listed));
+      if (isFacultyAssignment(settings.department) && (listedSpecific || namesSpecificDepartment(record))) {
+        return { category: 'other', reason: 'mismatch' };
+      }
+      if (listedSpecific && settings.department.trim()) {
+        if (departmentMatches(listed, settings.department)) return { category: 'own', reason: 'department' };
         return { category: 'other', reason: 'mismatch' };
       }
       return { category: 'own', reason: 'faculty-wide' };
