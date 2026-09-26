@@ -244,7 +244,7 @@ export function SettingsModal({
           </ModalBody>
           <ModalFooter gap={3} flexShrink={0}>
             <Button variant="ghost" onClick={() => setResetOpen(true)}>
-              初期状態に戻す
+              設定をリセット
             </Button>
             <Button id="save-settings" colorScheme="ink" onClick={() => void save()}>
               保存する
@@ -255,8 +255,8 @@ export function SettingsModal({
       <AlertDialog isOpen={resetOpen} leastDestructiveRef={cancelRef} onClose={() => setResetOpen(false)} isCentered>
         <AlertDialogOverlay>
           <AlertDialogContent mx={3}>
-            <AlertDialogHeader>初期状態に戻す</AlertDialogHeader>
-            <AlertDialogBody>学部・学科と3色を初期値に戻します。保存するまで履修一覧には反映されません。</AlertDialogBody>
+            <AlertDialogHeader>設定をリセットする</AlertDialogHeader>
+            <AlertDialogBody>学部・学科と3色をリセットします。保存するまで履修一覧には反映されません。</AlertDialogBody>
             <AlertDialogFooter>
               <Button ref={cancelRef} variant="ghost" onClick={() => setResetOpen(false)}>
                 やめる

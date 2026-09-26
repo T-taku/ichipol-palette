@@ -60,8 +60,9 @@ const manifest = {
   manifest_version: 3,
   name: 'いちぽる履修パレット',
   version: '1.0.0',
-  description: '広島市立大学のいちぽる（UNIPA）で、履修登録とシラバス検索の科目を自学科・他学科・共通科目に色分けします。',
-  permissions: ['storage'],
+  description:
+    '広島市立大学のいちぽるで、履修科目を自学科・他学科・共通科目に色分けします。大学公式ではありません。',
+  permissions: ['storage', 'activeTab', 'scripting'],
   host_permissions: matches,
   background: { service_worker: 'background.js' },
   action: {
@@ -96,8 +97,9 @@ const manifest = {
   ],
   web_accessible_resources: [
     {
+      // ツールバーからは、いちぽる以外のページにも設定モーダルを重ねるため、全ページから読めるようにする。
       resources: ['settings.html', 'assets/*'],
-      matches,
+      matches: ['<all_urls>'],
     },
   ],
 };

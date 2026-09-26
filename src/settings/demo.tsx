@@ -4,6 +4,7 @@ import { applyColoring } from '../content/apply';
 import { createCourseCache } from '../content/cache';
 import { FIXTURE_HTML } from '../content/fixture';
 import { renderLegend } from '../content/legend';
+import { mountSettingsFrame, unmountSettingsFrame } from '../content/settings-frame';
 import '../content/styles.css';
 import { inferFaculty } from '../shared/classify-faculty';
 import { defaultSettings, sanitizeSettings } from '../shared/defaults';
@@ -23,21 +24,30 @@ function paintFixture(base: Settings): void {
       : base;
   const stats = applyColoring(root, settings, createCourseCache());
   renderLegend(stats, settings, () => {
-    location.href = './index.html';
+    mountSettingsFrame('./index.html?embed=1');
   });
 }
 
 function Demo() {
   useEffect(() => {
+    const onMessage = (event: MessageEvent) => {
+      const data = event.data as { source?: string; type?: string } | null;
+      if (data?.source === 'hcu-rishu-settings' && data.type === 'close') unmountSettingsFrame();
+    };
+    window.addEventListener('message', onMessage);
     let current = defaultSettings();
     void loadSettings().then((settings) => {
       current = settings;
       paintFixture(current);
     });
-    return watchSettings((settings) => {
+    const stop = watchSettings((settings) => {
       current = settings;
       paintFixture(settings);
     });
+    return () => {
+      window.removeEventListener('message', onMessage);
+      stop();
+    };
   }, []);
 
   return (
@@ -47,7 +57,14 @@ function Demo() {
           <p className="brand">見本データ</p>
           <h1>履修登録・シラバス検索</h1>
         </div>
-        <a href="./index.html">色分け設定</a>
+        <button
+          type="button"
+          onClick={() => {
+            mountSettingsFrame('./index.html?embed=1');
+          }}
+        >
+          色分け設定
+        </button>
       </header>
       <p className="notice">
         ログインできない環境で色分けを見るための架空の一覧です。広島市立大学のいちぽるそのものではありません。

@@ -14,6 +14,8 @@ export function App({ embed }: { embed: boolean }) {
       return;
     }
     setOpen(false);
+    // chrome:// などから別タブで開いたときは、閉じたらタブも閉じる。
+    window.close();
   };
 
   const saved = () => {

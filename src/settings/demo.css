@@ -33,9 +33,15 @@ body {
   letter-spacing: 0.08em;
 }
 
-.bar a {
+.bar a,
+.bar button {
   color: #f7f4ef;
+  font: inherit;
   font-weight: 700;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
 }
 
 .notice {

@@ -21,6 +21,15 @@ function readCollapsed(): boolean {
 }
 
 let collapsed = readCollapsed();
+let openHandler: () => void = () => {};
+
+function requestOpen(event: Event): void {
+  const target = event.target;
+  if (!(target instanceof Element) || !target.closest('.hcu-rc-open')) return;
+  event.preventDefault();
+  event.stopPropagation();
+  openHandler();
+}
 
 function writeCollapsed(next: boolean): void {
   collapsed = next;
@@ -83,6 +92,8 @@ function ensurePanel(host: HTMLElement): HTMLElement {
   inner.className = 'hcu-rc-body-inner';
   body.append(inner);
   panel.append(head, body);
+  panel.addEventListener('pointerdown', requestOpen);
+  panel.addEventListener('click', requestOpen);
   applyCollapsed(panel, head);
   host.append(panel);
   return panel;
@@ -104,21 +115,35 @@ function swatch(category: 'own' | 'other' | 'common', label: string, count: numb
 
 export function renderLegend(stats: ApplyStats, settings: Settings, onOpen: () => void): void {
   if (!inTopFrame() || !document.body) return;
+  openHandler = onOpen;
   const panel = ensurePanel(ensureHost());
   const inner = panel.querySelector('.hcu-rc-body-inner');
   if (!inner) return;
-  inner.replaceChildren();
+  let content = inner.querySelector('.hcu-rc-legend-content');
+  if (!content) {
+    content = document.createElement('div');
+    content.className = 'hcu-rc-legend-content';
+    inner.append(content);
+  }
+  if (!inner.querySelector('.hcu-rc-open')) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'hcu-rc-open';
+    button.textContent = '色分け設定';
+    inner.append(button);
+  }
+  content.replaceChildren();
 
   if (!settings.enabled) {
     const note = document.createElement('p');
     note.className = 'hcu-rc-note';
     note.textContent = '色分けはオフです。';
-    inner.append(note);
+    content.append(note);
   } else if (!settings.showLegend) {
     const note = document.createElement('p');
     note.className = 'hcu-rc-note';
     note.textContent = '凡例は隠しています。';
-    inner.append(note);
+    content.append(note);
   } else {
     const org = [settings.faculty, settings.department].filter(Boolean).join(' ') || '学科未設定';
     const who = document.createElement('p');
@@ -128,30 +153,23 @@ export function renderLegend(stats: ApplyStats, settings: Settings, onOpen: () =
       const inferred = resolvedFaculty(settings);
       if (inferred) who.textContent = `${inferred} ${settings.department}`;
     }
-    inner.append(who);
-    inner.append(swatch('own', CATEGORY_LABEL.own, stats.own));
-    inner.append(swatch('other', CATEGORY_LABEL.other, stats.other));
-    inner.append(swatch('common', CATEGORY_LABEL.common, stats.common));
+    content.append(who);
+    content.append(swatch('own', CATEGORY_LABEL.own, stats.own));
+    content.append(swatch('other', CATEGORY_LABEL.other, stats.other));
+    content.append(swatch('common', CATEGORY_LABEL.common, stats.common));
     if (stats.unknown > 0) {
       const unknown = document.createElement('p');
       unknown.className = 'hcu-rc-note';
       unknown.textContent = `未判定 ${stats.unknown}`;
-      inner.append(unknown);
+      content.append(unknown);
     }
     if (stats.tables === 0 && stats.own + stats.other + stats.common === 0) {
       const empty = document.createElement('p');
       empty.className = 'hcu-rc-note';
       empty.textContent = '対象の一覧はまだ見当たりません。履修の追加やシラバス検索を開くと色が付きます。';
-      inner.append(empty);
+      content.append(empty);
     }
   }
-
-  const button = document.createElement('button');
-  button.type = 'button';
-  button.className = 'hcu-rc-open';
-  button.textContent = '色分け設定';
-  button.addEventListener('click', onOpen);
-  inner.append(button);
 }
 
 export function removeLegend(): void {

@@ -13,8 +13,12 @@ export function extensionContextAlive(): boolean {
 }
 
 export function isContextInvalidated(error: unknown): boolean {
-  const message = error instanceof Error ? error.message : String(error ?? '');
-  return /context invalidated/i.test(message);
+  try {
+    const message = error instanceof Error ? `${error.name} ${error.message}` : String(error ?? '');
+    return /context invalidated/i.test(message);
+  } catch {
+    return true;
+  }
 }
 
 export function hasChromeStorage(): boolean {

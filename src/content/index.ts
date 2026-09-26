@@ -5,12 +5,14 @@ import type { Settings } from '../shared/types';
 import { applyColoring } from './apply';
 import { createCourseCache, type CourseCache } from './cache';
 import { renderLegend } from './legend';
+import { mountSettingsFrame, unmountSettingsFrame } from './settings-frame';
 import { extractRecordsFromPayload } from './parse-payload';
 import { LIVE_PAGE } from './selectors';
 
 const NET_SOURCE = 'hcu-rishu-net';
 const SETTINGS_SOURCE = 'hcu-rishu-settings';
 const CACHE_KEY = 'hcu-rishu-color-cache';
+const REOPEN_KEY = 'hcu-rc-open-after-reload';
 
 let halted = false;
 const cleanups: Array<() => void> = [];
@@ -21,8 +23,8 @@ function halt(): void {
   for (const cleanup of cleanups) {
     try {
       cleanup();
-    } catch (error) {
-      if (!isContextInvalidated(error)) throw error;
+    } catch {
+      // 拡張が無効になったあとは chrome.runtime 自体が消えていることがあり、後片付けの失敗は無視する。
     }
   }
   cleanups.length = 0;
@@ -37,18 +39,36 @@ function alive(): boolean {
   return true;
 }
 
+function inTopFrame(): boolean {
+  try {
+    return window.top === window;
+  } catch {
+    return false;
+  }
+}
+
+function reopenAfterReload(): void {
+  halt();
+  try {
+    sessionStorage.setItem(REOPEN_KEY, '1');
+  } catch {
+    /* 保存できなくても、再読み込みで新しいスクリプトに切り替える */
+  }
+  location.reload();
+}
+
 function openSettings(): void {
-  if (!alive()) return;
+  if (!inTopFrame()) return;
   const mount = () => {
-    if (!alive() || !document.body || document.getElementById('hcu-rc-frame')) return;
     try {
-      const frame = document.createElement('iframe');
-      frame.id = 'hcu-rc-frame';
-      frame.title = '履修パレットの設定';
-      frame.src = chrome.runtime.getURL('settings.html?embed=1');
-      document.body.appendChild(frame);
+      if (!document.body || document.getElementById('hcu-rc-frame')) return;
+      if (!alive()) {
+        reopenAfterReload();
+        return;
+      }
+      mountSettingsFrame(chrome.runtime.getURL('settings.html?embed=1'));
     } catch (error) {
-      if (isContextInvalidated(error)) halt();
+      if (isContextInvalidated(error)) reopenAfterReload();
       else throw error;
     }
   };
@@ -57,7 +77,7 @@ function openSettings(): void {
 }
 
 function closeSettings(): void {
-  document.getElementById('hcu-rc-frame')?.remove();
+  unmountSettingsFrame();
 }
 
 const SAVED_NOTICE = '保存しました。開いている履修一覧に反映されます。';
@@ -74,27 +94,26 @@ function showSavedSnack(): void {
   savedSnackTimer = window.setTimeout(() => snack.remove(), 4000);
 }
 
+// 科目キャッシュは無くても色分けできる。session storage が使えない場合も、起動は止めない。
 async function loadSession(cache: CourseCache): Promise<void> {
-  if (!alive() || !chrome.storage?.session) return;
   try {
+    if (!alive() || !chrome.storage?.session) return;
     const data = await chrome.storage.session.get(CACHE_KEY);
     const records = data[CACHE_KEY];
     if (Array.isArray(records)) cache.load(records);
   } catch (error) {
     if (isContextInvalidated(error)) halt();
-    else throw error;
   }
 }
 
 function persistSession(cache: CourseCache): void {
-  if (!alive() || !chrome.storage?.session) return;
   try {
+    if (!alive() || !chrome.storage?.session) return;
     void chrome.storage.session.set({ [CACHE_KEY]: cache.snapshot() }).catch((error: unknown) => {
       if (isContextInvalidated(error)) halt();
     });
   } catch (error) {
     if (isContextInvalidated(error)) halt();
-    else throw error;
   }
 }
 
@@ -119,6 +138,16 @@ function boot(): void {
 
   window.addEventListener('message', onSettings);
   cleanups.push(() => window.removeEventListener('message', onSettings));
+  if (inTopFrame()) {
+    try {
+      if (sessionStorage.getItem(REOPEN_KEY) === '1') {
+        sessionStorage.removeItem(REOPEN_KEY);
+        openSettings();
+      }
+    } catch {
+      /* 読み直したあとに設定を開き直せないだけなので、色分け自体は続ける */
+    }
+  }
   if (alive()) {
     const onCommand = (message: { type?: string }) => {
       if (!alive()) return;
@@ -164,15 +193,23 @@ function boot(): void {
   const onTab = (event: Event) => {
     const target = event.target;
     if (!(target instanceof Element)) return;
+    if (target.closest('.hcu-rc-open')) {
+      event.preventDefault();
+      event.stopPropagation();
+      openSettings();
+      return;
+    }
     const tab = target.closest('a, button, [role="tab"]');
     const text = (tab?.textContent ?? '').replace(/\s+/g, '');
     if ((LIVE_PAGE.tabLabels as readonly string[]).includes(text)) schedule();
   };
 
   window.addEventListener('message', onNet);
+  document.addEventListener('pointerdown', onTab, true);
   document.addEventListener('click', onTab, true);
   cleanups.push(
     () => window.removeEventListener('message', onNet),
+    () => document.removeEventListener('pointerdown', onTab, true),
     () => document.removeEventListener('click', onTab, true),
     () => window.clearTimeout(timer),
     () => window.clearTimeout(persistTimer),
@@ -209,13 +246,18 @@ function boot(): void {
     paint();
   };
 
-  void loadSettings().then(async (next) => {
-    settings = next;
-    await loadSession(cache);
-  }).then(() => {
-    if (document.body) start();
-    else document.addEventListener('DOMContentLoaded', start, { once: true });
-  });
+  void loadSettings()
+    .then(async (next) => {
+      settings = next;
+      await loadSession(cache);
+    })
+    .catch((error: unknown) => {
+      if (isContextInvalidated(error)) halt();
+    })
+    .then(() => {
+      if (document.body) start();
+      else document.addEventListener('DOMContentLoaded', start, { once: true });
+    });
 }
 
 boot();

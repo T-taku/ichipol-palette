@@ -8,6 +8,7 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "build": "npm run typecheck && vite build && node scripts/build-extension.mjs",
+    "package:store": "npm run build && node scripts/package-store.mjs",
     "prebuild": "npm test"
   },
   "dependencies": {

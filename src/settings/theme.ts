@@ -18,6 +18,11 @@ export function buildTheme(embed: boolean) {
     },
     styles: {
       global: {
+        'html, body, #root': {
+          height: embed ? '100%' : undefined,
+          margin: embed ? 0 : undefined,
+          bg: embed ? 'transparent' : undefined,
+        },
         body: {
           bg: embed ? 'transparent' : '#f3eee6',
           color: '#1c2430',

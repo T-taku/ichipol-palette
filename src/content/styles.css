@@ -222,12 +222,22 @@ td.hcu-rc-cell a {
 }
 
 #hcu-rc-frame {
-  position: fixed;
-  inset: 0;
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  z-index: 2147483646 !important;
+}
+
+#hcu-rc-frame > iframe {
+  display: block;
   width: 100%;
   height: 100%;
   border: 0;
-  z-index: 2147483646;
   background: transparent;
 }
 

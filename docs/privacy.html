@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>いちぽる履修パレット プライバシーポリシー</title>
+    <style>
+      body {
+        margin: 0 auto;
+        max-width: 42rem;
+        padding: 2rem 1.25rem 4rem;
+        font: 16px/1.7 system-ui, sans-serif;
+        color: #1a1a1a;
+      }
+      h1 { font-size: 1.5rem; line-height: 1.4; }
+      h2 { font-size: 1.1rem; margin-top: 2rem; }
+    </style>
+  </head>
+  <body>
+    <h1>いちぽる履修パレット プライバシーポリシー</h1>
+    <p>最終更新: 2026-09-27</p>
+    <p>
+      いちぽる履修パレットは、広島市立大学の UNIPA（いちぽる）で履修科目を色分けする Chrome 拡張機能です。広島市立大学の公式機能ではありません。
+    </p>
+
+    <h2>扱う情報</h2>
+    <p>色分けのため、次の情報を利用者のブラウザの中だけで読みます。</p>
+    <ul>
+      <li>履修登録とシラバスの画面に表示された科目名、授業コード、開講所属</li>
+      <li>いちぽる自身が同じサイト内で受け取った応答のうち、科目に関係する部分</li>
+      <li>利用者が設定した学部、学科、色</li>
+    </ul>
+    <p>
+      パスワード、クッキー、学籍番号は取り出しません。開発者のサーバ、解析サービス、外部のフォントや CDN へは送りません。
+    </p>
+
+    <h2>保存</h2>
+    <ul>
+      <li>学部、学科、色の設定は、そのブラウザの <code>chrome.storage.local</code> に保存します。</li>
+      <li>画面から取り出した科目の一時データは <code>chrome.storage.session</code> に残り、ブラウザを閉じると消えます。</li>
+      <li>授業コードの索引は拡張機能に同梱したファイルで、実行時に取りにいきません。</li>
+    </ul>
+
+    <h2>利用範囲</h2>
+    <p>読み取った情報は、画面上の色分けと、その理由の表示にだけ使います。</p>
+    <p>
+      ツールバーのアイコンを押したときは、そのタブに設定画面を重ねて表示します（<code>activeTab</code> と <code>scripting</code>）。このとき、いちぽる以外のページの内容は読み取りません。
+    </p>
+    <ul>
+      <li>第三者へ販売したり、渡したりしません。</li>
+      <li>色分け以外の目的（広告、クレジットの判断を含みます）には使いません。</li>
+      <li>開発者がその内容を読むことはありません。利用者が自分から問い合わせに添付した場合を除きます。</li>
+    </ul>
+
+    <h2>連絡</h2>
+    <p>このポリシーについての連絡は、Chrome ウェブストアに表示される開発者の連絡先へお願いします。</p>
+  </body>
+</html>
