@@ -1,13 +1,17 @@
 {
   "year": 2026,
   "term": "後期",
-  "source": "ichiPOL guest syllabus Pky00101 guestlogin=Kmh006; department from 2026-09-18 undergraduate timetables",
-  "updated": "2026-09-27",
+  "source": "ichiPOL guest syllabus Pky00101 guestlogin=Kmh006; department from 2026-09-18 undergraduate timetables; graduate courses from 2026-09-18 graduate timetables",
+  "updated": "2026-10-01",
   "counts": {
-    "common": 154,
+    "common": 156,
     "情報科学部": 128,
     "国際学部": 252,
-    "芸術学部": 93
+    "芸術学部": 93,
+    "国際学研究科": 205,
+    "情報科学研究科": 36,
+    "芸術学研究科": 38,
+    "平和学研究科": 70
   },
   "courses": {
     "00110401": {
@@ -187,6 +191,20 @@
     },
     "001609T2": {
       "name": "体育実技Ⅱ （テニス）",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null,
+      "department": null
+    },
+    "001609Z1": {
+      "name": "体育実技Ⅱ",
+      "type": "全学共通科目",
+      "category": "common",
+      "faculty": null,
+      "department": null
+    },
+    "001609Z2": {
+      "name": "体育実技Ⅱ",
       "type": "全学共通科目",
       "category": "common",
       "faculty": null,
@@ -3228,7 +3246,7 @@
       "type": "情報科学部専門科目",
       "category": "faculty",
       "faculty": "情報科学部",
-      "department": null
+      "department": "情報工学科"
     },
     "26433603": {
       "name": "プレゼンテーション技法",
@@ -3529,7 +3547,7 @@
       "type": "情報科学部専門科目",
       "category": "faculty",
       "faculty": "情報科学部",
-      "department": null
+      "department": "システム工学科"
     },
     "28433601": {
       "name": "技術文書作成法",
@@ -3585,7 +3603,7 @@
       "type": "情報科学部専門科目",
       "category": "faculty",
       "faculty": "情報科学部",
-      "department": null
+      "department": "システム工学科"
     },
     "28450701": {
       "name": "機械力学",
@@ -3641,7 +3659,7 @@
       "type": "情報科学部専門科目",
       "category": "faculty",
       "faculty": "情報科学部",
-      "department": null
+      "department": "医用情報科学科"
     },
     "29432001": {
       "name": "技術文書作成法",
@@ -4398,6 +4416,2449 @@
       "category": "faculty",
       "faculty": "芸術学部",
       "department": "デザイン工芸学科"
+    },
+    "51110201": {
+      "name": "学術研究のための基礎統計",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512305AA": {
+      "name": "特別演習Ⅰ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512305AB": {
+      "name": "特別演習Ⅰ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512305AC": {
+      "name": "特別演習Ⅰ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512305AD": {
+      "name": "特別演習Ⅰ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512305AE": {
+      "name": "特別演習Ⅰ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512305AF": {
+      "name": "特別演習Ⅰ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512305AG": {
+      "name": "特別演習Ⅰ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512305AH": {
+      "name": "特別演習Ⅰ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512305AI": {
+      "name": "特別演習Ⅰ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512305AJ": {
+      "name": "特別演習Ⅰ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512305AL": {
+      "name": "特別演習Ⅰ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512305AM": {
+      "name": "特別演習Ⅰ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512305AN": {
+      "name": "特別演習Ⅰ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512305AO": {
+      "name": "特別演習Ⅰ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512305AQ": {
+      "name": "特別演習Ⅰ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512305AR": {
+      "name": "特別演習Ⅰ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512305AS": {
+      "name": "特別演習Ⅰ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512305AT": {
+      "name": "特別演習Ⅰ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512305AU": {
+      "name": "特別演習Ⅰ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512305AV": {
+      "name": "特別演習Ⅰ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512305AW": {
+      "name": "特別演習Ⅰ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512305AX": {
+      "name": "特別演習Ⅰ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512305AY": {
+      "name": "特別演習Ⅰ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512305AZ": {
+      "name": "特別演習Ⅰ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512305BA": {
+      "name": "特別演習Ⅰ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512305BB": {
+      "name": "特別演習Ⅰ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512305BC": {
+      "name": "特別演習Ⅰ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512305BD": {
+      "name": "特別演習Ⅰ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512305BE": {
+      "name": "特別演習Ⅰ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512305BF": {
+      "name": "特別演習Ⅰ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512305BG": {
+      "name": "特別演習Ⅰ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512305BH": {
+      "name": "特別演習Ⅰ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512305BI": {
+      "name": "特別演習Ⅰ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512305BJ": {
+      "name": "特別演習Ⅰ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512305BK": {
+      "name": "特別演習Ⅰ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512305BL": {
+      "name": "特別演習Ⅰ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512305BM": {
+      "name": "特別演習Ⅰ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512305BO": {
+      "name": "特別演習Ⅰ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512305BP": {
+      "name": "特別演習Ⅰ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512305BQ": {
+      "name": "特別演習Ⅰ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "5123061A": {
+      "name": "特別演習Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512306AA": {
+      "name": "特別演習Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512306AB": {
+      "name": "特別演習Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512306AC": {
+      "name": "特別演習Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512306AD": {
+      "name": "特別演習Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512306AE": {
+      "name": "特別演習Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512306AF": {
+      "name": "特別演習Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512306AG": {
+      "name": "特別演習Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512306AH": {
+      "name": "特別演習Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512306AI": {
+      "name": "特別演習Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512306AJ": {
+      "name": "特別演習Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512306AL": {
+      "name": "特別演習Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512306AM": {
+      "name": "特別演習Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512306AN": {
+      "name": "特別演習Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512306AO": {
+      "name": "特別演習Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512306AQ": {
+      "name": "特別演習Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512306AR": {
+      "name": "特別演習Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512306AS": {
+      "name": "特別演習Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512306AT": {
+      "name": "特別演習Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512306AU": {
+      "name": "特別演習Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512306AV": {
+      "name": "特別演習Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512306AW": {
+      "name": "特別演習Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512306AX": {
+      "name": "特別演習Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512306AY": {
+      "name": "特別演習Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512306AZ": {
+      "name": "特別演習Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512306BA": {
+      "name": "特別演習Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512306BB": {
+      "name": "特別演習Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512306BC": {
+      "name": "特別演習Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512306BD": {
+      "name": "特別演習Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512306BE": {
+      "name": "特別演習Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512306BF": {
+      "name": "特別演習Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512306BG": {
+      "name": "特別演習Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512306BH": {
+      "name": "特別演習Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512306BI": {
+      "name": "特別演習Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512306BJ": {
+      "name": "特別演習Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512306BK": {
+      "name": "特別演習Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512306BL": {
+      "name": "特別演習Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512306BM": {
+      "name": "特別演習Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512306BO": {
+      "name": "特別演習Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512306BP": {
+      "name": "特別演習Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512306BQ": {
+      "name": "特別演習Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512307A2": {
+      "name": "特別講義Ａ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512307A3": {
+      "name": "特別講義Ａ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512307A4": {
+      "name": "特別講義Ａ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512307A5": {
+      "name": "特別講義Ａ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512307A6": {
+      "name": "特別講義Ａ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512307A7": {
+      "name": "特別講義Ａ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512307A8": {
+      "name": "特別講義Ａ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512307A9": {
+      "name": "特別講義Ａ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512307B1": {
+      "name": "特別講義Ａ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512307B2": {
+      "name": "特別講義Ａ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512307B4": {
+      "name": "特別講義Ａ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512307B5": {
+      "name": "特別講義Ａ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512307B6": {
+      "name": "特別講義Ａ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512307B7": {
+      "name": "特別講義Ａ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512307B9": {
+      "name": "特別講義Ａ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512307C1": {
+      "name": "特別講義Ａ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512307C2": {
+      "name": "特別講義Ａ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512307C3": {
+      "name": "特別講義Ａ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512307C4": {
+      "name": "特別講義Ａ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512307C5": {
+      "name": "特別講義Ａ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512307C6": {
+      "name": "特別講義Ａ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512307C7": {
+      "name": "特別講義Ａ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512307C8": {
+      "name": "特別講義Ａ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512307C9": {
+      "name": "特別講義Ａ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512307D1": {
+      "name": "特別講義Ａ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512307D2": {
+      "name": "特別講義Ａ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512307D3": {
+      "name": "特別講義Ａ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512307D4": {
+      "name": "特別講義Ａ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512307D5": {
+      "name": "特別講義Ａ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512307D6": {
+      "name": "特別講義Ａ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512307D7": {
+      "name": "特別講義Ａ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512307D8": {
+      "name": "特別講義Ａ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512307D9": {
+      "name": "特別講義Ａ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512307E1": {
+      "name": "特別講義Ａ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512307E2": {
+      "name": "特別講義Ａ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512307E3": {
+      "name": "特別講義Ａ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512307E4": {
+      "name": "特別講義Ａ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512307E6": {
+      "name": "特別講義Ａ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512307E7": {
+      "name": "特別講義Ａ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512307E8": {
+      "name": "特別講義Ａ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512308A2": {
+      "name": "特別講義Ｂ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512308A3": {
+      "name": "特別講義Ｂ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512308A4": {
+      "name": "特別講義Ｂ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512308A5": {
+      "name": "特別講義Ｂ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512308A6": {
+      "name": "特別講義Ｂ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512308A7": {
+      "name": "特別講義Ｂ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512308A8": {
+      "name": "特別講義Ｂ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512308A9": {
+      "name": "特別講義Ｂ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512308B1": {
+      "name": "特別講義Ｂ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512308B2": {
+      "name": "特別講義Ｂ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512308B4": {
+      "name": "特別講義Ｂ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512308B5": {
+      "name": "特別講義Ｂ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512308B6": {
+      "name": "特別講義Ｂ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512308B7": {
+      "name": "特別講義Ｂ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512308B9": {
+      "name": "特別講義Ｂ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512308C1": {
+      "name": "特別講義Ｂ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512308C2": {
+      "name": "特別講義Ｂ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512308C3": {
+      "name": "特別講義Ｂ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512308C4": {
+      "name": "特別講義Ｂ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512308C5": {
+      "name": "特別講義Ｂ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512308C6": {
+      "name": "特別講義Ｂ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512308C7": {
+      "name": "特別講義Ｂ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512308C8": {
+      "name": "特別講義Ｂ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512308C9": {
+      "name": "特別講義Ｂ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512308D1": {
+      "name": "特別講義Ｂ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512308D2": {
+      "name": "特別講義Ｂ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512308D3": {
+      "name": "特別講義Ｂ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512308D4": {
+      "name": "特別講義Ｂ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512308D5": {
+      "name": "特別講義Ｂ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512308D6": {
+      "name": "特別講義Ｂ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512308D7": {
+      "name": "特別講義Ｂ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512308D8": {
+      "name": "特別講義Ｂ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512308D9": {
+      "name": "特別講義Ｂ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512308E1": {
+      "name": "特別講義Ｂ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512308E2": {
+      "name": "特別講義Ｂ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512308E3": {
+      "name": "特別講義Ｂ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512308E4": {
+      "name": "特別講義Ｂ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512308E6": {
+      "name": "特別講義Ｂ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512308E7": {
+      "name": "特別講義Ｂ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "512308E8": {
+      "name": "特別講義Ｂ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "51310401": {
+      "name": "平和構築論",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "51310601": {
+      "name": "国際協力論Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "51311001": {
+      "name": "日本政治外交論Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "51311201": {
+      "name": "東北アジア政治論Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "51311401": {
+      "name": "東南アジア政治論Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "51311601": {
+      "name": "ヨーロッパ国際関係史Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "51311801": {
+      "name": "アメリカ政治外交論Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "51312001": {
+      "name": "中国国際関係史Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "51313001": {
+      "name": "ロシア国際関係史Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "51314201": {
+      "name": "国際安全保障理論",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "51320401": {
+      "name": "国際法Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "51320801": {
+      "name": "開発社会学／人類学",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "51321001": {
+      "name": "社会政策論",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "51321601": {
+      "name": "持続可能な開発のための教育（ＥＳＤ）論",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "51321801": {
+      "name": "情報メディア論Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "51322001": {
+      "name": "健康心理学Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "51322801": {
+      "name": "環境経済学Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "51323401": {
+      "name": "行政学Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "51330201": {
+      "name": "国際経営論Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "51330401": {
+      "name": "多国籍企業論Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "51331601": {
+      "name": "マーケティング論Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "51331801": {
+      "name": "公会計論Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "51332401": {
+      "name": "人的資源管理論Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "51332601": {
+      "name": "国際商務論Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "51332801": {
+      "name": "会計学Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "51340201": {
+      "name": "現代思想Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "51340401": {
+      "name": "現代社会論Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "51340801": {
+      "name": "ジェンダー論Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "51341201": {
+      "name": "日本文化史研究",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "51341601": {
+      "name": "ラテンアメリカ文化論Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "51341801": {
+      "name": "中東イスラーム社会論Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "51342001": {
+      "name": "アフリカ文化論",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "51350201": {
+      "name": "英語教育論Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "51350401": {
+      "name": "応用言語論Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "51350601": {
+      "name": "対照言語学Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "51351001": {
+      "name": "翻訳論Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "51351601": {
+      "name": "イギリス文学・文化論Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "51351801": {
+      "name": "フランス文学・文化論Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "51352001": {
+      "name": "American Literature and CultureⅡ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "51352201": {
+      "name": "日本語教育論Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "51352601": {
+      "name": "英語学習論Ⅱ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "51360401": {
+      "name": "ピース・インターンシップⅡ",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "51410301": {
+      "name": "広島と世界",
+      "type": "国際学研究科専門科目",
+      "category": "faculty",
+      "faculty": "国際学研究科",
+      "department": null
+    },
+    "66410101": {
+      "name": "論理回路・システム特論",
+      "type": "情報科学研究科専門科目",
+      "category": "faculty",
+      "faculty": "情報科学研究科",
+      "department": "情報工学専攻 医用情報科学専攻"
+    },
+    "66410401": {
+      "name": "回路設計自動化特論",
+      "type": "情報科学研究科専門科目",
+      "category": "faculty",
+      "faculty": "情報科学研究科",
+      "department": "情報工学専攻"
+    },
+    "66410701": {
+      "name": "プログラミング言語特論",
+      "type": "情報科学研究科専門科目",
+      "category": "faculty",
+      "faculty": "情報科学研究科",
+      "department": "情報工学専攻"
+    },
+    "66410901": {
+      "name": "情報通信方法特論",
+      "type": "情報科学研究科専門科目",
+      "category": "faculty",
+      "faculty": "情報科学研究科",
+      "department": null
+    },
+    "66411001": {
+      "name": "通信工学特論",
+      "type": "情報科学研究科専門科目",
+      "category": "faculty",
+      "faculty": "情報科学研究科",
+      "department": "情報工学専攻"
+    },
+    "66412501": {
+      "name": "通信トラヒック特論",
+      "type": "情報科学研究科専門科目",
+      "category": "faculty",
+      "faculty": "情報科学研究科",
+      "department": "情報工学専攻"
+    },
+    "66420201": {
+      "name": "情報工学特別演習Ⅱ",
+      "type": "情報科学研究科専門科目",
+      "category": "faculty",
+      "faculty": "情報科学研究科",
+      "department": "情報工学専攻"
+    },
+    "66420401": {
+      "name": "情報工学特別演習Ⅳ",
+      "type": "情報科学研究科専門科目",
+      "category": "faculty",
+      "faculty": "情報科学研究科",
+      "department": "情報工学専攻"
+    },
+    "66420601": {
+      "name": "インターンシップⅠ",
+      "type": "情報科学研究科専門科目",
+      "category": "faculty",
+      "faculty": "情報科学研究科",
+      "department": "情報工学専攻"
+    },
+    "66420701": {
+      "name": "インターンシップⅡ",
+      "type": "情報科学研究科専門科目",
+      "category": "faculty",
+      "faculty": "情報科学研究科",
+      "department": "情報工学専攻"
+    },
+    "66430601": {
+      "name": "プロジェクト演習Ⅱ",
+      "type": "情報科学研究科専門科目",
+      "category": "faculty",
+      "faculty": "情報科学研究科",
+      "department": null
+    },
+    "67410701": {
+      "name": "マルチメディアデータベース特論",
+      "type": "情報科学研究科専門科目",
+      "category": "faculty",
+      "faculty": "情報科学研究科",
+      "department": null
+    },
+    "67410801": {
+      "name": "知的情報検索特論",
+      "type": "情報科学研究科専門科目",
+      "category": "faculty",
+      "faculty": "情報科学研究科",
+      "department": null
+    },
+    "67410901": {
+      "name": "確率的情報処理特論",
+      "type": "情報科学研究科専門科目",
+      "category": "faculty",
+      "faculty": "情報科学研究科",
+      "department": null
+    },
+    "67411501": {
+      "name": "パターン認識特論",
+      "type": "情報科学研究科専門科目",
+      "category": "faculty",
+      "faculty": "情報科学研究科",
+      "department": "知能工学専攻"
+    },
+    "67413301": {
+      "name": "知能数理特論Ｂ",
+      "type": "情報科学研究科専門科目",
+      "category": "faculty",
+      "faculty": "情報科学研究科",
+      "department": "情報工学専攻 知能工学専攻 システム工学専攻"
+    },
+    "67420201": {
+      "name": "知能工学特別演習Ⅱ",
+      "type": "情報科学研究科専門科目",
+      "category": "faculty",
+      "faculty": "情報科学研究科",
+      "department": "知能工学専攻"
+    },
+    "67420401": {
+      "name": "知能工学特別演習Ⅳ",
+      "type": "情報科学研究科専門科目",
+      "category": "faculty",
+      "faculty": "情報科学研究科",
+      "department": "知能工学専攻"
+    },
+    "67420601": {
+      "name": "インターンシップⅠ",
+      "type": "情報科学研究科専門科目",
+      "category": "faculty",
+      "faculty": "情報科学研究科",
+      "department": "知能工学専攻"
+    },
+    "67420701": {
+      "name": "インターンシップⅡ",
+      "type": "情報科学研究科専門科目",
+      "category": "faculty",
+      "faculty": "情報科学研究科",
+      "department": "知能工学専攻"
+    },
+    "68410401": {
+      "name": "システム推定学特論",
+      "type": "情報科学研究科専門科目",
+      "category": "faculty",
+      "faculty": "情報科学研究科",
+      "department": "システム工学専攻"
+    },
+    "68411101": {
+      "name": "ヒューマンコンピュータインタラクション特論",
+      "type": "情報科学研究科専門科目",
+      "category": "faculty",
+      "faculty": "情報科学研究科",
+      "department": "情報工学専攻 知能工学専攻 システム工学専攻"
+    },
+    "68412401": {
+      "name": "暗号と情報セキュリティ特論",
+      "type": "情報科学研究科専門科目",
+      "category": "faculty",
+      "faculty": "情報科学研究科",
+      "department": "システム工学専攻"
+    },
+    "68412901": {
+      "name": "ソフトウェア品質評価特論",
+      "type": "情報科学研究科専門科目",
+      "category": "faculty",
+      "faculty": "情報科学研究科",
+      "department": "システム工学専攻"
+    },
+    "68420201": {
+      "name": "システム工学特別演習Ⅱ",
+      "type": "情報科学研究科専門科目",
+      "category": "faculty",
+      "faculty": "情報科学研究科",
+      "department": "システム工学専攻"
+    },
+    "68420401": {
+      "name": "システム工学特別演習Ⅳ",
+      "type": "情報科学研究科専門科目",
+      "category": "faculty",
+      "faculty": "情報科学研究科",
+      "department": "システム工学専攻"
+    },
+    "68420601": {
+      "name": "インターンシップⅠ",
+      "type": "情報科学研究科専門科目",
+      "category": "faculty",
+      "faculty": "情報科学研究科",
+      "department": "システム工学専攻"
+    },
+    "68420701": {
+      "name": "インターンシップⅡ",
+      "type": "情報科学研究科専門科目",
+      "category": "faculty",
+      "faculty": "情報科学研究科",
+      "department": "システム工学専攻"
+    },
+    "68420801": {
+      "name": "製品企画プロジェクト特別演習",
+      "type": "情報科学研究科専門科目",
+      "category": "faculty",
+      "faculty": "情報科学研究科",
+      "department": "システム工学専攻"
+    },
+    "68421101": {
+      "name": "認識システム特論",
+      "type": "情報科学研究科専門科目",
+      "category": "faculty",
+      "faculty": "情報科学研究科",
+      "department": "システム工学専攻"
+    },
+    "6A410101": {
+      "name": "バイオ情報学特論",
+      "type": "情報科学研究科専門科目",
+      "category": "faculty",
+      "faculty": "情報科学研究科",
+      "department": "医用情報科学専攻"
+    },
+    "6A410801": {
+      "name": "生体計測工学特論",
+      "type": "情報科学研究科専門科目",
+      "category": "faculty",
+      "faculty": "情報科学研究科",
+      "department": "医用情報科学専攻"
+    },
+    "6A411201": {
+      "name": "マイクロ医用工学特論",
+      "type": "情報科学研究科専門科目",
+      "category": "faculty",
+      "faculty": "情報科学研究科",
+      "department": "医用情報科学専攻"
+    },
+    "6A411301": {
+      "name": "医用ロボット学特論",
+      "type": "情報科学研究科専門科目",
+      "category": "faculty",
+      "faculty": "情報科学研究科",
+      "department": "システム工学専攻 医用情報科学専攻"
+    },
+    "6A420201": {
+      "name": "医用情報科学特別演習Ⅱ",
+      "type": "情報科学研究科専門科目",
+      "category": "faculty",
+      "faculty": "情報科学研究科",
+      "department": "医用情報科学専攻"
+    },
+    "6A420401": {
+      "name": "医用情報科学特別演習Ⅳ",
+      "type": "情報科学研究科専門科目",
+      "category": "faculty",
+      "faculty": "情報科学研究科",
+      "department": "医用情報科学専攻"
+    },
+    "70110801": {
+      "name": "美学特講B",
+      "type": "芸術学研究科専門科目",
+      "category": "faculty",
+      "faculty": "芸術学研究科",
+      "department": null
+    },
+    "70111001": {
+      "name": "美術史特講（日本）Ｂ",
+      "type": "芸術学研究科専門科目",
+      "category": "faculty",
+      "faculty": "芸術学研究科",
+      "department": null
+    },
+    "70111201": {
+      "name": "美術史特講（東洋・工芸）Ｂ",
+      "type": "芸術学研究科専門科目",
+      "category": "faculty",
+      "faculty": "芸術学研究科",
+      "department": null
+    },
+    "70111301": {
+      "name": "美術史特講（西洋）Ａ",
+      "type": "芸術学研究科専門科目",
+      "category": "faculty",
+      "faculty": "芸術学研究科",
+      "department": null
+    },
+    "70111601": {
+      "name": "美術史特講（現代）Ｂ",
+      "type": "芸術学研究科専門科目",
+      "category": "faculty",
+      "faculty": "芸術学研究科",
+      "department": null
+    },
+    "70111701": {
+      "name": "専門語学演習（英語）Ｂ",
+      "type": "芸術学研究科専門科目",
+      "category": "faculty",
+      "faculty": "芸術学研究科",
+      "department": null
+    },
+    "70230301": {
+      "name": "造形総合演習Ⅰ",
+      "type": "芸術学研究科専門科目",
+      "category": "faculty",
+      "faculty": "芸術学研究科",
+      "department": null
+    },
+    "70230302": {
+      "name": "造形総合演習Ⅰ",
+      "type": "芸術学研究科専門科目",
+      "category": "faculty",
+      "faculty": "芸術学研究科",
+      "department": null
+    },
+    "70230303": {
+      "name": "造形総合演習Ⅰ",
+      "type": "芸術学研究科専門科目",
+      "category": "faculty",
+      "faculty": "芸術学研究科",
+      "department": null
+    },
+    "70310101": {
+      "name": "造形応用特別研究",
+      "type": "芸術学研究科専門科目",
+      "category": "faculty",
+      "faculty": "芸術学研究科",
+      "department": null
+    },
+    "71220101": {
+      "name": "日本画研究Ⅰ",
+      "type": "芸術学研究科専門科目",
+      "category": "faculty",
+      "faculty": "芸術学研究科",
+      "department": null
+    },
+    "71220201": {
+      "name": "日本画研究Ⅱ",
+      "type": "芸術学研究科専門科目",
+      "category": "faculty",
+      "faculty": "芸術学研究科",
+      "department": null
+    },
+    "71220301": {
+      "name": "日本画研究（含古典研究）Ⅰ",
+      "type": "芸術学研究科専門科目",
+      "category": "faculty",
+      "faculty": "芸術学研究科",
+      "department": null
+    },
+    "71220401": {
+      "name": "日本画研究（含古典研究）Ⅱ",
+      "type": "芸術学研究科専門科目",
+      "category": "faculty",
+      "faculty": "芸術学研究科",
+      "department": null
+    },
+    "71220901": {
+      "name": "油絵研究ＡⅠ",
+      "type": "芸術学研究科専門科目",
+      "category": "faculty",
+      "faculty": "芸術学研究科",
+      "department": null
+    },
+    "71221001": {
+      "name": "油絵研究ＡⅡ",
+      "type": "芸術学研究科専門科目",
+      "category": "faculty",
+      "faculty": "芸術学研究科",
+      "department": null
+    },
+    "71221101": {
+      "name": "油絵研究ＢⅠ",
+      "type": "芸術学研究科専門科目",
+      "category": "faculty",
+      "faculty": "芸術学研究科",
+      "department": null
+    },
+    "71221201": {
+      "name": "油絵研究ＢⅡ",
+      "type": "芸術学研究科専門科目",
+      "category": "faculty",
+      "faculty": "芸術学研究科",
+      "department": null
+    },
+    "71230101": {
+      "name": "日本画材料技法演習",
+      "type": "芸術学研究科専門科目",
+      "category": "faculty",
+      "faculty": "芸術学研究科",
+      "department": null
+    },
+    "71230201": {
+      "name": "油絵材料技法演習",
+      "type": "芸術学研究科専門科目",
+      "category": "faculty",
+      "faculty": "芸術学研究科",
+      "department": null
+    },
+    "72220101": {
+      "name": "彫刻研究ＡⅠ",
+      "type": "芸術学研究科専門科目",
+      "category": "faculty",
+      "faculty": "芸術学研究科",
+      "department": null
+    },
+    "72220201": {
+      "name": "彫刻研究ＡⅡ",
+      "type": "芸術学研究科専門科目",
+      "category": "faculty",
+      "faculty": "芸術学研究科",
+      "department": null
+    },
+    "72220301": {
+      "name": "彫刻研究ＢⅠ",
+      "type": "芸術学研究科専門科目",
+      "category": "faculty",
+      "faculty": "芸術学研究科",
+      "department": null
+    },
+    "72220401": {
+      "name": "彫刻研究ＢⅡ",
+      "type": "芸術学研究科専門科目",
+      "category": "faculty",
+      "faculty": "芸術学研究科",
+      "department": null
+    },
+    "72230101": {
+      "name": "環境造形演習",
+      "type": "芸術学研究科専門科目",
+      "category": "faculty",
+      "faculty": "芸術学研究科",
+      "department": null
+    },
+    "73220101": {
+      "name": "造形計画研究Ⅰ",
+      "type": "芸術学研究科専門科目",
+      "category": "faculty",
+      "faculty": "芸術学研究科",
+      "department": null
+    },
+    "73220201": {
+      "name": "造形計画研究Ⅱ",
+      "type": "芸術学研究科専門科目",
+      "category": "faculty",
+      "faculty": "芸術学研究科",
+      "department": null
+    },
+    "73230201": {
+      "name": "視覚造形演習",
+      "type": "芸術学研究科専門科目",
+      "category": "faculty",
+      "faculty": "芸術学研究科",
+      "department": null
+    },
+    "73230301": {
+      "name": "映像メディア造形演習",
+      "type": "芸術学研究科専門科目",
+      "category": "faculty",
+      "faculty": "芸術学研究科",
+      "department": null
+    },
+    "73230401": {
+      "name": "立体造形演習",
+      "type": "芸術学研究科専門科目",
+      "category": "faculty",
+      "faculty": "芸術学研究科",
+      "department": null
+    },
+    "73230601": {
+      "name": "金属造形演習",
+      "type": "芸術学研究科専門科目",
+      "category": "faculty",
+      "faculty": "芸術学研究科",
+      "department": null
+    },
+    "73230701": {
+      "name": "漆造形演習",
+      "type": "芸術学研究科専門科目",
+      "category": "faculty",
+      "faculty": "芸術学研究科",
+      "department": null
+    },
+    "73230801": {
+      "name": "染織造形演習",
+      "type": "芸術学研究科専門科目",
+      "category": "faculty",
+      "faculty": "芸術学研究科",
+      "department": null
+    },
+    "73230901": {
+      "name": "現代美術特別演習",
+      "type": "芸術学研究科専門科目",
+      "category": "faculty",
+      "faculty": "芸術学研究科",
+      "department": null
+    },
+    "77000101": {
+      "name": "現代表現研究Ⅰ",
+      "type": "芸術学研究科専門科目",
+      "category": "faculty",
+      "faculty": "芸術学研究科",
+      "department": null
+    },
+    "77000201": {
+      "name": "現代表現研究Ⅱ",
+      "type": "芸術学研究科専門科目",
+      "category": "faculty",
+      "faculty": "芸術学研究科",
+      "department": null
+    },
+    "78000101": {
+      "name": "芸術学研究Ⅰ",
+      "type": "芸術学研究科専門科目",
+      "category": "faculty",
+      "faculty": "芸術学研究科",
+      "department": null
+    },
+    "78000201": {
+      "name": "芸術学研究Ⅱ",
+      "type": "芸術学研究科専門科目",
+      "category": "faculty",
+      "faculty": "芸術学研究科",
+      "department": null
+    },
+    "81110101": {
+      "name": "平和学",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "81110201": {
+      "name": "グローバル・ガヴァナンス論",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "81110601": {
+      "name": "地方自治と平和",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "81120201": {
+      "name": "広島の復興の歴史",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "81120401": {
+      "name": "核文化論",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "81120601": {
+      "name": "反核運動史",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "81210101": {
+      "name": "軍縮国際法",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "81220501": {
+      "name": "戦争と平和のメディア論",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "81310301": {
+      "name": "現代中国の政治と外交",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "81310501": {
+      "name": "日本の近現代史",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "81320201": {
+      "name": "国際組織と国際制度",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "81320301": {
+      "name": "地域機構と平和・安全保障",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "81320501": {
+      "name": "国際環境論",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814101X0": {
+      "name": "平和学特殊演習Ⅰ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814101X1": {
+      "name": "平和学特殊演習Ⅰ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814101X2": {
+      "name": "平和学特殊演習Ⅰ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814101X4": {
+      "name": "平和学特殊演習Ⅰ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814101X5": {
+      "name": "平和学特殊演習Ⅰ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814101X6": {
+      "name": "平和学特殊演習Ⅰ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814101X7": {
+      "name": "平和学特殊演習Ⅰ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814101X9": {
+      "name": "平和学特殊演習Ⅰ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814101Y0": {
+      "name": "平和学特殊演習Ⅰ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814101Y1": {
+      "name": "平和学特殊演習Ⅰ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814101Y2": {
+      "name": "平和学特殊演習Ⅰ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814101Y3": {
+      "name": "平和学特殊演習Ⅰ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814101Y4": {
+      "name": "平和学特殊演習Ⅰ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814101Y5": {
+      "name": "平和学特殊演習Ⅰ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814102A0": {
+      "name": "平和学特殊演習Ⅱ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814102A1": {
+      "name": "平和学特殊演習Ⅱ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814102A2": {
+      "name": "平和学特殊演習Ⅱ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814102A4": {
+      "name": "平和学特殊演習Ⅱ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814102A5": {
+      "name": "平和学特殊演習Ⅱ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814102A6": {
+      "name": "平和学特殊演習Ⅱ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814102A7": {
+      "name": "平和学特殊演習Ⅱ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814102A9": {
+      "name": "平和学特殊演習Ⅱ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814102B0": {
+      "name": "平和学特殊演習Ⅱ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814102B1": {
+      "name": "平和学特殊演習Ⅱ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814102B2": {
+      "name": "平和学特殊演習Ⅱ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814102B3": {
+      "name": "平和学特殊演習Ⅱ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814102B4": {
+      "name": "平和学特殊演習Ⅱ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814102B5": {
+      "name": "平和学特殊演習Ⅱ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814103X0": {
+      "name": "平和学特殊演習Ⅲ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814103X1": {
+      "name": "平和学特殊演習Ⅲ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814103X2": {
+      "name": "平和学特殊演習Ⅲ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814103X4": {
+      "name": "平和学特殊演習Ⅲ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814103X5": {
+      "name": "平和学特殊演習Ⅲ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814103X6": {
+      "name": "平和学特殊演習Ⅲ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814103X7": {
+      "name": "平和学特殊演習Ⅲ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814103X9": {
+      "name": "平和学特殊演習Ⅲ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814103Y0": {
+      "name": "平和学特殊演習Ⅲ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814103Y1": {
+      "name": "平和学特殊演習Ⅲ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814103Y2": {
+      "name": "平和学特殊演習Ⅲ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814103Y3": {
+      "name": "平和学特殊演習Ⅲ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814103Y4": {
+      "name": "平和学特殊演習Ⅲ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814103Y5": {
+      "name": "平和学特殊演習Ⅲ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814104A0": {
+      "name": "平和学特殊演習Ⅳ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814104A1": {
+      "name": "平和学特殊演習Ⅳ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814104A2": {
+      "name": "平和学特殊演習Ⅳ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814104A4": {
+      "name": "平和学特殊演習Ⅳ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814104A5": {
+      "name": "平和学特殊演習Ⅳ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814104A6": {
+      "name": "平和学特殊演習Ⅳ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814104A7": {
+      "name": "平和学特殊演習Ⅳ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814104A9": {
+      "name": "平和学特殊演習Ⅳ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814104B0": {
+      "name": "平和学特殊演習Ⅳ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814104B1": {
+      "name": "平和学特殊演習Ⅳ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814104B2": {
+      "name": "平和学特殊演習Ⅳ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814104B3": {
+      "name": "平和学特殊演習Ⅳ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814104B4": {
+      "name": "平和学特殊演習Ⅳ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "814104B5": {
+      "name": "平和学特殊演習Ⅳ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
+    },
+    "81510101": {
+      "name": "平和インターンシップ",
+      "type": "平和学研究科専門科目",
+      "category": "faculty",
+      "faculty": "平和学研究科",
+      "department": null
     }
   }
 }
